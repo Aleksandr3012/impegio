@@ -8,7 +8,7 @@ $file-format: woff2 woff;
 // @include font-face ($default-font, $addr + "Roboto-Regular/Roboto-Regular", $file-formats: $file-format);
 @include font-face ($default-font, $addr + "Avenir-Black/Avenir-Black", 900, $file-formats: $file-format);
 @include font-face ($default-font2, $addr + "Avenir-Book/Avenir-Book", normal, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Avenir-Heavy/Avenir-Heavy", 900, $file-formats: $file-format);
+// @include font-face ($default-font, $addr + "Avenir-Heavy/Avenir-Heavy", 900, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "Avenir-Light/Avenir-Light", 300, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "Avenir-Medium/Avenir-Medium", 500, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "Avenir-Roman/Avenir-Roman", normal, $file-formats: $file-format);
