@@ -11,18 +11,26 @@ mixin mob-mnu()
 	+b.toggle-menu-mobile--js
 		span
 	+b.menu-mobile--js
-		+e.inner
+		+e.inner.d-none.d-lg-flex
 			+e.topMnu
 				+b.toggle-menu-mobile--js
 					span
 				+searchBlock('JOB FINDEN')
-			+mail('info@impegio.de')
-			+e.tel(href="tel:+49(741)9423810")
-				+icon('phone')
-				span +49 (741) 94 23 81 0
-			+mnu()
+			+e.body
+				+mail('info@impegio.de')
+				+e.tel(href="tel:+49(741)9423810")
+					+icon('phone')
+					span +49 (741) 94 23 81 0
+				+mnu()
+				+searchBlockLine('Zur JOBBÖRSE')
 			+soc()
 			.text-right
+		+e.inner.d-lg-none
+			+e.topMnu
+				+searchBlock('Zur Jobbörse')
+				+b.toggle-menu-mobile--js
+					span
+			+mobMnu()
 	//  мобильное меню
 mixin top-nav() 
 	// start top-nav

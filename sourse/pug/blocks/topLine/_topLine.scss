@@ -1,42 +1,69 @@
 
 	// start .topLine
 	.topLine {
-		padding-top: rem(23);
-		padding-bottom: rem(21);
+		padding-top: rem(20);
+		padding-bottom: rem(17);
+		@include media-breakpoint-up(md) {
+			padding-top: rem(23);
+			padding-bottom: rem(21);
+		}
 		background-color: $primary;
 		// position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
+		// top: 0;
+		// left: 0;
+		// width: 100vw;
 		&__logo {
-			margin-top: 4px;
+			@include media-breakpoint-up(md) {
+				margin-top: 4px;
+			}
 			display: block;
 			color: #fff !important;
 			text-decoration: none !important;
 			.icon {
-				font-size: rem(66);
+				font-size: rem(38);
+				@include media-breakpoint-up(md) {
+					font-size: rem(50);
+				}
+				@include media-breakpoint-up(xl) {
+					font-size: rem(66);
+				}
 			}
 		}
 
 		&__col {
-			padding-left: rem(52);
+			margin-left: auto;
+			@include media-breakpoint-up(lg) {
+				margin-left: 0;
+				padding-left: rem(52);
+			}
 		}
 
 		.menu {
 			display: flex;
 			justify-content: center;
-			margin-left: rem(-16);
-			margin-right: rem(-16);
+			@include media-breakpoint-up(lg) {
+				margin-left: rem(-16);
+				margin-right: rem(-16);
+			}
 			margin-bottom: 0;
 		}
 
 		.menu-item {
 			list-style: none;
-			margin: 0 rem(16);
+			@include media-breakpoint-up(lg) {
+				margin: 0 rem(5);
+			}
+			@include media-breakpoint-up(xl) {
+				margin: 0 rem(16);
+			}
 			a {
 				color: #fff;
 				font-weight: normal;
 				font-weight: 900;
+				text-decoration: none;
+				&:hover {
+					opacity: .6;
+				}
 			}
 		}
 
@@ -45,14 +72,17 @@
 			text-decoration: none !important;
 			color: #fff;
 			position: relative;
-			margin-left: rem(17);
-			padding-left: rem(17);
-			margin-top: rem(-22);
+			margin-left: rem(7);
+			padding-left: rem(7);
+			@include media-breakpoint-up(xl) {
+				margin-left: rem(16);
+				padding-left: rem(17);
+			}
+			margin-top: rem(-15);
 
 			span {
-				padding-top: 6px;
-				line-height: 1;
-				
+				padding-top: 13px;
+				line-height: 1.1;
 			}
 
 			&::before {
@@ -61,7 +91,7 @@
 				height: 100%;
 				position: absolute;
 				left: rem(-15);
-				top: 0;
+				top: rem(4);
 				background-color: #fff;
 			}
 

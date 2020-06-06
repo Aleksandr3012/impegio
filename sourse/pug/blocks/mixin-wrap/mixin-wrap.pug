@@ -134,27 +134,50 @@ mixin mnuSm()
 			li.menu-item(itemprop="item" ): a(href= linkPatch itemprop="url")= linkName
 //- WP menu
 mixin mnu()
-	-
-		var nav= { 
-			"AGB":"#",
-			"Datenschutz":"#",
-			"Impressum":"#" ,
-			}
 	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
-		li.menu-item.menu-item-has-children
+		li.menu-item.menu-item-has-children 
 			a(href="#" itemprop="url") Mein Impegio
 			ul.sub-menu
-				-
-					var subnav= { 
-						"Kontakt":"#",
-						"Working next level":"#",
-						"Karriere":"#",
-						}
-				each sublinkPatch, sublinkName in nav
-					li.menu-item(itemprop="item" ): a(href= sublinkPatch itemprop="url")= sublinkName
-		each linkPatch, linkName in nav
-			li.menu-item(itemprop="item" ): a(href= linkPatch itemprop="url")= linkName
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Kontakt
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Working next level
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Karriere
+		li.menu-item(itemprop="item" ): a(href="#" itemprop="url") AGB
+		li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Datenschutz
+		li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Impressum
 
+mixin mobMnu()
+
+	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
+		li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Home
+		li.menu-item.menu-item-has-children
+			span.accordion-js Für Bewerber
+			ul.sub-menu
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Karrierebegleiter
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Bewerbungsservice
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Einstiegsmöflichkeiten
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Working next level
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Jobbörse
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Mein Impegio
+		li.menu-item.menu-item-has-children
+			span.accordion-js Für Unternehmen
+			ul.sub-menu
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Zeitarbeit
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Projektmanagement
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") HR-Beratunng
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Working next level
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Ihre Ansprechpartner
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Mein Impegio
+		li.menu-item.menu-item-has-children
+			span.accordion-js Über uns
+			ul.sub-menu
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Lorem ipsum dolor sit
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Lorem ipsum dolor sit
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Lorem ipsum dolor sit
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Lorem ipsum dolor sit
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Lorem ipsum dolor sit
+				li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Lorem ipsum dolor sit
+		li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Standorte
+		li.menu-item(itemprop="item" ): a(href="#" itemprop="url") Kontakt
 //- menu
 //- mixin mnu()
 //- 	-
@@ -174,10 +197,14 @@ mixin mnu()
 //- //- /menu
 
 mixin searchBlock(t)
-	+b.searchBlock(href="#")
+	+b.searchBlock(href="#")&attributes(attributes)
 		span= t
 		+icon('search')
 
+mixin searchBlockLine(t)
+	+b.searchBlock--line(href="#")&attributes(attributes)
+		+icon('search')
+		span= t
 
 mixin pic(i, bg, lazy="lazy", media='576px')
 	-

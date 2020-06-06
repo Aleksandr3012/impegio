@@ -4,45 +4,51 @@ mixin footer()
 			+e.logo(href="/")
 				+icon('logo')
 			.row
-				.col-lg-6
+				.col-xl-5.col-lg-4
 					+e.descr.h6 Wir stehen für zeitgerechte, intelligente und innovative Lösungen im Bereich der Personalarbeit. 
+					+searchBlock('Zur Jobbörse')(class="d-none d-lg-block")
+				.col-lg
+					+e.mnu
+						+e.mnuTitle.accordion-js Mein Impegio
+						.wrapper
+							ul
+								li: a(href="#") Kontakt
+								li: a(href="#") Standorte
+								li: a(href="#") Working next level
+								li: a(href="#") Karriere
+								li: a(href="#") Jobbörse
+				.col-lg
+					+e.mnu
+						+e.mnuTitle.accordion-js Für Bewerber
+						.wrapper
+							ul
+								li: a(href="#") Karrierebegleiter
+								li: a(href="#") Bewerbungsservice
+								li: a(href="#") Einstiegsmöflichkeiten
+								li: a(href="#") Working next level
+								li: a(href="#") Jobbörse
+								li: a(href="#") Mein Impegio
+				.col-lg
+					+e.mnu
+						+e.mnuTitle.accordion-js Für Unternehmen
+						.wrapper
+							ul
+								li: a(href="#") Zeitarbeit
+								li: a(href="#") Projektmanagement
+								li: a(href="#") HR-Beratunng
+								li: a(href="#") Working next level
+								li: a(href="#") Ihre Ansprechpartner
+								li: a(href="#") Mein Impegio
+				.col.d-lg-none
 					+searchBlock('Zur Jobbörse')
-				.col
-					+e.mnuTitle Mein Impegio
-					.wrapper
-						ul
-							li: a(href="#") Kontakt
-							li: a(href="#") Standorte
-							li: a(href="#") Working next level
-							li: a(href="#") Karriere
-							li: a(href="#") Jobbörse
-				.col
-					+e.mnuTitle Für Bewerber
-					.wrapper
-						ul
-							li: a(href="#") Karrierebegleiter
-							li: a(href="#") Bewerbungsservice
-							li: a(href="#") Einstiegsmöflichkeiten
-							li: a(href="#") Working next level
-							li: a(href="#") Jobbörse
-							li: a(href="#") Mein Impegio
-				.col
-					+e.mnuTitle Für Unternehmen
-					.wrapper
-						ul
-							li: a(href="#") Zeitarbeit
-							li: a(href="#") Projektmanagement
-							li: a(href="#") HR-Beratunng
-							li: a(href="#") Working next level
-							li: a(href="#") Ihre Ansprechpartner
 			+e.foot.row.justify-content-between
-				.col
-					+e.copyright © 2020 impegio GmbH Personalmanagemen  |  info@impegio.de
-				.col-auto
-					+soc()
-				.col
+				.col-md.order-lg-last
 					+e.confidentiality
 						ul
 							li: a(href="#") AGB
 							li: a(href="#") Datenschutz
 							li: a(href="#") Impressum
+				.col-lg-auto
+					+soc()
+				.col-lg.order-lg-first
+					+e.copyright © 2020 impegio GmbH Personalmanagemen  #[span.d-none.d-md-inline |  info@impegio.de]

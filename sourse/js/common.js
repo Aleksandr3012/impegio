@@ -127,7 +127,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Web.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/MenuMobil.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -271,7 +271,10 @@ function eventHandler() {
 				// yaCounter55828534.reachGoal('zakaz');
 			}, 4000);
 		}).fail(function () { });
+	});
 
+	$('.accordion-js').click(function(){
+		$(this).toggleClass('active').next().slideToggle();
 	});
 
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;

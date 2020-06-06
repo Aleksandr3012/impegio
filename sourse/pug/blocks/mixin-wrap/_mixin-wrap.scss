@@ -22,12 +22,21 @@
 		}
 		
 	}
-	.icon{
-	font-size: rem(30);
-	}
 	 
 	.icon-fb {
-		font-size: rem(23);
+		font-size: rem(21);
+	}
+
+	.icon-in {
+		font-size: rem(17);
+	}
+
+	.icon-XING {
+		font-size: rem(17);
+	}
+
+	.icon-inst {
+		font-size: rem(19);
 	}
 }
 
@@ -38,7 +47,12 @@
 
 	.icon {
 		margin-right: rem(20);
-		font-size: rem(25);
+		font-size: rem(20);
+	}
+
+	span {
+		@extend .h6;
+		font-weight: 300;
 	}
 }
  
@@ -48,7 +62,7 @@
 	span {
 		text-transform: uppercase;
 		color: #fff;
-		@extend .h6;
+		font-size: rem(20);
 		text-transform: uppercase;
 		max-width: rem(100);
 		margin-bottom: 0;
@@ -62,6 +76,13 @@
 		border-radius: 50%;
 		padding: rem(8);
 		font-size: rem(33);
+	}
+
+	&--line {
+		align-items: center;
+		span {
+			max-width: 100%;
+		}
 	}
 }
 

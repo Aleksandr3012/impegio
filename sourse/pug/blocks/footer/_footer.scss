@@ -1,13 +1,27 @@
 .footer {
 	background-color: $primary;
-	padding-top: var(--sPT);
-	padding-bottom: var(--sPB);
+	padding-top: calc(var(--sPT) + #{rem(7)});
+	padding-bottom: calc(var(--sPB) - #{rem(20)});
+	@include media-breakpoint-up(lg) {
+		padding-top: calc(var(--sPT) - #{rem(4)});
+		padding-bottom: calc(var(--sPB) - #{rem(60)});
+	}
 
 	&__logo {
-		margin-bottom: rem(40);
-		display: block;
+		margin-bottom: rem(32);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(52);
+		}
+		// max-width: rem(330);
+		display: inline-block;
 		.icon {
-			font-size: rem(68);
+			font-size: rem(38);
+			@include media-breakpoint-up(md) {
+				font-size: rem(50);
+			}
+			@include media-breakpoint-up(xl) {
+				font-size: rem(66);
+			}
 		}
 	}
 
@@ -23,51 +37,170 @@
 	&__descr {
 		color: #fff;
 		max-width: rem(360);
-		margin-bottom: rem(40);
+		font-weight: 900;
+		margin-bottom: rem(30);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(37);
+		}
+		line-height: 1.4;
 	}
 
 	&__copyright {
-		font-size: rem(14);
+		
+		color: #fff;
+		font-size: rem(11);
+		text-align: center;
+		padding-top: rem(22);
+		@include media-breakpoint-up(lg) {
+			padding-top: rem(15);
+			font-size: rem(14);
+			text-align-last: left;
+		}
+		position: relative;
+
+		&::before {
+			content: '';
+			@include media-breakpoint-up(lg) {
+				background-color: transparent;
+			}
+			background-color: #fff;
+			width: 200vw;
+			left: -50vw;
+			top: 0;
+			height: 1px;
+			position: absolute;
+		}
 	}
 
 	&__mnuTitle {
-		font-family: var(--avBlack);
 		text-transform: uppercase;
 		font-weight: 900;
 		color: #fff;
-		margin-bottom: rem(20);
+		padding-bottom: rem(15);
+		padding-top: rem(26);
+		@include mt;
+		@include media-breakpoint-up(lg) {
+			padding-top: 0;
+			margin-bottom: rem(10);
+			font-size: $small;
+		}
+		font-size: rem(13.5);
+		letter-spacing: rem(-0.3);
+		@include media-breakpoint-up(xl) {
+			margin-left: rem(-5);
+		}
+		@include media-breakpoint-down(md) {
+			border-bottom: 1px solid #B94F00;
+			border-top: 1px solid #B94F00;
+			margin-bottom: -1px;
+		}
+
+		
+
+		&.active {
+			padding-left: rem(20);
+
+		}
+	}
+
+
+	li {
+		font-size: rem(13);
+		line-height: 2.2;
+		@include media-breakpoint-up(md) {
+			font-size: $small;
+			line-height: 1.8;
+		}
+	}
+
+	//обертка меню
+	.wrapper {
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+		ul {
+			@include media-breakpoint-down(md) {
+				padding-left: rem(20);
+				padding-top: rem(20);
+				margin-bottom: rem(14);
+			}
+			@include media-breakpoint-up(xl) {
+			margin-left: rem(-5);
+			}
+		}
 	}
 
 	&__foot {
-		margin-top: rem(20);
-		padding-top: rem(20);
-		border-top: solid 1px #fff;
+		margin-top: rem(30);
+		padding-top: rem(25);
+		@include media-breakpoint-up(lg) {
+			margin-top: rem(47);
+			padding-top: rem(22);
+		}
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			width: 98%;
+			height: 1px;
+			left: 1%;
+			background-color: #fff;
+		}
 	}
 
 	.searchBlock {
+		@include media-breakpoint-down(md) {
+			margin-top: rem(33);
+		}
 		span {
-			margin-right: rem(20);
+			margin-right: rem(40);
+			padding-top: rem(13);
+			line-height: 1.1;
 		}
 	}
 
-	&__copyright {
-		color: #fff;
-	}
 
 	&__confidentiality {
+		padding-top: rem(16);
+
+		@include media-breakpoint-down(md) {
+			padding-bottom: rem(10);
+		}
 
 		ul {
 			display: flex;
-			justify-content: flex-end;
+			justify-content: center;
+			@include media-breakpoint-up(lg) {
+				justify-content: flex-end;
+			}
 		}
 
 		li {
+			font-size: rem(14);
 			line-height: 1;
 			&:not(:last-child) {
-				margin-right: rem(10);
+				margin-right: rem(7);
 				padding-right: rem(10);
 				border-right: solid 1px #fff;
 			}
+		}
+	}
+
+	.soc {
+		@include media-breakpoint-down(md) {
+			justify-content: center;
+			margin-bottom: rem(37);
+		}
+		&__item {
+			margin: 0 rem(12);
+		}
+	}
+
+	.accordion-js {
+		@include media-breakpoint-up(lg) {
+			pointer-events: none;
 		}
 	}
 
@@ -109,4 +242,43 @@
 @include media-breakpoint-down(sm) {}
 
 @include media-breakpoint-down(xs) {}
+}
+
+.accordion-js {
+	position: relative;
+	&::before {
+		@include media-breakpoint-down(md) {
+			content: '';
+			position: absolute;
+			top: rem(25);
+			right: 0;
+			background-image: url('../img/svg/chevronDown.svg');
+			background-position: center;
+			background-repeat: no-repeat;
+			width: rem(15);
+			height: rem(15);
+			@include mt;
+		}
+	}
+
+	&::after {
+		@include media-breakpoint-down(md) {
+			content: '';
+			position: absolute;
+			left: -200vw;
+			top: rem(26);
+			@include triangle(8px 9px, #fff transparent, up-right);
+			@include mt;
+		}
+	}
+
+	&.active {
+		&::before {
+			transform: rotate(180deg);
+		}
+
+		&::after {
+			left: 0;
+		}
+	}
 }

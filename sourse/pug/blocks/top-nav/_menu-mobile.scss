@@ -7,10 +7,14 @@ $h: em(2);
 	display: block;
 	height: $h* 12;
 	position: relative;
+	cursor: pointer;
 	color: #fff;
 	margin-left: auto;
 	font-size: 32px;
 	max-width: rem(30);
+	@include media-breakpoint-up(md) {
+		margin-top: -3px;
+	}
 
 	&.on {
 		color: #ffffff;
@@ -30,11 +34,11 @@ $h: em(2);
 	span:before {
 
 
-		top: $h * 2;
+		top: 8px;
 	}
 
 	span:after {
-		bottom: $h * 2;
+		bottom: 8px;
 	}
 
 	span {
@@ -47,7 +51,7 @@ $h: em(2);
 	span:before {
 		// width: 32px;
 		width: rem(26);
-		height: $h;
+		height: 2px;
 		background-color: currentColor;
 		transition: all 0.3s;
 		backface-visibility: hidden;
@@ -82,9 +86,13 @@ $h: em(2);
 .menu-mobile {
 	position: fixed !important;
 	z-index: 999;
-	max-width: 85%;
+	max-width: 100%;
+	@include media-breakpoint-up(sm) {
+		max-width: 85%;
+		width: rem(566);
+	}
+	width: 100%;
 	height: 101vh;
-	width: rem(566);
 	top: 0;
 	// left: 0;
 	right: 0;
@@ -93,8 +101,14 @@ $h: em(2);
 	will-change: transform;
 
 	&__inner {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
 		background-color: $primary;
-		padding: 5% 0;
+		@include media-breakpoint-up(lg) {
+			padding: rem(40) 0 rem(70);
+		}
+		padding: rem(25);
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 		height: 100%;
@@ -104,13 +118,53 @@ $h: em(2);
 		}
 	}
 
+	.searchBlock {
+		margin-right: rem(42);
+		// margin-left: rem();
+
+		&--line {
+			padding-bottom: rem(30);
+			padding-left: 0 !important;
+			margin-left: 0 !important;
+			span {
+				padding-top: 0 !important;
+				padding-left: rem(20);
+			}
+
+			&::before {
+				display: none;
+			}
+		}
+
+		@include media-breakpoint-down(md) {
+			margin-top: 0;
+			&::before {
+				display: none;
+			}
+
+			span {
+				padding-top: rem(15);
+				margin-right: rem(40);
+			}
+			margin-left: 0;
+			padding-left: 0;
+		}
+	}
+
 	&__tel {
 		color: #fff;
 		text-decoration: none !important;
+		margin-bottom: rem(39);
+		display: block;
 
 		.icon {
-			font-size: rem(30);
-			margin-right: rem(20);
+			font-size: rem(25);
+			margin-right: rem(24);
+		}
+
+		span {
+			@extend .h6;
+			font-weight: 300;
 		}
 	}
 
@@ -124,14 +178,121 @@ $h: em(2);
 
 	&__topMnu {
 		display: flex;
+		justify-content: space-between;
+		padding-bottom: rem(64);
+		@include media-breakpoint-up(lg) {
+			justify-content: center;
+			padding-bottom: rem(126);
+		}
+	}
+
+	&__body {
+		@include media-breakpoint-up(lg) {
+			padding-left: rem(128);
+		}
+	}
+
+	.mail {
+		margin-bottom: rem(27);
+	}
+
+	.menu {
+		@include media-breakpoint-up(lg) {
+			padding-left: rem(40);
+		}
+
+		&-item a {
+			text-transform: uppercase;
+
+
+		}
+
+		&-item {
+			@include media-breakpoint-down(md) {
+				border-bottom: 1px solid #B94F00;
+				border-top: 1px solid #B94F00;
+				margin-bottom: -1px;
+				padding-top: rem(15);
+				padding-bottom: rem(5);
+				font-size: rem(14);
+
+				a {
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
+		}
+
+		padding-bottom: rem(50);
+	}
+
+	.sub-menu {
+		margin-bottom: rem(3);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(30);
+
+		}
+		@include media-breakpoint-down(md) {
+			border-top: 1px solid #B94F00;
+			display: none;
+		}
+		@include media-breakpoint-down(md) {
+			padding-top: rem(20);
+			padding-left: rem(20);
+		}
+		.menu-item {
+			margin: 0;
+			border: none;
+			padding: 0;
+			line-height: 2.2;
+
+			a {
+				text-transform: capitalize;
+				font-weight: 300;
+				@include media-breakpoint-down(md) {
+					padding: 0;
+				}
+			}
+		}
+	}
+
+	.accordion-js {
+		padding: 10px;
+		padding-left: 0;
+		font-weight: 900;
+		display: block;
+		text-transform: uppercase;
+
+		&::before {
+			top: rem(8);
+		}
+
+		&.active {
+			padding-left: rem(20);
+		}
+
+		&::after {
+			top: rem(10);
+		}
+
+
+	}
+
+	.soc {
 		justify-content: center;
+		margin-top: auto;
 	}
 
 	.toggle-menu-mobile {
 		// position: relative;
 		cursor: pointer;
 		margin-left: 0%;
-		margin-right: rem(60);
+		@include media-breakpoint-up(lg) {
+			margin-right: rem(30);
+		}
+		@include media-breakpoint-down(md) {
+			margin-top: rem(-5);
+		}
 		// position: absolute;
 		opacity: 0;
 		// left: 0;
@@ -163,7 +324,8 @@ $h: em(2);
 	li {
 		display: block;
 		margin: 0;
-		border-top: 1px solid rgba(255, 255, 255, .13);
+		color: #fff;
+		// border-top: 1px solid rgba(255, 255, 255, .13);
 
 		a {
 			// font-size: 16px;

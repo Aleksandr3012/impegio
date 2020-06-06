@@ -125,8 +125,8 @@ function eventHandler() {
 	JSCCommon.mobileMenu(); // JSCCommon.inputMask();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Web.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/MenuMobil.jpg);"></div>')
+	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -240,6 +240,9 @@ function eventHandler() {
 				// yaCounter55828534.reachGoal('zakaz');
 			}, 4000);
 		}).fail(function () {});
+	});
+	$('.accordion-js').click(function () {
+		$(this).toggleClass('active').next().slideToggle();
 	});
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
