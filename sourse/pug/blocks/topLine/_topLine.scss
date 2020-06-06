@@ -1,0 +1,92 @@
+
+	// start .topLine
+	.topLine {
+		padding-top: rem(23);
+		padding-bottom: rem(21);
+		background-color: $primary;
+		// position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		&__logo {
+			margin-top: 4px;
+			display: block;
+			color: #fff !important;
+			text-decoration: none !important;
+			.icon {
+				font-size: rem(66);
+			}
+		}
+
+		&__col {
+			padding-left: rem(52);
+		}
+
+		.menu {
+			display: flex;
+			justify-content: center;
+			margin-left: rem(-16);
+			margin-right: rem(-16);
+			margin-bottom: 0;
+		}
+
+		.menu-item {
+			list-style: none;
+			margin: 0 rem(16);
+			a {
+				color: #fff;
+				font-weight: normal;
+				font-weight: 900;
+			}
+		}
+
+
+		.searchBlock {
+			text-decoration: none !important;
+			color: #fff;
+			position: relative;
+			margin-left: rem(17);
+			padding-left: rem(17);
+			margin-top: rem(-22);
+
+			span {
+				padding-top: 6px;
+				line-height: 1;
+			}
+
+			&::before {
+				content: '';
+				width: 1px;
+				height: 100%;
+				position: absolute;
+				left: rem(-15);
+				top: 0;
+				background-color: #fff;
+			}
+
+		}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.topLine

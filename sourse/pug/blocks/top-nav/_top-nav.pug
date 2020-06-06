@@ -1,0 +1,33 @@
+mixin mob-mnu()
+	-
+		//- let path = require('path');
+		//- let fs = require('fs');
+		//- var requestURL = 'top-nav.json';
+		//- var request = new XMLHttpRequest();
+		//- request.open('GET', requestURL);
+		//- request.responseType = 'json';
+		//- let dataJson = JSON.parse(json);
+	//- h1= dataJson['lala'] 
+	+b.toggle-menu-mobile--js
+		span
+	+b.menu-mobile--js
+		+e.inner
+			+e.topMnu
+				+b.toggle-menu-mobile--js
+					span
+				+searchBlock('JOB FINDEN')
+			+mail('info@impegio.de')
+			+e.tel(href="tel:+49(741)9423810")
+				+icon('phone')
+				span +49 (741) 94 23 81 0
+			+mnu()
+			+soc()
+			.text-right
+	//  мобильное меню
+mixin top-nav() 
+	// start top-nav
+	+b.top-nav.block-with-lazy
+		.container
+			+mnu()
+					
+	// end top-nav

@@ -1,0 +1,77 @@
+ 
+	  
+.soc{
+	margin: 0 rem(-5px);
+	display: flex;
+	&__item{
+		text-decoration: none !important;
+		margin: 0 rem(5px);
+		border-radius: 50%;
+		border: solid 1px #fff;
+		color: #fff;
+		@include mt;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: rem(8);
+		width: rem(41);
+		height: rem(41);
+		&:hover{
+		 	// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
+			opacity: .6 ;
+		}
+		
+	}
+	.icon{
+	font-size: rem(30);
+	}
+	 
+	.icon-fb {
+		font-size: rem(23);
+	}
+}
+
+.mail {
+	color: #fff;
+	text-decoration: none !important;
+	display: block;
+
+	.icon {
+		margin-right: rem(20);
+		font-size: rem(25);
+	}
+}
+ 
+.searchBlock {
+	text-decoration: none !important;
+	display: flex;
+	span {
+		text-transform: uppercase;
+		color: #fff;
+		@extend .h6;
+		text-transform: uppercase;
+		max-width: rem(100);
+		margin-bottom: 0;
+		// margin-right: rem(10);
+	}
+
+	.icon {
+		color: $primary;
+		background-color: #fff;
+		border-radius: 50%;
+		padding: rem(8);
+		font-size: rem(33);
+	}
+}
+
+.counter{
+	counter-reset: num;
+	&__item {
+		position: relative; 
+		&::before {
+			content: counter(num);
+			counter-increment: num;
+		}
+	}
+}
+

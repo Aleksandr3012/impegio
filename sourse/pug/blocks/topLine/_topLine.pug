@@ -1,0 +1,15 @@
+mixin topLine()
+	// start topLine
+	+b.topLine#topLine&attributes(attributes)
+		.container
+			.row.justify-content-between.align-items-center
+				.col-auto
+					+e.logo(href="/")
+						+icon('logo')
+				.col.d-none.d-lg-block
+					+mnuSm()
+				+e.col.col-auto
+					+mob-mnu()
+				.col-auto
+					+searchBlock('JOB FINDEN')
+	// end topLine
