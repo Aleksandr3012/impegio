@@ -1,6 +1,6 @@
 	// start .sAbout
 .sAbout {
-	padding-top: var(--sPT);
+	padding-top: calc(var(--sPT) + #{rem(70)});
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

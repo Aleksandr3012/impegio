@@ -11,10 +11,10 @@
 		max-width: 280px;
 		margin-right: 0;
 	}
-	@include media-breakpoint-up(md) {
-		margin-right: rem(220);
+	@include media-breakpoint-only(md) {
+		margin-right: rem(100);
 	}
-	max-width: 200px;
+	max-width: 300px;
 
 	.h4, .h6{
 		color: #fff;

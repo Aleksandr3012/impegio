@@ -55,9 +55,9 @@
 			padding-top: rem(30);
 		}
 		padding-top: rem(60);
-		@include media-breakpoint-up(md) {
-			max-width: rem(300);
-		}
+		// @include media-breakpoint-up(md) {
+		// 	max-width: rem(300);
+		// }
 		@include media-breakpoint-up(lg) {
 			max-width: rem(420);
 		}

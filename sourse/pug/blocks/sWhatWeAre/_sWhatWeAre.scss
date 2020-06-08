@@ -79,7 +79,9 @@
 		font-weight: 900;
 		letter-spacing: rem(1.1);
 		line-height: 0.93;
-		text-align-last: right;
+		@include media-breakpoint-up(lg) {
+			text-align-last: right;
+		}
 		text-transform: uppercase;
 	}
 
