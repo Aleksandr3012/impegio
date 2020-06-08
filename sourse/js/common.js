@@ -127,7 +127,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/MenuMobil.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Startseite768x1024px.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -191,28 +191,20 @@ function eventHandler() {
 	});
 
 	let defaultSl = {
-
-	}
-	const swiper4 = new Swiper('.color-slider', {
-		// slidesPerView: 5,
-		...defaultSl,
-		slidesPerView: 'auto',
+		slidesPerView: 1,
 		watchOverflow: true,
 		spaceBetween: 0,
-		freeMode: true,
-		watchOverflow: true,
-		slidesPerGroup: 3,
-
-		// centeredSlides: true,
 		loop: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+		lazy: {
+			loadPrevNext: true,
 		},
+		// autoplay: {
+		// 	delay: 6000,
+		// },
+	}
+
+	const swiper4 = new Swiper('.slider-js', {
+		...defaultSl, 
 
 	});
 	// modal window
@@ -273,6 +265,19 @@ function eventHandler() {
 		}).fail(function () { });
 	});
 
+	//Видео bg
+	var video = document.getElementById(".headerVideo");
+	// function myFunction() {
+	// 	if (video.paused) {
+	// 		video.play();
+	// 		btn.innerHTML = "Pause";
+	// 	} else {
+	// 		video.pause();
+	// 		btn.innerHTML = "Play";
+	// 	}
+	// }
+
+	//Аккардион
 	$('.accordion-js').click(function(){
 		$(this).toggleClass('active').next().slideToggle();
 	});

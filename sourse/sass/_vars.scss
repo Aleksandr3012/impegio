@@ -1,9 +1,9 @@
 $em-base: 18px;
-$small: rem(16);
+$small: 16px;
 $url: '../img/';
 $path2: '@2x/';
 $path1: '@1x/';
-$rfs-breakpoint: 1200px !default;
+$rfs-breakpoint: 1560px !default;
 
 // Color system
 
@@ -11,7 +11,7 @@ $white: #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
+$gray-400: #D3D3D3 !default;
 $gray-500: #bcbcbc !default;
 $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
@@ -98,7 +98,7 @@ $grid-breakpoints: (xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px,
+  xl: 1245px,
   xxl: 1560px
 ) !default;
 
@@ -110,7 +110,7 @@ $container-max-widths: (xs: 480px,
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px,
+  xl: 1191px,
   xxl: 1546px
 ) !default;
 // Grid columns
@@ -119,6 +119,7 @@ $container-max-widths: (xs: 480px,
 
 $grid-columns: 12 !default;
 $grid-gutter-width: 30px !default;
+
 
 
 // $link-color:                              theme-color("primary") !default;

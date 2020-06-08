@@ -1,0 +1,15 @@
+<svg id="_Icons_Arrows_Arrow" data-name=" Icons / Arrows / Arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Shape" d="M-18,5.5a.5.5,0,0,1,.5-.5H-3.83L-7.057,1.764a.5.5,0,0,1,0-.707l.7-.7a.5.5,0,0,1,.707,0L0,6l-5.646,5.646a.5.5,0,0,1-.707,0l-.7-.7a.5.5,0,0,1,0-.707L-3.83,7H-17.5a.5.5,0,0,1-.5-.5Z" transform="translate(17 20) rotate(90)" fill="rgba(255,255,255,0.7)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_45" data-name="Group 45">
+    <path id="Shape-2" data-name="Shape" d="M-18,5.5a.5.5,0,0,1,.5-.5H-3.83L-7.057,1.764a.5.5,0,0,1,0-.707l.7-.7a.5.5,0,0,1,.707,0L0,6l-5.646,5.646a.5.5,0,0,1-.707,0l-.7-.7a.5.5,0,0,1,0-.707L-3.83,7H-17.5a.5.5,0,0,1-.5-.5Z" transform="translate(17 20) rotate(90)" fill="rgba(255,255,255,0.7)"/>
+    <g id="Mask_Group_45" data-name="Mask Group 45" clip-path="url(#clip-path)">
+      <g id="Color" transform="translate(0 0)">
+        <rect id="Rectangle" width="22" height="22" fill="rgba(255,255,255,0.7)"/>
+      </g>
+    </g>
+  </g>
+</svg>

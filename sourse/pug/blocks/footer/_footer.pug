@@ -4,41 +4,44 @@ mixin footer()
 			+e.logo(href="/")
 				+icon('logo')
 			.row
-				.col-xl-5.col-lg-4
+				.col-xl-5.col-lg-7
 					+e.descr.h6 Wir stehen für zeitgerechte, intelligente und innovative Lösungen im Bereich der Personalarbeit. 
-					+searchBlock('Zur Jobbörse')(class="d-none d-lg-block")
+					+searchBlock('Zur Jobbörse')(class="d-none d-lg-flex")
 				.col-lg
-					+e.mnu
-						+e.mnuTitle.accordion-js Mein Impegio
-						.wrapper
-							ul
-								li: a(href="#") Kontakt
-								li: a(href="#") Standorte
-								li: a(href="#") Working next level
-								li: a(href="#") Karriere
-								li: a(href="#") Jobbörse
-				.col-lg
-					+e.mnu
-						+e.mnuTitle.accordion-js Für Bewerber
-						.wrapper
-							ul
-								li: a(href="#") Karrierebegleiter
-								li: a(href="#") Bewerbungsservice
-								li: a(href="#") Einstiegsmöflichkeiten
-								li: a(href="#") Working next level
-								li: a(href="#") Jobbörse
-								li: a(href="#") Mein Impegio
-				.col-lg
-					+e.mnu
-						+e.mnuTitle.accordion-js Für Unternehmen
-						.wrapper
-							ul
-								li: a(href="#") Zeitarbeit
-								li: a(href="#") Projektmanagement
-								li: a(href="#") HR-Beratunng
-								li: a(href="#") Working next level
-								li: a(href="#") Ihre Ansprechpartner
-								li: a(href="#") Mein Impegio
+					.row
+						.col-xl
+							+e.mnu
+								+e.mnuTitle.accordion-js Mein Impegio
+								.wrapper
+									ul
+										li: a(href="#") Kontakt
+										li: a(href="#") Standorte
+										li: a(href="#") Working next level
+										li: a(href="#") Karriere
+										li: a(href="#") Jobbörse
+						.col-xl
+							+e.mnu
+								+e.mnuTitle.accordion-js Für Bewerber
+								.wrapper
+									ul
+										li: a(href="#") Karrierebegleiter
+										li: a(href="#") Bewerbungsservice
+										li: a(href="#") Einstiegsmöflichkeiten
+										li: a(href="#") Working next level
+										li: a(href="#") Jobbörse
+										li: a(href="#") Mein Impegio
+						.col-xl
+							+e.mnu
+								+e.mnuTitle.accordion-js Für Unternehmen
+								.wrapper
+									ul
+										li: a(href="#") Zeitarbeit
+										li: a(href="#") Projektmanagement
+										li: a(href="#") HR-Beratunng
+										li: a(href="#") Working next level
+										li: a(href="#") Ihre Ansprechpartner
+										li: a(href="#") Mein Impegio
+
 				.col.d-lg-none
 					+searchBlock('Zur Jobbörse')
 			+e.foot.row.justify-content-between

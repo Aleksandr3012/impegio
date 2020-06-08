@@ -112,8 +112,6 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _objectSpread2;
-
 	// полифил для object-fit
 	objectFitImages(); // Picture element HTML5 shiv
 
@@ -125,7 +123,7 @@ function eventHandler() {
 	JSCCommon.mobileMenu(); // JSCCommon.inputMask();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/MenuMobil.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Startseite768x1024px.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
@@ -173,16 +171,19 @@ function eventHandler() {
 		}, 1100);
 		return false;
 	});
-	var defaultSl = {};
-	var swiper4 = new Swiper('.color-slider', _objectSpread(_objectSpread({}, defaultSl), {}, (_objectSpread2 = {
-		slidesPerView: 'auto',
+	var defaultSl = {
+		slidesPerView: 1,
 		watchOverflow: true,
 		spaceBetween: 0,
-		freeMode: true
-	}, _defineProperty(_objectSpread2, "watchOverflow", true), _defineProperty(_objectSpread2, "slidesPerGroup", 3), _defineProperty(_objectSpread2, "loop", true), _defineProperty(_objectSpread2, "loopFillGroupWithBlank", true), _defineProperty(_objectSpread2, "touchRatio", 0.2), _defineProperty(_objectSpread2, "slideToClickedSlide", true), _defineProperty(_objectSpread2, "freeModeMomentum", true), _defineProperty(_objectSpread2, "navigation", {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}), _objectSpread2))); // modal window
+		loop: true,
+		lazy: {
+			loadPrevNext: true
+		} // autoplay: {
+		// 	delay: 6000,
+		// },
+
+	};
+	var swiper4 = new Swiper('.slider-js', _objectSpread({}, defaultSl)); // modal window
 
 	var gets = function () {
 		var a = window.location.search;
@@ -240,7 +241,19 @@ function eventHandler() {
 				// yaCounter55828534.reachGoal('zakaz');
 			}, 4000);
 		}).fail(function () {});
-	});
+	}); //Видео bg
+
+	var video = document.getElementById(".headerVideo"); // function myFunction() {
+	// 	if (video.paused) {
+	// 		video.play();
+	// 		btn.innerHTML = "Pause";
+	// 	} else {
+	// 		video.pause();
+	// 		btn.innerHTML = "Play";
+	// 	}
+	// }
+	//Аккардион
+
 	$('.accordion-js').click(function () {
 		$(this).toggleClass('active').next().slideToggle();
 	});

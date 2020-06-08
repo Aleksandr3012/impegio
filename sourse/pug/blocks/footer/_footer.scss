@@ -79,9 +79,11 @@
 		padding-bottom: rem(15);
 		padding-top: rem(26);
 		@include mt;
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(xl) {
 			padding-top: 0;
 			margin-bottom: rem(10);
+		}
+		@include media-breakpoint-up(lg) {
 			font-size: $small;
 		}
 		font-size: rem(13.5);
@@ -89,7 +91,7 @@
 		@include media-breakpoint-up(xl) {
 			margin-left: rem(-5);
 		}
-		@include media-breakpoint-down(md) {
+		@include media-breakpoint-down(lg) {
 			border-bottom: 1px solid #B94F00;
 			border-top: 1px solid #B94F00;
 			margin-bottom: -1px;
@@ -107,7 +109,7 @@
 	li {
 		font-size: rem(13);
 		line-height: 2.2;
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(xl) {
 			font-size: $small;
 			line-height: 1.8;
 		}
@@ -115,11 +117,11 @@
 
 	//обертка меню
 	.wrapper {
-		@include media-breakpoint-down(md) {
+		@include media-breakpoint-down(lg) {
 			display: none;
 		}
 		ul {
-			@include media-breakpoint-down(md) {
+			@include media-breakpoint-down(lg) {
 				padding-left: rem(20);
 				padding-top: rem(20);
 				margin-bottom: rem(14);
@@ -158,6 +160,10 @@
 			margin-right: rem(40);
 			padding-top: rem(13);
 			line-height: 1.1;
+			display: block;
+			// @include media-breakpoint-only(xl) {
+			// 	max-width: rem(20);
+			// }
 		}
 	}
 
@@ -199,7 +205,7 @@
 	}
 
 	.accordion-js {
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(xl) {
 			pointer-events: none;
 		}
 	}
@@ -247,7 +253,7 @@
 .accordion-js {
 	position: relative;
 	&::before {
-		@include media-breakpoint-down(md) {
+		@include media-breakpoint-down(lg) {
 			content: '';
 			position: absolute;
 			top: rem(25);
@@ -262,7 +268,7 @@
 	}
 
 	&::after {
-		@include media-breakpoint-down(md) {
+		@include media-breakpoint-down(lg) {
 			content: '';
 			position: absolute;
 			left: -200vw;

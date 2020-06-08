@@ -1,0 +1,42 @@
+mixin sAdvantage()
+	// start sAdvantage
+	+b.SECTION.sAdvantage.section#sAdvantage&attributes(attributes)
+		.container
+			.row
+				+e.col.col-md-auto
+					p Warum Impegio?
+					h2 Was ist der Vorteil Was bieten wir
+					ul
+						li 
+							b Service
+							span Kostenlose Jobvermittlung und Karrierebetreuung
+						li 
+							b Flexibilität
+							span Vielfältige Stellenauswahl für Berufs-,&nbsp;Quer- und Wiedereinsteiger
+						li 
+							b Qualifikation
+							span Sammeln von Erfahrungen, auf Wunsch in unterschiedliche Positionen
+				+e.colSl.col
+					+b.tiltedSlider.slider-js.swiper-container
+						.swiper-wrapper
+							mixin slide(title,subtitle)
+								.swiper-slide
+									+e.slideWrap
+										+e.content(href="#")
+											+e.DIV.imgWrap
+												img.res-i.swiper-lazy(src="#" data-src=`img/@2x/doctor.jpg` alt="")
+											+e.body
+												.h4= title
+												.h6= subtitle
+												+e.btn Mehr
+							+slide('Keine Datenbank Viele Kunden','Karriereberater Suche für Dich deinen Job')
+							+slide('Keine Datenbank Viele Kunden','Karriereberater Suche für Dich deinen Job')
+							+slide('Keine Datenbank Viele Kunden','Karriereberater Suche für Dich deinen Job')
+							+slide('Keine Datenbank Viele Kunden','Karriereberater Suche für Dich deinen Job')
+							+slide('Keine Datenbank Viele Kunden','Karriereberater Suche für Dich deinen Job')
+							+slide('Keine Datenbank Viele Kunden','Karriereberater Suche für Dich deinen Job')
+							+slide('Keine Datenbank Viele Kunden','Karriereberater Suche für Dich deinen Job')
+
+			+moreDetailed()
+
+	// end sAdvantage

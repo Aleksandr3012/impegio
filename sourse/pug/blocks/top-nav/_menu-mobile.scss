@@ -15,6 +15,9 @@ $h: em(2);
 	@include media-breakpoint-up(md) {
 		margin-top: -3px;
 	}
+	@include media-breakpoint-only(xl) {
+		margin-top: -8px;
+	}
 
 	&.on {
 		color: #ffffff;

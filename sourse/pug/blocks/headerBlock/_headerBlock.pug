@@ -1,10 +1,27 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
+		+e.videoWrap
+			video.headerVideo(autoplay="autoplay" muted="muted" loop="loop" id="headerVideo" poster="img/@2x/header-bg.jpg")
+				source(src="img/video/rain.mp4")
+			//- source(src="img/header-bg.jpg")
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-
-			.row
-						
+			+e.row.row
+				.col-xl-12.col-lg-7
+					+b.section-title
+						h1 Wir finden deinen Traumjob
+						.h4 Starte deine Individuelle Karriere
+				.col-lg
+					+b.FORM.jobSearchBlock
+						+e.INPUT.control--work(type="text" placeholder="Welchen Job suchst du?")
+						+e.INPUT.control--ort.d-none.d-xl-block(type="text" placeholder="Ort")
+						+e.BUTTON.btn(type="button")
+							+icon('search')
+					p 3.139 Jobs online. Ist Dein Wunschjob dabei?
+		.container
+			.row.d-xl-none
+				.col
+			+e.scroll(href="#") 
+				img(src="img/svg/arrowDown.svg", alt="")
+				span Scroll down
 	// end headerBlock

@@ -206,6 +206,13 @@ mixin searchBlockLine(t)
 		+icon('search')
 		span= t
 
+mixin moreDetailed(t)
+	+b.moreDetailed(href="#")
+		if t
+			span= t
+		+e.line
+		img(src="img/svg/chevronDown.svg")
+
 mixin pic(i, bg, lazy="lazy", media='576px')
 	-
 		const smpath2 = "2x"

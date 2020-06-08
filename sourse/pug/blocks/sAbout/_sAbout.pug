@@ -1,0 +1,51 @@
+mixin sAbout()
+	// start sAbout
+	+b.sAbout#sAbout&attributes(attributes)
+		.container
+			+b.section-title
+				p Wie funktioniert es?
+				h2 WIR GESTALTEN DEINE JOBSSUCHE EINFACH
+			+e.sectionSlider.swiper-container
+				.swiper-wrapper
+					mixin slide(numb)
+						.swiper-slide
+							.row
+								.col-lg-3
+									mixin slideName(k,p,w,d)
+										+e.slideName
+											ul
+												ul(class=`${k}`)
+													+e.numb 1
+													p KONTAKT
+													span Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+												ul(class=`${p}`)
+													+e.numb 2
+													p Persönliches Gespräch
+													span Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+												ul(class=`${w}`)
+													+e.numb 3
+													p Wir suchen Deinen Job
+													span Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+												ul(class=`${d}`)
+													+e.numb 4
+													p Du hast einen neuen Job
+													span Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+									if numb == 1
+										+slideName('active','inactive','inactive','inactive')
+									if numb == 2
+										+slideName('passed','active','inactive','inactive')
+									if numb == 3
+										+slideName('passed','passed','active','inactive')
+									if numb == 4
+										+slideName('passed','passed','passed','active')
+									+b.jobSearchBlock
+										+e.INPUT.control--work(type="text" placeholder="Welchen Job suchst du?")
+										//- +e.INPUT.control--ort.d-none.d-md-block(type="text" placeholder="Ort")
+										+e.BUTTON.btn(type="button")
+											+icon('search')
+								.col
+								.col
+
+					+slide()
+
+	// end sAbout
