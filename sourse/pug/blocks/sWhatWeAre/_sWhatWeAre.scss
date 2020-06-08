@@ -69,7 +69,6 @@
 
 	&__title {
 		max-width: rem(630);
-		font-size: rem(75);
 		@include media-breakpoint-up(xxl) {
 			font-size: rem(100px);
 			max-width: rem(720);
@@ -79,7 +78,9 @@
 		font-weight: 900;
 		letter-spacing: rem(1.1);
 		line-height: 0.93;
+		font-size: rem(60);
 		@include media-breakpoint-up(lg) {
+			font-size: rem(75);
 			text-align-last: right;
 		}
 		text-transform: uppercase;
@@ -99,6 +100,9 @@
 		@include media-breakpoint-up(xxl) {
 			width: rem(168px);
 			height: rem(168px);
+		}
+		@include media-breakpoint-down(md) {
+			margin-bottom: rem(30);
 		}
 		background-color: #ffffff;
 		opacity: 0.87;
@@ -140,7 +144,12 @@
 		}
 		margin-left: rem(17);
 		display: flex;
-		align-items: flex-end;
+		@include media-breakpoint-down(sm) {
+			flex-direction: column;
+		}
+		@include media-breakpoint-up(md) {
+			align-items: flex-end;
+		}
 	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
