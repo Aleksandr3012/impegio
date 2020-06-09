@@ -5,7 +5,7 @@ mixin headerBlock()
 			video.headerVideo(autoplay="autoplay" muted="muted" loop="loop" id="headerVideo" poster="img/@2x/header-bg.jpg")
 				source(src="img/video/rain.mp4")
 			//- source(src="img/header-bg.jpg")
-		.container
+		+e.contMain.container
 			+e.row.row
 				.col-xl-12.col-lg-7
 					+b.section-title
@@ -18,7 +18,7 @@ mixin headerBlock()
 						+e.BUTTON.btn(type="button")
 							+icon('search')
 					p 3.139 Jobs online. Ist Dein Wunschjob dabei?
-		.container
+		+e.scrollCont.container
 			.row.d-xl-none
 				.col
 			+e.scroll(href="#") 
