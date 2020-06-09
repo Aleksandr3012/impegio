@@ -169,7 +169,7 @@
 
 
 	&__confidentiality {
-		padding-top: rem(16);
+		padding-top: rem(19);
 
 		@include media-breakpoint-down(md) {
 			padding-bottom: rem(10);
@@ -185,7 +185,7 @@
 
 		li {
 			font-size: rem(14);
-			line-height: 1;
+			line-height: 0.9 !important;
 			&:not(:last-child) {
 				margin-right: rem(7);
 				padding-right: rem(10);

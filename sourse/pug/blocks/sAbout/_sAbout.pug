@@ -14,22 +14,26 @@ mixin sAbout()
 									mixin slideName(k,p,w,d)
 										+e.slideName
 											ul
-												ul(class=`${k}`)
+												li(class=`${k}`)
 													+e.numb 1
-													p KONTAKT
-													span Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-												ul(class=`${p}`)
+													+e.text
+														p KONTAKT
+														+e.descr Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+												li(class=`${p}`)
 													+e.numb 2
-													p Persönliches Gespräch
-													span Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-												ul(class=`${w}`)
+													+e.text
+														p Persönliches Gespräch
+														+e.descr Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+												li(class=`${w}`)
 													+e.numb 3
-													p Wir suchen Deinen Job
-													span Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-												ul(class=`${d}`)
+													+e.text
+														p Wir suchen Deinen Job
+														+e.descr Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+												li(class=`${d}`)
 													+e.numb 4
-													p Du hast einen neuen Job
-													span Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+													+e.text
+														p Du hast einen neuen Job
+														+e.descr Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
 									if numb == 1
 										+slideName('active','inactive','inactive','inactive')
 									if numb == 2
@@ -38,14 +42,18 @@ mixin sAbout()
 										+slideName('passed','passed','active','inactive')
 									if numb == 4
 										+slideName('passed','passed','passed','active')
-									+b.jobSearchBlock
-										+e.INPUT.control--work(type="text" placeholder="Welchen Job suchst du?")
-										//- +e.INPUT.control--ort.d-none.d-md-block(type="text" placeholder="Ort")
-										+e.BUTTON.btn(type="button")
-											+icon('search')
+									+jobSearchBlock()
 								.col
+									+e.imgWrap
+										img.res-i.swiper-lazy(src="#" data-src="img/@2x/sAbout.jpg", alt="")
 								.col
+									+e.slideNumb= numb
+									.h4 Lorem ipsum dolor sit amet, consectetuer elit
+									.h6 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo. 
 
-					+slide()
+					+slide('1')
+					+slide('2')
+					+slide('3')
+					+slide('4')
 
 	// end sAbout

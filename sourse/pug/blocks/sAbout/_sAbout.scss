@@ -1,6 +1,112 @@
 	// start .sAbout
 .sAbout {
 	padding-top: calc(var(--sPT) + #{rem(70)});
+
+	p {
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+
+	li {
+		display: flex;
+		padding-bottom: rem(50);
+
+		&.active {
+			p {
+				color: $primary;
+			}
+			.sAbout__numb {
+				border-color: $primary;
+				color: $primary;
+				font-weight: 700;
+			}
+		}
+
+		&:not(.active) {
+			.sAbout__descr {
+				display: none;
+			}
+		}
+
+		&.inactive, &.passed {
+			p, .sAbout__numb {
+				color: $gray-500;
+			}
+		}
+
+		&.passed {
+			.sAbout__numb {
+				text-indent: -9999px;
+				background-color: #fff;
+				background-color: $green;
+				background-image: url('../img/svg/check.svg');
+				background-position: center;
+				background-repeat: no-repeat;
+				border-color: $green;
+			}
+		}
+	}
+
+	&__numb {
+		margin-right: rem(30);
+		border: solid 1px;
+		border-radius: 50%;
+		width: rem(41px);
+		height: rem(41px);
+		flex-shrink: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__descr {
+		font-size: rem(19);
+		font-weight: 300;
+	}
+
+	&__slideNumb {
+		color: $primary;
+		font-family: "Open Sans";
+		font-size: rem(120px);
+		font-weight: 300;
+		line-height: 1;
+	}
+
+	&__imgWrap {
+		position: relative;
+		border-radius: 50%;
+
+		&::before {
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: rem(112px);
+			height: rem(113px);
+			@include triangle(rem(112px) rem(113px), $primary transparent, up-right);
+		}
+	}
+
+	.jobSearchBlock {
+		background-color: $primary;
+		&__control {
+			color: #FFF;
+			width: 100%;
+			border-right: solid 1px #D3D3D3;
+
+			&::placeholder {
+				color: #fff;
+			}
+		}
+
+		&__btn {
+			background-color: #fff;
+
+			.icon {
+				color: $primary;
+			}
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

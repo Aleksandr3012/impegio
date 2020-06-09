@@ -199,13 +199,21 @@ mixin mobMnu()
 mixin searchBlock(t)
 	+b.searchBlock(href="#")&attributes(attributes)
 		span= t
-		+icon('search')
+		+e.DIV.iconWrap
+			+icon('search')
 
 mixin searchBlockLine(t)
 	+b.searchBlock--line(href="#")&attributes(attributes)
-		+icon('search')
+		+e.DIV.iconWrap
+			+icon('search')
 		span= t
 
+mixin jobSearchBlock()
+	+b.jobSearchBlock
+		+e.INPUT.control--work(type="text" placeholder="Welchen Job suchst du?")
+		//- +e.INPUT.control--ort.d-none.d-md-block(type="text" placeholder="Ort")
+		+e.BUTTON.btn(type="button")
+			+icon('search')
 mixin moreDetailed(t)
 	+b.moreDetailed(href="#")
 		if t

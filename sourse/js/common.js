@@ -198,14 +198,23 @@ function eventHandler() {
 		lazy: {
 			loadPrevNext: true,
 		},
-		// autoplay: {
-		// 	delay: 6000,
-		// },
+
 	}
 
-	const swiper4 = new Swiper('.slider-js', {
+	const swiper1 = new Swiper('.slider-js', {
 		...defaultSl, 
+		autoplay: {
+			delay: 6000,
+		},
+	});
 
+	const swiper2 = new Swiper('.sAbout__sectionSlider', {
+		...defaultSl, 
+		loop: false,
+		// effect: fade,
+		fadeEffect: {
+			crossFade: true,
+		},
 	});
 	// modal window
 

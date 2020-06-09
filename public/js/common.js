@@ -178,12 +178,20 @@ function eventHandler() {
 		loop: true,
 		lazy: {
 			loadPrevNext: true
-		} // autoplay: {
-		// 	delay: 6000,
-		// },
-
+		}
 	};
-	var swiper4 = new Swiper('.slider-js', _objectSpread({}, defaultSl)); // modal window
+	var swiper1 = new Swiper('.slider-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		autoplay: {
+			delay: 6000
+		}
+	}));
+	var swiper2 = new Swiper('.sAbout__sectionSlider', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		loop: false,
+		// effect: fade,
+		fadeEffect: {
+			crossFade: true
+		}
+	})); // modal window
 
 	var gets = function () {
 		var a = window.location.search;

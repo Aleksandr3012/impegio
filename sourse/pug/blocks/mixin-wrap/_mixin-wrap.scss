@@ -18,9 +18,15 @@
 		height: rem(41);
 		&:hover{
 		 	// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
-			opacity: .6 ;
+			background-color: #fff;
+			.icon {
+				color: $primary;
+			}
 		}
-		
+	}
+
+	.icon {
+		@include mt;
 	}
 	 
 	.icon-fb {
@@ -38,6 +44,8 @@
 	.icon-inst {
 		font-size: rem(19);
 	}
+
+
 }
 
 .mail {
@@ -70,10 +78,18 @@
 		// margin-right: rem(10);
 	}
 
-	.icon {
-		color: $primary;
+	&__iconWrap {
 		background-color: #fff;
 		border-radius: 50%;
+		width: rem(33);
+		height: rem(33);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.icon {
+		color: $primary;
 		padding: rem(8);
 		font-size: rem(33);
 	}
@@ -128,3 +144,8 @@
 	}
 }
 
+.jobSearchBlock {
+	&__control {
+		background-color: transparent;
+	}
+}
