@@ -7,10 +7,8 @@
 	padding-top: rem(0);
 	display: flex;
 	flex-direction: column;
-	@include media-breakpoint-up(sm) {
-		min-height: calc(var(--vh, 1vh) * 100 - 75.5px);
+	min-height: calc(var(--vh, 1vh) * 100 - 75.5px);
 
-	}
 	@include media-breakpoint-up(md) {
 		// padding-top: rem(200);
 		min-height: calc(var(--vh, 1vh) * 100 - 77.3px);
