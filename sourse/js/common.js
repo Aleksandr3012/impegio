@@ -127,7 +127,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Startseite768x1024px.jpg);"></div>')
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/StartseiteiPhoneX.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -309,6 +309,22 @@ function eventHandler() {
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
 		});
 	};
+
+
+	//luckyoneJs
+
+	$('.contact-pill-item-with-sublist').click(function () {
+		event.preventDefault();
+		this.classList.toggle('active');
+
+		$(this).find('.contact-pill-item-subbox').slideToggle(function () {
+			this.classList.toggle('active');
+		});
+
+	});
+	//
+
+
 	if (document.readyState !== 'loading') {
 		eventHandler();
 	} else {

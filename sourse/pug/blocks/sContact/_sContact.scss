@@ -1,7 +1,372 @@
+// start .sContact
+.sContact {
+	position: relative;
+	background-color: $secondary;
+	//border-top: 1px solid red;
 
-	// start .sContact
-	.sContact {
-		 
+
+	padding-top: 90px;
+	padding-bottom: 0px;
+	@include media-breakpoint-up(md){
+		padding-top: 130px;
+		padding-bottom: 165px;
+	}
+	@include media-breakpoint-up(lg){
+		padding-top: 108px;
+		padding-bottom: 104px;
+	}
+	@include media-breakpoint-up(xl){
+		padding-top: 141px;
+		padding-bottom: 145px;
+	}
+	@include media-breakpoint-up(xxl){
+		padding-top: 141px;
+		padding-bottom: 280px;
+	}
+
+	.container{
+		@include media-breakpoint-down(md){
+			padding-left: 56px;
+			padding-right: 56px;
+		}
+
+		@include media-breakpoint-down(sm){
+			padding-left: 26px;
+			padding-right: 26px;
+		}
+	}
+
+	&__contact-bg{
+
+		width: 100vw;
+		position: relative;
+		left: calc(-1 * (100vw - 100%) / 2);
+		@include media-breakpoint-up(md){
+			width: 100%;
+			position: static;
+			left: 0;
+		}
+
+		@include media-breakpoint-up(lg){
+			position: absolute;
+			right: -15px;
+			left: auto;
+
+			width: 100%;
+			height: 100%;
+
+			max-width: calc(100% - 550px);
+			max-height: 444px;
+			top: 162px;
+		}
+		@include media-breakpoint-up(xl){
+			max-width: calc(100% - 615px);
+			max-height: 578px;
+			top: 220px;
+		}
+		@include media-breakpoint-up(xxl){
+			max-width: calc(100% - 745px);
+			max-height: 740px;
+			top: 250px;
+		}
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__contant-block{
+
+	}
+	&__white-box{
+
+		padding: 0;
+		@include media-breakpoint-up(lg){
+			background-color: $white;
+			width: 1132px;
+
+			padding: 100px 80px 80px 75px;
+		}
+		@include media-breakpoint-up(xl) {
+			padding: 128px 80px 100px 86px;
+		}
+		@include media-breakpoint-up(xxl){
+			padding: 142px 80px 90px 84px;
+		}
+
+		h2{
+			font-weight: 900;
+			text-transform: uppercase;
+
+			margin-bottom: 6px;
+			font-size: 28px;
+			@include media-breakpoint-up(md){
+				margin-bottom: 5px;
+				font-size: 42px;
+			}
+			@include media-breakpoint-up(xl){
+				font-size: 46px;
+				margin-bottom: 17px;
+			}
+			@include media-breakpoint-up(xxl){
+				font-size: 46px;
+				margin-bottom: 30px;
+			}
+		}
+		h4{
+			font-weight: 900;
+
+			font-size: 23px;
+			margin-bottom: 37px;
+			@include media-breakpoint-up(md){
+				font-size: 23px;
+				margin-bottom: 50px;
+			}
+			@include media-breakpoint-up(lg){
+				font-size: 24px;
+				letter-spacing: -0.28px;
+				margin-bottom: 50px;
+			}
+			@include media-breakpoint-up(xl){
+				font-size: 28px;
+				letter-spacing: -0.28px;
+				margin-bottom: 50px;
+			}
+			@include media-breakpoint-up(xxl){
+				letter-spacing: -0.22px;
+				font-size: 32px;
+				margin-bottom: 60px;
+			}
+
+			line-height: 36px;
+		}
+	}
+
+	//pills box
+	&__contact-pills-box{
+
+		padding-bottom: 43px;
+		padding-left: 10px;
+		@include media-breakpoint-up(md){
+			padding-left: 0px;
+			padding-bottom: 0px;
+		}
+	}
+	&__contact-pill-item-cont{
+		&.active{
+			.sContact__pill-descr{
+				.icon{
+					transform: rotateX(180deg);
+				}
+			}
+		}
+
+		&:nth-child(1){
+			.sContact__icon-cont{
+				.icon{
+					font-size: 35px;
+				}
+			}
+		}
+		&:nth-child(2){
+			.sContact__icon-cont{
+				.icon{
+					font-size: 25px;
+				}
+			}
+		}
+
+	}
+	&__contact-pill-item{
+		display: flex;
+		align-items: center;
+
+		padding-bottom: 15px;
+
+		color: $body-color;
+	}
+	&__icon-cont{
+		width: 32px;
+		height: auto;
+
+		.icon{
+			font-size: 22px;
+			color: $primary;
+		}
+
+		margin-right: 30px;
+		@include media-breakpoint-up(md){
+			margin-right: 20px;
+		}
+		//30px
+	}
+	&__pill-descr{
+		display: flex;
+		align-items: center;
+
+		//background-color: red;
+		min-width: 250px;
+
+		font-weight: 300;
+		line-height: 26px;
+
+		span{
+			margin-right: 10px;
+
+			font-size: 17px;
+			@include media-breakpoint-up(xl){
+				font-size: 20px;
+				letter-spacing: -0.18px;
+			}
+		}
+
+		.icon{
+			font-size: 20px;
+			@include mt();
+
+			color: $primary;
+			margin-left: auto;
+			@include media-breakpoint-up(md){
+				margin-left: 0;
+				color: #7b7b7b;
+			}
+		}
+	}
+
+	.contact-pill-item-subbox{
+		display: none;
+		&.active{
+			display: block;
+		}
+
+		background-color: pink;
+	}
+	//
+	&__to-cont-form-btn-cont{
+		position: relative;
+
+		text-align: center;
+		margin-bottom: 54px;
+		@include media-breakpoint-up(md){
+			padding: 0;
+			text-align: right;
+			margin-bottom: 65px;
+		}
+		@include media-breakpoint-up(lg){
+			padding: 60px 0 0 45px;
+			margin-bottom: 0;
+			text-align: left;
+		}
+		@include media-breakpoint-up(xl){
+			padding: 60px 0 0 45px;
+		}
+		@include media-breakpoint-up(xl){
+			padding: 51px 0 0 50px;
+		}
+		@include media-breakpoint-up(xxl){
+			padding: 73px 0 0 86px;
+		}
+	}
+	&__to-cont-form-btn{
+		@extend .btn;
+		@extend .btn-primary;
+
+		@include media-breakpoint-up(md){
+			position: absolute;
+			bottom: 100%;
+			right: 0;
+		}
+		@include media-breakpoint-up(lg){
+			position: static;
+		}
+
+		//
+		height: 60px;
+		border-radius: 30px;
+		width: 100%;
+		@include media-breakpoint-up(md){
+			height: 45px;
+			border-radius: 22.5px;
+			width: auto;
+		}
+		@include media-breakpoint-up(xxl){
+			height: 60px;
+			border-radius: 30px;
+		}
+
+		padding: 0 9px 0 36px;
+		display: inline-flex;
+		align-items: center;
+
+
+		span{
+			color: $white;
+			font-weight: 800;
+			letter-spacing: -0.18px;
+		}
+		.icon-cont{
+			position: relative;
+			border-radius: 50%;
+			background-color: $white;
+			display: flex;
+
+
+			width: 41px;
+			height: 41px;
+			margin-left: auto;
+			@include media-breakpoint-up(md){
+				width: 31px;
+				height: 31px;
+				margin-left: 54px;
+			}
+			@include media-breakpoint-up(xxl){
+				width: 41px;
+				height: 41px;
+				margin-left: 86px;
+			}
+
+
+			.icon{
+				margin: auto;
+				color: $primary;
+
+
+				font-size: 17px;
+				@include media-breakpoint-up(md){
+					font-size: 13px;
+				}
+				@include media-breakpoint-up(xxl){
+					font-size: 17px;
+				}
+			}
+
+			&:before{
+				@include media-breakpoint-up(md){
+					content: '';
+				}
+
+				position: absolute;
+				width: 1px;
+				height: 100%;
+				background-color: $white;
+				top: 0;
+
+				left: -16.5px;
+				@include media-breakpoint-up(xl) {
+					left: -16.5px;
+				}
+				@include media-breakpoint-up(xxl){
+					left: -25.5px;
+				}
+			}
+		}
+	}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

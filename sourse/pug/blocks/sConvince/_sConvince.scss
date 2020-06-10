@@ -1,0 +1,223 @@
+// start .sConvince
+.sConvince {
+
+	padding-bottom: 88px;
+	@include media-breakpoint-up(md){
+		padding-bottom: 45px;
+	}
+	@include media-breakpoint-up(xxl){
+		padding-bottom: 0px;
+	}
+
+
+	padding-top: 52px;
+	@include media-breakpoint-up(lg){
+		padding-top: 23px;
+	}
+	@include media-breakpoint-up(lg){
+		padding-top: 15px;
+	}
+	@include media-breakpoint-up(xl){
+		padding-top: 0;
+	}
+
+	.container{
+
+	}
+
+	&__convince-row{
+
+	}
+	&__pills-col{
+
+		padding-left: rem(17);
+		@include media-breakpoint-up(lg){
+			padding-left: rem(26);
+		}
+	}
+
+	&__award-col{
+		padding-top: 39px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include media-breakpoint-up(md){
+			padding: 52px 0 0 0;
+			display: block;
+		}
+		@include media-breakpoint-up(lg){
+			padding: 25px 13px 0 0;
+		}
+		@include media-breakpoint-up(xl){
+			padding: 63px 13px 0 0;
+		}
+		@include media-breakpoint-up(xxl){
+			padding: 59px 24px 0px 0px;
+		}
+	}
+	&__award-item{
+		display: flex;
+
+		&:last-child{
+			margin-right: 0;
+		}
+
+		margin-right: 45px;
+		@include media-breakpoint-up(md){
+			margin-bottom: 21px;
+			margin-right: 0;
+		}
+		@include media-breakpoint-up(lg){
+			margin-bottom: 29px;
+		}
+		@include media-breakpoint-up(xl){
+			margin-bottom: 34px;
+		}
+		@include media-breakpoint-up(xxl){
+			margin-bottom: 46px;
+		}
+
+		img{
+			margin: auto;
+			max-height: 100%;
+
+			max-width: 80px;
+			@include media-breakpoint-up(md) {
+				max-width: 65px;
+			}
+			@include media-breakpoint-up(lg) {
+				max-width: 58%;
+			}
+			@include media-breakpoint-up(xl){
+				max-width: 50%;
+			}
+			@include media-breakpoint-up(xxl){
+				max-width: 100%;
+			}
+			width: auto;
+			height: auto;
+		}
+	}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sConvince
+
+.convince-pill-item{
+	border-bottom: 1px solid #dbdbdb;
+
+	&:last-child{
+		@include media-breakpoint-up(xxl){
+			border-bottom: none;
+		}
+	}
+
+	&:first-child{
+		@include media-breakpoint-down(lg){
+			//padding-top: 0;
+		}
+	}
+
+	display: flex;
+
+	align-items: flex-start;
+
+	padding: 37px 0 37px 8px;
+	@include media-breakpoint-up(md){
+		padding: 30px 0;
+	}
+	@include media-breakpoint-up(xl){
+		padding: 45px 0;
+		align-items: center;
+	}
+	@include media-breakpoint-up(xxl){
+		padding: 50px 0;
+	}
+
+
+	&__img-bl{
+		flex-shrink: 0;
+		display: flex;
+
+		width: 199px;
+		height: 152px;
+		@include media-breakpoint-up(xl){
+			width: 236px;
+			height: 180px;
+		}
+
+
+		margin-right: 20px;
+		@include media-breakpoint-up(xl){
+			margin-right: 57px;
+		}
+		@include media-breakpoint-up(xxl){
+			margin-right: 148px;
+		}
+		img{
+			margin: auto;
+
+			height: auto;
+			width: auto;
+			max-height: 100%;
+			max-width: 100%;
+		}
+	}
+
+	&__txt-bl{
+		max-width: 740px;
+		font-size: 14px;
+		@include media-breakpoint-up(md){
+			font-size: inherit;
+		}
+
+		.headline{
+			font-family: $default-font;
+			font-weight: 900;
+		}
+		p{
+			color: $body-color;
+			font-family: $default-font;
+			font-weight: 300;
+			letter-spacing: -0.18px;
+
+			line-height: 22px;
+			margin-bottom: 0;
+			@include media-breakpoint-up(md){
+				line-height: 28px;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+	&__{}
+	&__{}
+	&__{}
+}

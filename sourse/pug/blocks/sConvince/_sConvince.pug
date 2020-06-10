@@ -1,0 +1,24 @@
+mixin sConvince()
+	// start sConvince
+	+b.sConvince#sConvince&attributes(attributes)
+		.container
+			+e.convince-row.row
+				+e.pills-col.col-12.col-md-10.col-lg-10
+					+convincePillItem(1)
+					+convincePillItem(2)
+					+convincePillItem(3)
+				+e.award-col.col-12.col-md-2.col-lg-2
+					+e.award-item
+						img.lazy(data-src="img/@2x/convince-logo-1.png" src="#" alt="")
+					+e.award-item
+						img.lazy(data-src="img/@2x/convince-logo-2.png" src="#" alt="")
+
+	// end sConvince
+
+mixin convincePillItem(itemNum=1)
+	+b.convince-pill-item
+		+e.img-bl.d-none.d-lg-flex
+			img.lazy(src='#' data-src=`img/@2x/convince-${itemNum}.jpg` alt='')
+		+e.txt-bl
+			.headline Dies ist ein Typoblindtext.
+			p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et&nbsp;magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque&nbsp;eu, pretium quis, sem. Nulla consequat massa quis enim.

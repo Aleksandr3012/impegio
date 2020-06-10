@@ -2,8 +2,36 @@ mixin sContact()
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContact
-				
-			.row
+			+e.contant-block
+				+e.white-box
+					h2 Kontakt
+					h4 Wir finde deinen Traumjob
+					+e.contact-pills-box
+						+e.A.contact-pill-item-cont.contact-pill-item-with-sublist(href="#")
+							+e.contact-pill-item
+								+e.icon-cont
+									+icon('contact-location')
+								+e.pill-descr
+									span Niederlassung Rottweil
+									+icon('chevron-down')
+							.contact-pill-item-subbox 123
+						+e.A.contact-pill-item-cont(href="tel:+497419423810")
+							+e.contact-pill-item
+								+e.icon-cont
+									+icon('phone')
+								+e.pill-descr
+									span +49 (741) 94 23 81 0
+						+e.A.contact-pill-item-cont(href="mailto:info@impegio.de")
+							+e.contact-pill-item
+								+e.icon-cont
+									+icon('mail')
+								+e.pill-descr
+									span info@impegio.de
+				+e.to-cont-form-btn-cont
+					+e.A.to-cont-form-btn(href='#')
+						span Zum Kontaktformular
+						.icon-cont
+							+icon('mail')
+			+e.contact-bg
+				img.lazy(src="#" data-src="img/@2x/contact-img.jpg" alt="")
 	// end sContact
