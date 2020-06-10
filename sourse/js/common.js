@@ -127,7 +127,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Startseite768x1024px.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Startseite1024x768px.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -211,12 +211,11 @@ function eventHandler() {
 	const swiper2 = new Swiper('.sAbout__sectionSlider', {
 		...defaultSl, 
 		loop: false,
-		// effect: fade,
-		fadeEffect: {
-			crossFade: true,
+		effect: 'fade',
+		mousewheel: {
+			sensitivity: 4.5,
 		},
 	});
-	// modal window
 
 	var gets = (function () {
 		var a = window.location.search;

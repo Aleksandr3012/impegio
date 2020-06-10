@@ -209,7 +209,7 @@ mixin searchBlockLine(t)
 		span= t
 
 mixin jobSearchBlock()
-	+b.jobSearchBlock
+	+b.jobSearchBlock&attributes(attributes)
 		+e.INPUT.control--work(type="text" placeholder="Welchen Job suchst du?")
 		//- +e.INPUT.control--ort.d-none.d-md-block(type="text" placeholder="Ort")
 		+e.BUTTON.btn(type="button")

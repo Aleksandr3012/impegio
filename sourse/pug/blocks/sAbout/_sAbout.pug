@@ -10,7 +10,7 @@ mixin sAbout()
 					mixin slide(numb)
 						.swiper-slide
 							.row
-								.col-lg-3
+								.col-xl-3
 									mixin slideName(k,p,w,d)
 										+e.slideName
 											ul
@@ -34,6 +34,7 @@ mixin sAbout()
 													+e.text
 														p Du hast einen neuen Job
 														+e.descr Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+											+e.slideNumb.d-lg-none= numb
 									if numb == 1
 										+slideName('active','inactive','inactive','inactive')
 									if numb == 2
@@ -42,12 +43,12 @@ mixin sAbout()
 										+slideName('passed','passed','active','inactive')
 									if numb == 4
 										+slideName('passed','passed','passed','active')
-									+jobSearchBlock()
-								.col
+									+jobSearchBlock(class="d-none d-xl-flex")
+								+e.col.col-lg-auto
 									+e.imgWrap
 										img.res-i.swiper-lazy(src="#" data-src="img/@2x/sAbout.jpg", alt="")
 								.col
-									+e.slideNumb= numb
+									+e.slideNumb.d-none.d-lg-block= numb
 									.h4 Lorem ipsum dolor sit amet, consectetuer elit
 									.h6 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo. 
 
@@ -55,5 +56,6 @@ mixin sAbout()
 					+slide('2')
 					+slide('3')
 					+slide('4')
+				+jobSearchBlock()
 
 	// end sAbout

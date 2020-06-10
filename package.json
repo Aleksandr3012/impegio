@@ -44,7 +44,7 @@
     "gulp-svgmin": "^2.2.0",
     "gulp-tabify": "0.0.2",
     "gulp-uglify": "^3.0.2",
-    "postcss": "^7.0.31",
+    "postcss": "^7.0.32",
     "postcss-combine-media-query": "^1.0.1",
     "postcss-custom-properties": "^9.1.1",
     "postcss-extract-media-query": "^2.0.0",
@@ -56,6 +56,7 @@
     "@fancyapps/fancybox": "^3.5.7",
     "animate.css": "^4.1.0",
     "bootstrap": "^4.5.0",
+    "fullpage.js": "^3.0.8",
     "gijgo": "^1.9.13",
     "gulp-group-css-media-queries": "^1.2.2",
     "inputmask": "^5.0.3",
@@ -67,7 +68,7 @@
     "popper.js": "^1.16.1",
     "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.9",
-    "swiper": "^5.4.1",
+    "swiper": "^5.4.2",
     "vue": "^2.6.11",
     "wowjs": "^1.1.3"
   }

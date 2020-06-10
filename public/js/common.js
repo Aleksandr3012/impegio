@@ -123,7 +123,7 @@ function eventHandler() {
 	JSCCommon.mobileMenu(); // JSCCommon.inputMask();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Startseite768x1024px.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Startseite1024x768px.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
@@ -187,11 +187,11 @@ function eventHandler() {
 	}));
 	var swiper2 = new Swiper('.sAbout__sectionSlider', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		loop: false,
-		// effect: fade,
-		fadeEffect: {
-			crossFade: true
+		effect: 'fade',
+		mousewheel: {
+			sensitivity: 4.5
 		}
-	})); // modal window
+	}));
 
 	var gets = function () {
 		var a = window.location.search;
