@@ -188,9 +188,13 @@ function eventHandler() {
 	var swiper2 = new Swiper('.sAbout__sectionSlider', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		loop: false,
 		effect: 'fade',
+		// breakpoints: {
+		// 768: {
 		mousewheel: {
 			sensitivity: 4.5
-		}
+		} // }
+		// }
+
 	}));
 
 	var gets = function () {

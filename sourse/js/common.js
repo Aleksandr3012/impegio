@@ -212,9 +212,14 @@ function eventHandler() {
 		...defaultSl, 
 		loop: false,
 		effect: 'fade',
-		mousewheel: {
-			sensitivity: 4.5,
-		},
+		// breakpoints: {
+
+			// 768: {
+				mousewheel: {
+					sensitivity: 4.5,
+				},
+			// }
+		// }
 	});
 
 	var gets = (function () {
