@@ -216,8 +216,15 @@ function eventHandler() {
 			// 768: {
 				mousewheel: {
 					sensitivity: 4.5,
+					releaseOnEdges: true,
 				},
-			// }
+			// },
+		// },
+
+		// on: {
+		// 	reachEnd: function() {
+		// 		mousewheel: false,
+		// 	}
 		// }
 	});
 

@@ -1,0 +1,70 @@
+.feedback {
+	position: fixed;
+	right: 0;
+	z-index: 100;
+	top: 40vh;
+	display: flex;
+
+	&__iconBlock {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: $primary;
+		padding: rem(12);
+		cursor: pointer;
+
+		.icon {
+			color: #fff;
+		}
+
+		.icon-mail {
+			font-size: rem(28);
+		}
+
+		.icon-phone {
+			font-size: rem(50);
+			margin-bottom: rem(20);
+			position: relative;
+			padding-bottom: rem(15);
+			border-bottom: solid 1px #fff;
+		}
+	}
+
+	&__logo {
+		color: $primary;
+		.icon {
+			font-size: rem(50);
+		}
+	}
+
+	.rotate {
+		transform: rotate(-90deg);
+	}
+
+	.h4 {
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+
+	&__manager {
+		display: flex;
+	}
+
+	&__contactBlock {
+		display: none;
+		background-color: #fff;
+		box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.3);
+	}
+
+	.mail, &__tel {
+		.icon {
+			color: $primary;
+		}
+
+		span {
+			color: #000;
+		}
+	}
+
+
+}
