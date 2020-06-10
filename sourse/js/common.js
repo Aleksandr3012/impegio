@@ -213,7 +213,6 @@ function eventHandler() {
 		loop: false,
 		effect: 'fade',
 		// breakpoints: {
-
 			// 768: {
 				mousewheel: {
 					sensitivity: 4.5,
