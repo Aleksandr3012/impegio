@@ -187,11 +187,21 @@ function eventHandler() {
 	}));
 	var swiper2 = new Swiper('.sAbout__sectionSlider', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		loop: false,
-		// effect: fade,
-		fadeEffect: {
-			crossFade: true
-		}
-	})); // modal window
+		effect: 'fade',
+		// breakpoints: {
+		// 768: {
+		mousewheel: {
+			sensitivity: 4.5,
+			releaseOnEdges: true
+		} // },
+		// },
+		// on: {
+		// 	reachEnd: function() {
+		// 		mousewheel: false,
+		// 	}
+		// }
+
+	}));
 
 	var gets = function () {
 		var a = window.location.search;

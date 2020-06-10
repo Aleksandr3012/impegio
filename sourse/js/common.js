@@ -211,12 +211,22 @@ function eventHandler() {
 	const swiper2 = new Swiper('.sAbout__sectionSlider', {
 		...defaultSl, 
 		loop: false,
-		// effect: fade,
-		fadeEffect: {
-			crossFade: true,
-		},
+		effect: 'fade',
+		// breakpoints: {
+			// 768: {
+				mousewheel: {
+					sensitivity: 4.5,
+					releaseOnEdges: true,
+				},
+			// },
+		// },
+
+		// on: {
+		// 	reachEnd: function() {
+		// 		mousewheel: false,
+		// 	}
+		// }
 	});
-	// modal window
 
 	var gets = (function () {
 		var a = window.location.search;
