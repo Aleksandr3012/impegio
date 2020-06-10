@@ -252,8 +252,8 @@
 
 	&__control {
 		border: none;
-		padding-top: rem(13);
-		// padding-bottom: rem(5);
+		padding-top: rem(6);
+		padding-bottom: rem(5);
 		@include media-breakpoint-only(xl) {
 			font-size: rem(16);
 		}
@@ -264,14 +264,19 @@
 			border-left: solid 1px $gray-400 !important;
 			border-right: solid 1px $gray-400 !important;
 			padding-left: rem(20);
-			margin-left: rem(26);
+			// margin-left: rem(26);
 			@include media-breakpoint-only(xl) {
-				margin-left: rem(40);
+				// margin-left: rem(40);
 			}
 			// @include media-breakpoint-only(xl) {
 			// 	padding-left: rem(8);
 			// 	margin-left: rem(17);
 			// }
+		}
+
+		&--work {
+			width: 100%;
+			text-align: center;
 		}
 		&:focus, &:active {
 			outline: none;
