@@ -1,5 +1,11 @@
 "use strict";
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -301,7 +307,120 @@ $('.contact-pill-item-with-sublist').click(function () {
 	$(this).find('.contact-pill-item-subbox').slideToggle(function () {
 		this.classList.toggle('active');
 	});
-}); //
+}); //statDigits bl
+
+var partnersSlider = new Swiper('.partners-slider-js', {
+	slidesPerView: 'auto',
+	loop: true,
+	//responsive
+	breakpoints: {
+		1245: {
+			slidesPerView: 6
+		},
+		992: {
+			slidesPerView: 5
+		},
+		768: {
+			slidesPerView: 4
+		},
+		0: {
+			slidesPerView: 3
+		}
+	},
+	//lazy load
+	lazy: {
+		loadPrevNext: true
+	},
+	//autoplay
+	autoplay: {
+		delay: 6000
+	}
+});
+
+function boostDigits() {
+	var digitsItems = document.querySelectorAll('.digits-boost-js');
+
+	var _iterator = _createForOfIteratorHelper(digitsItems),
+			_step;
+
+	try {
+		for (_iterator.s(); !(_step = _iterator.n()).done;) {
+			var item = _step.value;
+			//replace numbers by 0
+			var number = item.innerHTML.replace('.', '');
+			item.customPropInnerNumber = number;
+			item.innerHTML = '0';
+		}
+	} catch (err) {
+		_iterator.e(err);
+	} finally {
+		_iterator.f();
+	}
+
+	window.addEventListener('scroll', trigerDigitsCounter, {
+		passive: true
+	});
+}
+
+function trigerDigitsCounter() {
+	var firstDigitItem = document.querySelector('.digits-boost-js');
+	var digitsItemsTop = $(firstDigitItem).offset().top;
+	var windowScroll = window.scrollY + vh(100);
+
+	if (windowScroll > digitsItemsTop + 50) {
+		window.removeEventListener('scroll', trigerDigitsCounter, {
+			passive: true
+		});
+		var digitsItems = document.querySelectorAll('.digits-boost-js');
+
+		var _iterator2 = _createForOfIteratorHelper(digitsItems),
+				_step2;
+
+		try {
+			for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+				var item = _step2.value;
+				fromZeroToDigit(item);
+			}
+		} catch (err) {
+			_iterator2.e(err);
+		} finally {
+			_iterator2.f();
+		}
+	}
+}
+
+function fromZeroToDigit(item) {
+	var currNum = Number(item.innerHTML.replace('.', ''));
+	var targetNum = Number(item.customPropInnerNumber);
+	var difference = targetNum - currNum;
+	var step = Math.floor(difference / 100); //
+
+	if (step === 0) step = 1;
+
+	if (difference > 0) {
+		var newVal = currNum + step;
+		item.innerHTML = placeDot(newVal);
+		window.setTimeout(function () {
+			fromZeroToDigit(item);
+		}, 10); //
+	}
+}
+
+function placeDot(number) {
+	if (number < 1000) return number;
+	var strArr = String(number).split('');
+	strArr.splice(-3, 0, '.'); // 3
+
+	return strArr.join('');
+}
+
+function vh(v) {
+	var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+	return v * h / 100;
+}
+
+boostDigits(); //
+//end luckyone js
 
 if (document.readyState !== 'loading') {
 	eventHandler();
