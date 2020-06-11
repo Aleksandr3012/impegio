@@ -56,10 +56,11 @@ mixin footer()
 				.col-lg.order-lg-first
 					+e.copyright © 2020 impegio GmbH Personalmanagemen  #[span.d-none.d-md-inline |  info@impegio.de]
 		+b.feedback
-			+e.iconBlock
-				+icon('phone')
-				+icon('mail')
-			+e.contactBlock
+			+e.iconBlock.icon-block-js
+				+icon('phone-bg')
+				+icon('mail-bg')
+				+e.close
+			+e.contactBlock.hidden-block-js
 				+e.logo
 					+icon('logo')
 				.h4 KONTAKTIEREN SIE UNS.
@@ -68,8 +69,9 @@ mixin footer()
 					+e.imgWrap
 						img.res-i(src="img/@2x/tamara-felbinger.jpg", alt="")
 					+e.working.rotate Working Next level
-				+mail('info@impegio.de')
-				+e.tel(href="tel:+49(741)9423810")
-					+icon('phone')
-					span +49 (741) 94 23 81 0
+				+e.links
+					+e.tel(href="tel:+49(741)9423810")
+						+icon('phone')
+						span +49 (741) 94 23 81 0
+					+mail('info@impegio.de')
 				

@@ -18,11 +18,12 @@
 		min-height: calc(var(--vh, 1vh) * 100 - 88.4px);
 	}
 	@include media-breakpoint-up(xl) {
-		padding-top: rem(138);
+		padding-top: 0;
+		// padding-top: rem(138);
 		min-height: calc(var(--vh, 1vh) * 100 - 88.4px);
 	}
 	@include media-breakpoint-up(xxl) {
-		padding-top: rem(265);
+		// padding-top: rem(265);
 		min-height: calc(var(--vh, 1vh) * 100 - 114px);
 	}
 
@@ -31,7 +32,7 @@
 	&__row {
 		position: relative;
 		z-index: 4;
-		@include media-breakpoint-down(xl) {
+		@include media-breakpoint-down(lg) {
 			padding-top: rem(90);
 		}
 		@include media-breakpoint-only(md) {
@@ -73,6 +74,9 @@
 	}
 
 	&__contMain {
+		@include media-breakpoint-up(xl) {
+			margin-bottom: auto;
+		}
 		margin-top: auto;
 	}
 
@@ -118,7 +122,7 @@
 		}
 		@include media-breakpoint-up(xl) {
 			margin-left: rem(40);
-			// margin-bottom: rem(300);
+			margin-bottom: 0;
 		}
 		@include media-breakpoint-up(xxl) {
 			// margin-bottom: rem(283);
@@ -126,11 +130,11 @@
 		}
 	}
 
-	&__scrollCont {
-		@include media-breakpoint-up(xl) {
-			margin-top: auto;
-		}
-	}
+	// &__scrollCont {
+	// 	@include media-breakpoint-up(xl) {
+	// 		margin-top: auto;
+	// 	}
+	// }
 
 	&__scroll {
 		text-decoration: none !important;
@@ -223,6 +227,10 @@
 
 .jobSearchBlock {
 	background-color: #fff;
+	&:hover {
+		background-color: #dbdbdb;
+	}
+	@include mt;
 	border-radius: rem(30);
 	display: flex;
 	align-items: center;
@@ -248,8 +256,8 @@
 
 	&__control {
 		border: none;
-		padding-top: rem(13);
-		// padding-bottom: rem(5);
+		padding-top: rem(6);
+		padding-bottom: rem(5);
 		@include media-breakpoint-only(xl) {
 			font-size: rem(16);
 		}
@@ -260,14 +268,19 @@
 			border-left: solid 1px $gray-400 !important;
 			border-right: solid 1px $gray-400 !important;
 			padding-left: rem(20);
-			margin-left: rem(26);
-			@include media-breakpoint-only(xl) {
-				margin-left: rem(40);
-			}
+			// margin-left: rem(26);
+			// @include media-breakpoint-only(xl) {
+				// margin-left: rem(40);
+			// }
 			// @include media-breakpoint-only(xl) {
 			// 	padding-left: rem(8);
 			// 	margin-left: rem(17);
 			// }
+		}
+
+		&--work {
+			width: 100%;
+			text-align: center;
 		}
 		&:focus, &:active {
 			outline: none;

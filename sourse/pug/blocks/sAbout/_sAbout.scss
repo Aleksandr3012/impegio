@@ -331,11 +331,19 @@
 
 	.jobSearchBlock {
 		background-color: $primary;
+		@include mt;
+		&:hover {
+			background-color: #ff730b;
+			.icon {
+				color: #ff730b;
+			}
+		}
 		@include media-breakpoint-up(xl) {
 			margin-right: rem(-34);
 		}
 		@include media-breakpoint-up(xxl) {
 			margin-right: rem(-13);
+			padding: .55556rem;
 		}
 
 		@include media-breakpoint-down(lg) {
@@ -344,7 +352,9 @@
 			max-width: rem(330);
 		}
 		&__control {
+			padding-top: .3rem;
 			color: #FFF;
+			text-align: center;
 			width: 100%;
 			border-right: solid 1px #D3D3D3;
 
@@ -357,6 +367,7 @@
 			background-color: #fff;
 
 			.icon {
+				@include mt;
 				color: $primary;
 			}
 		}
