@@ -367,7 +367,6 @@ function eventHandler() {
 	//statDigits bl
 
 	let partnersSlider = new Swiper('.partners-slider-js', {
-		slidesPerView: 'auto',
 		loop: true,
 
 		//responsive
@@ -428,7 +427,7 @@ function eventHandler() {
 		let currNum = Number(item.innerHTML.replace('.', ''));
 		let targetNum = Number(item.customPropInnerNumber);
 		let difference = targetNum - currNum;
-		let step = Math.floor(difference/100); //
+		let step = Math.floor(difference/25); //
 		if (step === 0) step = 1;
 
 		if (difference > 0){

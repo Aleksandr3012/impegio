@@ -337,7 +337,6 @@ $('.contact-pill-item-with-sublist').click(function () {
 }); //statDigits bl
 
 var partnersSlider = new Swiper('.partners-slider-js', {
-	slidesPerView: 'auto',
 	loop: true,
 	//responsive
 	breakpoints: {
@@ -421,7 +420,7 @@ function fromZeroToDigit(item) {
 	var currNum = Number(item.innerHTML.replace('.', ''));
 	var targetNum = Number(item.customPropInnerNumber);
 	var difference = targetNum - currNum;
-	var step = Math.floor(difference / 100); //
+	var step = Math.floor(difference / 25); //
 
 	if (step === 0) step = 1;
 
