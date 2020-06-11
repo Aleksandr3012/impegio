@@ -1,0 +1,45 @@
+mixin sStatNumbers()
+	// start sStatNumbers
+	+b.SECTION.sStatNumbers#sStatNumbers&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				p Mehr als nur ein Versprechen
+				h2 Lorem ipsum dolor sit amet consetetur
+			+e.digits-bl
+				+e.digits-row.row
+					+statDigitsItem('1.988', 'Verfügbare', 'Kandidaten')
+					+statDigitsItem('5.288', 'Jobs & Projekte', 'Kandidaten')
+					+statDigitsItem('63.288', 'Erfolgreiche', 'Vermittlungen 2019')
+				+e.bg-img-block
+					img.lazy(src="#" data-src="img/@2x/digits-bg.png" alt="")
+				+e.digits-descr
+					p Auf der Grundlage unserer Kenntnisse und Erfahrungen erarbeiten wir effiziente und passende Handlungs- alternativen und sind davon &uuml;berzeugt, dass es&nbsp;f&uuml;r jede Situation die richtige L&ouml;sung gibt.
+				+e.A.orange-btn(href='#') Mehr zur unseren Mission
+			+partnersLogoSlider()
+
+	// end sStatNumbers
+
+mixin statDigitsItem(digits='1.988', boldWords='Verfügbare', commonWords='Kandidaten')
+	+e.stat-digits-item.col-md-4
+		.digits-item-txt.digits-boost-js=digits
+		span=boldWords
+		p=commonWords
+
+mixin partnersLogoSlider()
+	+b.partner-logoes-slider
+		+e.pre-slider-txt
+			span Unternehmen die uns vertrauen
+		+e.partners-slider
+			.swiper-container.partners-slider-js
+				.swiper-wrapper
+					+partnersLogoSlide(1)
+					+partnersLogoSlide(2)
+					+partnersLogoSlide(3)
+					+partnersLogoSlide(4)
+					+partnersLogoSlide(5)
+					+partnersLogoSlide(6)
+
+mixin partnersLogoSlide(imgNum=1)
+	.swiper-slide
+		a(href="#")
+			img.lazy(src="#" data-src=`img/partners-logos-slider-${imgNum}.svg` alt="")
