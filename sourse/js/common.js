@@ -423,6 +423,7 @@ function eventHandler() {
 			}
 		}
 	}
+	//
 	function fromZeroToDigit(item){
 		let currNum = Number(item.innerHTML.replace('.', ''));
 		let targetNum = Number(item.customPropInnerNumber);

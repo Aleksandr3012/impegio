@@ -414,7 +414,8 @@ function trigerDigitsCounter() {
 			_iterator2.f();
 		}
 	}
-}
+} //
+
 
 function fromZeroToDigit(item) {
 	var currNum = Number(item.innerHTML.replace('.', ''));
