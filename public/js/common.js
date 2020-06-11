@@ -72,6 +72,21 @@ var JSCCommon = {
 			_this.body.classList.remove("fixed");
 		}
 	},
+	//кастомный селект
+	select2: function select2() {
+		$(".custom-select-wrap").each(function () {
+			var th = $(this);
+			th.find('.custom-select-js').select2({
+				dropdownParent: th,
+				tags: true,
+				minimumResultsForSearch: -1,
+				// width: 'auto',
+				// width: th.find(".select2-results__options"),
+				allowClear: false // dropdownAutoWidth: true
+
+			});
+		});
+	},
 	mobileMenu: function mobileMenu() {
 		// закрыть/открыть мобильное меню
 		var _this = this;
@@ -120,11 +135,12 @@ function eventHandler() {
 	svg4everybody({});
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
-	JSCCommon.mobileMenu(); // JSCCommon.inputMask();
+	JSCCommon.mobileMenu();
+	JSCCommon.select2(); // JSCCommon.inputMask();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/StartseiteiPhoneX.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Web.jpg);"></div>')
+	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -178,16 +194,18 @@ function eventHandler() {
 		loop: true,
 		lazy: {
 			loadPrevNext: true
+		},
+		autoplay: {
+			delay: 4000
 		}
 	};
-	var swiper1 = new Swiper('.slider-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
-		autoplay: {
-			delay: 6000
-		}
-	}));
+	var swiper1 = new Swiper('.slider-js', _objectSpread({}, defaultSl));
 	var swiper2 = new Swiper('.sAbout__sectionSlider', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		loop: false,
 		effect: 'fade',
+		navigation: {
+			nextEl: '.swiper-slide'
+		},
 		// breakpoints: {
 		// 768: {
 		mousewheel: {
@@ -293,7 +311,16 @@ function eventHandler() {
 	});
 }
 
-; //luckyoneJs
+; //бовая кноака с контактами
+
+$('.icon-block-js').click(function () {
+	event.preventDefault();
+	this.classList.toggle('active');
+	$(this).parent().toggleClass('active');
+	$(this).parent().find('.hidden-block-js').toggle(function () {
+		this.classList.toggle('active');
+	});
+}); //luckyoneJs
 
 $('.contact-pill-item-with-sublist').click(function () {
 	event.preventDefault();

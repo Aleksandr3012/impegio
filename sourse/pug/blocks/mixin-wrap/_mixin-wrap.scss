@@ -76,6 +76,7 @@
 		margin-bottom: 0;
 		font-weight: 900;
 		// margin-right: rem(10);
+		@include mt;
 	}
 
 	&__iconWrap {
@@ -86,12 +87,23 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		@include mt;
 	}
 
 	.icon {
 		color: $primary;
 		padding: rem(8);
 		font-size: rem(33);
+	}
+
+	&:hover {
+		span {
+			color: $gray-600;
+		}
+
+		&__iconWrap {
+			background-color: $gray-600;
+		}
 	}
 
 	&--line {

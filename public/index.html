@@ -20,6 +20,7 @@
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#3361d8">
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
+		<link rel="stylesheet" href="libs/select2/css/select2.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
@@ -590,6 +591,71 @@
 					</div>
 				</div>
 				<!-- end sAbout-->
+				<!-- start sYourWork-->
+				<section class="sYourWork section" id="sYourWork">
+					<div class="sYourWork__section-bg">
+						<!-- picture-->
+						<picture class="lazy picture-bg"> 
+							<source srcset="#" data-srcset="img/@2x/Bildschirmfoto.jpg" type="image/jpg" media="(min-width:576px)"/>
+							<source srcset="#" data-srcset="img/@1x/Bildschirmfoto.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/Bildschirmfoto.jpg" alt=""/>
+						</picture>
+						<!-- /picture-->
+					</div>
+					<div class="container">
+						<div class="section-title">
+							<p>Wie stellst du dir deinen Job vor?</p>
+							<h2>WIR GEHEN AUF DEINE INDIVIDUELLEN ANSPRÜCHE EIN</h2>
+						</div>
+						<div class="row">
+							<div class="sYourWork__picCol col-md">
+								<!-- picture-->
+								<picture class="picture-bg"> 
+									<source srcset="img/@2x/Bildschirmfoto.jpg" type="image/jpg" media="(min-width:576px)"/>
+									<source srcset="img/@1x/Bildschirmfoto.jpg" type="image/jpg"/><img src="img/@2x/Bildschirmfoto.jpg" alt=""/>
+								</picture>
+								<!-- /picture-->
+							</div>
+							<div class="sYourWork__col col-auto">
+								<div class="sYourWork__advantages">
+									<div class="sYourWork__title">Deine Vorteile
+									</div>
+									<div class="h6">Als einer der gr&ouml;&szlig;ten Personaldienstleister Deutschlands haben wir es&nbsp;uns zur Aufgabe gemacht Dich bei der Suche zu&nbsp;unterst&uuml;tzen.</div>
+									<div class="row">
+											<div class="sYourWork__item col-md-6"><img class="takeoverOption" src="img/@2x/takeoverOption.png" alt="alt"/><span>Übernahmeoption</span>
+											</div>
+											<div class="sYourWork__item col-md-6"><img class="partTime" src="img/@2x/partTime.png" alt="alt"/><span>Teilzeit</span>
+											</div>
+											<div class="sYourWork__item col-md-6"><img class="time" src="img/@2x/time.png" alt="alt"/><span>Vollzeit</span>
+											</div>
+											<div class="sYourWork__item col-md-6"><img class="sun" src="img/@2x/sun.png" alt="alt"/><span>Urlaubsgeld</span>
+											</div>
+									</div>
+								</div>
+								<div class="sYourWork__contacts">
+									<div class="select-group input-group">
+										<div class="custom-select-wrap">
+											<div class="select-group__icon-cont">
+												<svg class="icon icon-contact-location ">
+													<use xlink:href="img/svg/sprite.svg#contact-location"></use>
+												</svg>
+											</div>
+											<select class="custom-select-js form-control" name="state">
+												<option value="Berlin" data-telephone="+49 (00) 00 000 00">Berlin</option>
+												<option value="Niederlassung Göppingen" data-telephone="+49 (7161) 50 777 50" selected="selected">Niederlassung Göppingen</option>
+												<option value="Hamburg" data-telephone="+49 (7161) 00 765 59">Hamburg</option>
+												<option value="Hamburg" data-telephone="+49 (7161) 50 123 45">Hamburg</option>
+											</select>
+										</div><a class="select-group__select-tel" href="tel:"> 
+										<svg class="icon icon-phone ">
+											<use xlink:href="img/svg/sprite.svg#phone"></use>
+										</svg><span>+49 (7161) 50 777 50</span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sYourWork-->
 				<!-- start sContact-->
 				<section class="sContact section" id="sContact">
 					<div class="container">
@@ -773,15 +839,17 @@
 						</div>
 					</div>
 					<div class="feedback">
-						<div class="feedback__iconBlock">
-							<svg class="icon icon-phone ">
-								<use xlink:href="img/svg/sprite.svg#phone"></use>
+						<div class="feedback__iconBlock icon-block-js">
+							<svg class="icon icon-phone-bg ">
+								<use xlink:href="img/svg/sprite.svg#phone-bg"></use>
 							</svg>
-							<svg class="icon icon-mail ">
-								<use xlink:href="img/svg/sprite.svg#mail"></use>
+							<svg class="icon icon-mail-bg ">
+								<use xlink:href="img/svg/sprite.svg#mail-bg"></use>
 							</svg>
+							<div class="feedback__close">
+							</div>
 						</div>
-						<div class="feedback__contactBlock">
+						<div class="feedback__contactBlock hidden-block-js">
 							<div class="feedback__logo">
 								<svg class="icon icon-logo ">
 									<use xlink:href="img/svg/sprite.svg#logo"></use>
@@ -795,13 +863,15 @@
 								</div>
 								<div class="feedback__working rotate">Working Next level
 								</div>
-							</div><a class="mail" href="mailto:info@impegio.de">
-							<svg class="icon icon-mail ">
-								<use xlink:href="img/svg/sprite.svg#mail"></use>
-							</svg><span>info@impegio.de</span></a><a class="feedback__tel" href="tel:+49(741)9423810">
-							<svg class="icon icon-phone ">
-								<use xlink:href="img/svg/sprite.svg#phone"></use>
-							</svg><span>+49 (741) 94 23 81 0</span></a>
+							</div>
+							<div class="feedback__links"><a class="feedback__tel" href="tel:+49(741)9423810">
+								<svg class="icon icon-phone ">
+									<use xlink:href="img/svg/sprite.svg#phone"></use>
+								</svg><span>+49 (741) 94 23 81 0</span></a><a class="mail" href="mailto:info@impegio.de">
+								<svg class="icon icon-mail ">
+									<use xlink:href="img/svg/sprite.svg#mail"></use>
+								</svg><span>info@impegio.de</span></a>
+							</div>
 						</div>
 					</div>
 				</footer>
@@ -846,6 +916,7 @@
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<!-- modal libs-->
 		<!-- slider libs-->
+		<script src="libs/select2/js/select2.full.min.js"></script>
 		<script src="libs/swiper/js/swiper.min.js"></script>
 		<!-- /slider libs-->
 		<!-- for svg libs-->

@@ -66,6 +66,22 @@ const JSCCommon = {
 
 	},
 
+	//кастомный селект
+	select2() {
+		$(".custom-select-wrap").each(function () {
+			var th = $(this)
+			th.find('.custom-select-js').select2({
+				dropdownParent: th,
+				tags: true,
+				minimumResultsForSearch: -1,
+				// width: 'auto',
+				// width: th.find(".select2-results__options"),
+				allowClear: false,
+				// dropdownAutoWidth: true
+			});
+		})
+	},
+
 	mobileMenu() {
 		// закрыть/открыть мобильное меню
 		let _this = this;
@@ -123,11 +139,13 @@ function eventHandler() {
 
 	JSCCommon.mobileMenu();
 
+	JSCCommon.select2();
+
 	// JSCCommon.inputMask();
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/StartseiteiPhoneX.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Web.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -198,20 +216,23 @@ function eventHandler() {
 		lazy: {
 			loadPrevNext: true,
 		},
-
-	}
+		autoplay: {
+			delay: 4000,
+		},
+	};
 
 	const swiper1 = new Swiper('.slider-js', {
-		...defaultSl, 
-		autoplay: {
-			delay: 6000,
-		},
+		...defaultSl,
+
 	});
 
 	const swiper2 = new Swiper('.sAbout__sectionSlider', {
 		...defaultSl, 
 		loop: false,
 		effect: 'fade',
+		navigation: {
+			nextEl: '.swiper-slide',
+		},
 		// breakpoints: {
 			// 768: {
 				mousewheel: {
@@ -320,6 +341,16 @@ function eventHandler() {
 		});
 	};
 
+	//бовая кноака с контактами
+	$('.icon-block-js').click(function(){
+		event.preventDefault();
+		this.classList.toggle('active');
+
+		$(this).parent().toggleClass('active');
+		$(this).parent().find('.hidden-block-js').toggle(function () {
+			this.classList.toggle('active');
+		});
+	});
 
 	//luckyoneJs
 

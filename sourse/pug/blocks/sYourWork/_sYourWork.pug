@@ -1,0 +1,42 @@
+mixin sYourWork()
+	// start sYourWork
+	+b.SECTION.sYourWork.section#sYourWork&attributes(attributes)
+		+e.section-bg
+			+pic('Bildschirmfoto')(class='picture-bg')
+		.container
+			+b.section-title
+				p Wie stellst du dir deinen Job vor?
+				h2 WIR GEHEN AUF DEINE INDIVIDUELLEN ANSPRÜCHE EIN
+			.row
+				+e.picCol.col-md
+					+pic('Bildschirmfoto','','')(class='picture-bg')
+				+e.col.col-auto
+					+e.advantages
+						+e.title Deine Vorteile
+						.h6 Als einer der gr&ouml;&szlig;ten Personaldienstleister Deutschlands haben wir es&nbsp;uns zur Aufgabe gemacht Dich bei der Suche zu&nbsp;unterst&uuml;tzen.
+						.row
+							mixin item(im,t)
+								+e.item.col-md-6
+									img(src=`img/@2x/${im}.png`, alt="alt" class= im)
+									span= t
+							+item('takeoverOption','Übernahmeoption')
+							+item('partTime','Teilzeit')
+							+item('time','Vollzeit')
+							+item('sun','Urlaubsgeld')
+					+e.contacts
+						+b.select-group.input-group
+							.custom-select-wrap
+								+e.icon-cont
+									+icon('contact-location')
+								select.custom-select-js.form-control(name="state")
+									option(value="Berlin" data-telephone="+49 (00) 00 000 00" ) Berlin
+									option(value="Niederlassung Göppingen" data-telephone="+49 (7161) 50 777 50" selected) Niederlassung Göppingen
+									option(value="Hamburg" data-telephone="+49 (7161) 00 765 59") Hamburg
+									option(value="Hamburg" data-telephone="+49 (7161) 50 123 45") Hamburg
+							+e.select-tel(href='tel:') 
+								+icon('phone')
+								span +49 (7161) 50 777 50
+
+
+
+	// end sYourWork

@@ -331,6 +331,13 @@
 
 	.jobSearchBlock {
 		background-color: $primary;
+		@include mt;
+		&:hover {
+			background-color: #ff730b;
+			.icon {
+				color: #ff730b;
+			}
+		}
 		@include media-breakpoint-up(xl) {
 			margin-right: rem(-34);
 		}
@@ -360,6 +367,7 @@
 			background-color: #fff;
 
 			.icon {
+				@include mt;
 				color: $primary;
 			}
 		}
