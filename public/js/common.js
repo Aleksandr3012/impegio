@@ -139,7 +139,7 @@ function eventHandler() {
 	JSCCommon.select2(); // JSCCommon.inputMask();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Web.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Uns375x812px.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
@@ -196,7 +196,7 @@ function eventHandler() {
 			loadPrevNext: true
 		},
 		autoplay: {
-			delay: 4000
+			delay: 5000
 		}
 	};
 	var swiper1 = new Swiper('.slider-js', _objectSpread({}, defaultSl));
@@ -219,6 +219,25 @@ function eventHandler() {
 		// 	}
 		// }
 
+	}));
+	var names = [];
+	$(".slider-tabs-js .swiper-slide").each(function (i) {
+		names.push($(this).data("slide-name"));
+		console.log(names);
+	});
+	var swiper3 = new Swiper('.slider-tabs-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		watchOverflow: false,
+		// pagination: '.slide-name',
+		// paginationClickable: true,
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',
+		pagination: {
+			el: '.slide-name',
+			clickable: true,
+			renderBullet: function renderBullet(index, className) {
+				return '<span class="' + className + '">' + names[index] + '</span>';
+			}
+		}
 	}));
 
 	var gets = function () {

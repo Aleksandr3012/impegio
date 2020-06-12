@@ -3,11 +3,12 @@ extends layout/main.pug
 
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug 
-include ../blocks/sAdvantage/_sAdvantage.pug 
+include ../blocks/sRecruting/_sRecruting.pug 
 include ../blocks/sWhatWeAre/_sWhatWeAre.pug 
-include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sLinks/_sLinks.pug
 include ../blocks/sResponsibility/_sResponsibility.pug
 include ../blocks/sConvince/_sConvince.pug
+include ../blocks/sQuality/_sQuality.pug
 
 block variables
 	- let  mainPage= null
@@ -20,13 +21,14 @@ block pagecontent
 		+header()
 			//- +top-nav()
 			+topLine()
-			+headerBlockAbout()
-		//- +sAdvantage()
-		//- +sWhatWeAre()
-		//- +sAbout()
-		//- +sYourWork()
+			+headerBlockAbout
 		+sResponsibility()
 			+breadcrumb('impegio.de','Home für Über impegio')
+		+sWhatWeAre-about()
+		+sQuality()
+		+sLinks()
+		+sRecruting()
+
 		+sContact()
 		+sConvince()
 		+footer()
