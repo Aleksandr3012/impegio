@@ -4,12 +4,19 @@ mixin sResponsibility()
 		.container
 			+e.breadWrap
 				block
+				+e.weTake Wir übernehmen Verantwortung
 			.row
-				.col
-					+b.section-title.text-center
-						span Wir übernehmen Verantwortung
+				.col-lg-6
+					+b.section-title
 						h2 working next level
 						.h6 impegio steht für zeitgerechte, intelligente und innovative Lösungen im Bereich der Personalarbeit.
-				.col
-					
+				+e.col.col-lg
+					p #[strong Dies ist ein Typoblindtext.]<br> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+					p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+					p Während des ganzen Prozesses steht Ihnen unser erfahrenes Team jederzeit zur Verfügung. 
+					+e.about.btn(href='#') Mehr über unsere Leistungen
+
+
+
+
 	// end sResponsibility

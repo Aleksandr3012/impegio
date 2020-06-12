@@ -1,0 +1,41 @@
+mixin sRecruting()
+	// start sRecruting
+	+b.SECTION.sRecruting.section#sRecruting&attributes(attributes)
+		.container
+			.row
+				.col-lg
+					+b.section-title
+						+e.logo Impegio
+						h2 Wir sind auf Zeitarbeit und Personalvermittlung spezialisiert.
+				.col
+					+e.telBlock
+						+e.tel(href='tel:+49(741)9423810') +49 (741) 94 23 81 0
+						.h6 Wir sind immer für Sie erreichbar
+			+b.tabSlider.slider-tabs-js.swiper-container
+				+e.slideNav
+					.slide-name
+					.swiper-button-next
+					.swiper-button-prev
+				.swiper-wrapper
+					mixin slide(n)
+						.swiper-slide(data-slide-name= n)
+							+e.slide
+								.row
+									.col-lg
+											img.res-i.swiper-lazy(src="#" data-src=`img/@2x/tab-slide.jpg` alt="")
+									.col
+										+e.iconBlock
+											.h4 Ihre Vorteile
+											mixin iconItem(i,t)
+												+e.iconItem
+													+icon(`${i}`)
+													.h6= t
+											+iconItem('time','Schnell und effiziente Umsetzung')
+											+iconItem('advice','Ehrliche Beratung auf Augenhöhe')
+											+iconItem('international','Internationaler Kandidatenpool')
+											+iconItem('box','Innovative und flexible Vermittlungsmodelle')
+											+iconItem('hands','Effiziertes Rekruting')
+											+iconItem('contact-person','Fester Ansprechpartner')
+					+slide('Für Bewerber')
+					+slide('Für Unternehmen')
+	// end sRecruting

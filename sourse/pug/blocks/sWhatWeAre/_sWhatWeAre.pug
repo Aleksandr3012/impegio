@@ -11,4 +11,20 @@ mixin sWhatWeAre()
 							+icon('play')
 						p In 20 Sekunden erklärt
 
+
+mixin sWhatWeAre-about()
+	// start sWhatWeAre
+	+b.sWhatWeAre--about#sWhatWeAre&attributes(attributes)
+		.container
+			+e.block(href="https://www.youtube.com/watch?v=CQZYzGO8QlM"  data-fancybox="video-gal")
+				img.lazy.picture-bg(src="#" data-src="img/@2x/Businessfoto.jpg" alt="")
+				+e.DIV.inner
+					+icon('nextLevel')
+					+e.btnBlock
+						+e.DIV.btn
+							+icon('play')
+					+e.title Was wir für dich tun
+
+						//- p In 20 Sekunden erklärt
+
 	// end sWhatWeAre

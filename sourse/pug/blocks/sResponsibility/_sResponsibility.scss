@@ -1,7 +1,70 @@
-
 	// start .sResponsibility
-	.sResponsibility {
-		 
+.sResponsibility {
+	padding-top: 0;
+	margin-top: -35vh;
+	@include media-breakpoint-up(xl) {
+		margin-top: -30vh;
+	}
+	padding-bottom: 0;
+	.container {
+		position: relative;
+		background-color: transparent;
+
+		&::before {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			background-color: #fff;
+			height: 100%;
+			@include a-cent(x);
+			width: 1364px;
+			@include media-breakpoint-up(xxl) {
+				width: 1838px;
+				// left: rem(-160);
+			}
+		}
+	}
+
+	&__col {
+		@include media-breakpoint-up(lg) {
+			padding-left: rem(10);
+			padding-top: rem(12);
+			max-width: rem(755px);
+		}
+	}
+
+	p {
+		letter-spacing: rem(-0.4);
+		line-height: 1.45;
+		margin-bottom: 1.35rem;
+
+		strong {
+			letter-spacing: rem(0.3);
+		}
+	}
+
+	h2 {
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: rem(-0.4px);
+	}
+
+	.h6 {
+		font-weight: 300;
+		line-height: 1.4;
+		max-width: rem(480);
+		letter-spacing: rem(-0.3px);
+	}
+
+	&__weTake {
+		font-size: $small;
+		font-weight: 900;
+		padding-bottom: rem(30);
+	}
+
+	&__about {
+		margin-top: rem(21);
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
