@@ -384,7 +384,181 @@ function eventHandler() {
 		});
 
 	});
+
+	//statDigits bl
+
+	let partnersSlider = new Swiper('.partners-slider-js', {
+		loop: true,
+
+		//responsive
+		breakpoints: {
+			1245: {
+				slidesPerView: 6,
+			},
+			992: {
+				slidesPerView: 5,
+			},
+			768: {
+				slidesPerView: 4,
+			},
+			0: {
+				slidesPerView: 3,
+			},
+
+		},
+
+		//lazy load
+		lazy: {
+			loadPrevNext: true,
+		},
+		//autoplay
+		autoplay: {
+			delay: 6000,
+		},
+	});
+
+	function boostDigits() {
+		let digitsItems = document.querySelectorAll('.digits-boost-js');
+		for (let item of digitsItems){
+			//replace numbers by 0
+			let number = item.innerHTML.replace('.', '');
+			item.customPropInnerNumber = number;
+			item.innerHTML = '0';
+		}
+
+		window.addEventListener('scroll', trigerDigitsCounter, {passive : true});
+	}
+
+	function trigerDigitsCounter() {
+		let firstDigitItem = document.querySelector('.digits-boost-js');
+		let digitsItemsTop = $(firstDigitItem).offset().top;
+		let windowScroll = window.scrollY + vh(100);
+
+		if (windowScroll > digitsItemsTop + 50) {
+			window.removeEventListener('scroll', trigerDigitsCounter, {passive : true});
+
+			let digitsItems = document.querySelectorAll('.digits-boost-js');
+			for (let item of digitsItems){
+				fromZeroToDigit(item);
+			}
+		}
+	}
 	//
+	function fromZeroToDigit(item){
+		let currNum = Number(item.innerHTML.replace('.', ''));
+		let targetNum = Number(item.customPropInnerNumber);
+		let difference = targetNum - currNum;
+		let step = Math.floor(difference/25); //
+		if (step === 0) step = 1;
+
+		if (difference > 0){
+			let newVal = currNum + step;
+			item.innerHTML = placeDot(newVal);
+
+			window.setTimeout(function () {
+				fromZeroToDigit(item);
+			}, 10); //
+		}
+
+	}
+
+	function placeDot(number) {
+		if (number < 1000) return number
+
+		let strArr = String(number).split('');
+		strArr.splice(-3,0,'.'); // 3
+		return strArr.join('')
+	}
+
+	function vh(v) {
+		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+		return (v * h) / 100;
+	}
+	boostDigits();
+
+	//sJobFindenSlider
+	let JobFindenThumb = new Swiper('.thumb-slider-Job-find-js', {
+		//slidesPerView: '2',
+		direction: 'horizontal',
+		spaceBetween: 20,
+
+		//lazy load
+		lazy: {
+			loadPrevNext: true,
+		},
+		//
+		on: {
+			click: () => {
+				//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+				JobFindenThumb.updateSlidesClasses();
+				JobFindenBigSlider.updateSlidesClasses();
+
+				let slideToIndex = JobFindenThumb.realIndex + 1;
+				console.log(slideToIndex);
+				window.setTimeout(function () {
+					JobFindenBigSlider.slideTo(slideToIndex, 700, false);
+				}, 10);
+			},
+		},
+	});
+
+	let JobFindenBigSlider = new Swiper('.big-slider-Job-find-js', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		loop: true,
+
+		//lazy load
+		lazy: {
+			loadPrevNext: true,
+		},
+		//
+		on: {
+			click: () => {
+				//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+				JobFindenThumb.updateSlidesClasses();
+				JobFindenBigSlider.updateSlidesClasses();
+			},
+			slideChange: () => {
+				if (JobFindenBigSlider){
+					//we already have slider
+					bind2SlidersSwipesBigSl();
+				}
+				else{
+					//we dont have slider, lets wait until it exist
+					let sliderReady = window.setInterval(function () {
+						if (!JobFindenBigSlider){ return }
+						window.clearInterval(sliderReady);
+						//it exist now
+						bind2SlidersSwipesBigSl();
+					}, 1);
+				}
+			},
+
+		},
+	});
+
+	function bind2SlidersSwipesBigSl() {
+		let slideToIndex = JobFindenBigSlider.realIndex + 1;
+		if(JobFindenBigSlider.realIndex + 1 >  JobFindenThumb.slides.length - 1){
+			slideToIndex = 0;
+		}
+		JobFindenThumb.slideTo(slideToIndex, 700, false);
+	}
+	//to next slide btn
+	$('.next-slide-btn-js').click(function () {
+		JobFindenBigSlider.slideNext();
+	});
+	//treatment
+	window.addEventListener('resize', function () {
+		JobFindenBigSlider.update();
+		JobFindenThumb.update();
+		window.setTimeout(function () {
+			JobFindenBigSlider.update();
+			JobFindenThumb.update();
+		}, 100);
+	}, {passive: true});
+
+	//end luckyone js
 
 
 	if (document.readyState !== 'loading') {
