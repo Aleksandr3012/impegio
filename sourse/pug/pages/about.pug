@@ -9,6 +9,8 @@ include ../blocks/sLinks/_sLinks.pug
 include ../blocks/sResponsibility/_sResponsibility.pug
 include ../blocks/sConvince/_sConvince.pug
 include ../blocks/sQuality/_sQuality.pug
+include ../blocks/sStatNumbers/_sStatNumbers.pug
+include ../blocks/sJobFindenSlider/_sJobFindenSlider.pug
 
 block variables
 	- let  mainPage= null
@@ -25,10 +27,11 @@ block pagecontent
 		+sResponsibility()
 			+breadcrumb('impegio.de','Home für Über impegio')
 		+sWhatWeAre-about()
+		+sStatNumbers-uber()
 		+sQuality()
 		+sLinks()
 		+sRecruting()
-
+		+sJobFindenSlider-uber()
 		+sContact()
 		+sConvince()
 		+footer()

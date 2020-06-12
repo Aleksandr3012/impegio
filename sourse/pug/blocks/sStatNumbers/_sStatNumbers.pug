@@ -43,3 +43,23 @@ mixin partnersLogoSlide(imgNum=1)
 	.swiper-slide
 		a(href="#")
 			img.lazy(src="#" data-src=`img/partners-logos-slider-${imgNum}.svg` alt="")
+
+mixin sStatNumbers-uber()
+	// start sStatNumbers
+	+b.SECTION.sStatNumbers--uber#sStatNumbers&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				p Mehr als nur ein Versprechen
+				h2 Impegio auf einem Blick
+			+e.digits-bl
+				+e.digits-row.row
+					+statDigitsItem('8', 'Jahre ', 'Erfahrung')
+					+statDigitsItem('800', 'Kunden', 'Nutzen unseren Service')
+					+statDigitsItem('200', 'Mitarbeiter', 'Spezialisten')
+				+e.bg-img-block
+					img.lazy(src="#" data-src="img/@2x/digits-bg.png" alt="")
+				+e.digits-descr
+					p Unsere Mitarbeiter sind dabei der wichtigste Erfolgsfaktor. Kompetent und engagiert gestalten sie die Qualität unserer Arbeit und richten ihre Zielorientierung an Ihren Wünschen aus.
+					p Wir wissen was es heißt, wenn aus Dienstleistung Verantwortung wird. Dieser gerecht zu werden, sehen wir als eine unserer obersten Verpflichtungen.
+					p.text-primary #[b WORKING NEXT LEVEL] - für uns mehr als ein Versprechen.
+			//- +partnersLogoSlider()

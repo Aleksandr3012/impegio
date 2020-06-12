@@ -56,6 +56,7 @@
 			color: $white;
 			margin: auto;
 			font-size: 25px;
+			@include mt();
 		}
 
 		@include mt();
