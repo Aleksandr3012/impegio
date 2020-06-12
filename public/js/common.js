@@ -145,8 +145,8 @@ function eventHandler() {
 	JSCCommon.select2(); // JSCCommon.inputMask();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Web.jpg);"></div>')
-	// /добавляет подложку для pixel perfect
+
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Startseite1440x900px.jpg);"></div>'); // /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -446,8 +446,90 @@ function vh(v) {
 	return v * h / 100;
 }
 
-boostDigits(); //
-//end luckyone js
+boostDigits(); //sJobFindenSlider
+
+var JobFindenThumb = new Swiper('.thumb-slider-Job-find-js', {
+	//slidesPerView: '2',
+	direction: 'horizontal',
+	spaceBetween: 20,
+	//lazy load
+	lazy: {
+		loadPrevNext: true
+	},
+	//
+	on: {
+		click: function click() {
+			//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+			JobFindenThumb.updateSlidesClasses();
+			JobFindenBigSlider.updateSlidesClasses();
+			var slideToIndex = JobFindenThumb.realIndex + 1;
+			console.log(slideToIndex);
+			window.setTimeout(function () {
+				JobFindenBigSlider.slideTo(slideToIndex, 700, false);
+			}, 10);
+		}
+	}
+});
+var JobFindenBigSlider = new Swiper('.big-slider-Job-find-js', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+	loop: true,
+	//lazy load
+	lazy: {
+		loadPrevNext: true
+	},
+	//
+	on: {
+		click: function click() {
+			//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+			JobFindenThumb.updateSlidesClasses();
+			JobFindenBigSlider.updateSlidesClasses();
+		},
+		slideChange: function slideChange() {
+			if (JobFindenBigSlider) {
+				//we already have slider
+				bind2SlidersSwipesBigSl();
+			} else {
+				//we dont have slider, lets wait until it exist
+				var sliderReady = window.setInterval(function () {
+					if (!JobFindenBigSlider) {
+						return;
+					}
+
+					window.clearInterval(sliderReady); //it exist now
+
+					bind2SlidersSwipesBigSl();
+				}, 1);
+			}
+		}
+	}
+});
+
+function bind2SlidersSwipesBigSl() {
+	var slideToIndex = JobFindenBigSlider.realIndex + 1;
+
+	if (JobFindenBigSlider.realIndex + 1 > JobFindenThumb.slides.length - 1) {
+		slideToIndex = 0;
+	}
+
+	JobFindenThumb.slideTo(slideToIndex, 700, false);
+} //to next slide btn
+
+
+$('.next-slide-btn-js').click(function () {
+	JobFindenBigSlider.slideNext();
+}); //treatment
+
+window.addEventListener('resize', function () {
+	JobFindenBigSlider.update();
+	JobFindenThumb.update();
+	window.setTimeout(function () {
+		JobFindenBigSlider.update();
+		JobFindenThumb.update();
+	}, 100);
+}, {
+	passive: true
+}); //end luckyone js
 
 if (document.readyState !== 'loading') {
 	eventHandler();

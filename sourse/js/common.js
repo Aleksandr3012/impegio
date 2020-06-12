@@ -145,7 +145,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Web.jpg);"></div>')
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Startseite1440x900px.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -454,9 +454,88 @@ function eventHandler() {
 		return (v * h) / 100;
 	}
 	boostDigits();
-	//
 
+	//sJobFindenSlider
+	let JobFindenThumb = new Swiper('.thumb-slider-Job-find-js', {
+		//slidesPerView: '2',
+		direction: 'horizontal',
+		spaceBetween: 20,
 
+		//lazy load
+		lazy: {
+			loadPrevNext: true,
+		},
+		//
+		on: {
+			click: () => {
+				//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+				JobFindenThumb.updateSlidesClasses();
+				JobFindenBigSlider.updateSlidesClasses();
+
+				let slideToIndex = JobFindenThumb.realIndex + 1;
+				console.log(slideToIndex);
+				window.setTimeout(function () {
+					JobFindenBigSlider.slideTo(slideToIndex, 700, false);
+				}, 10);
+			},
+		},
+	});
+
+	let JobFindenBigSlider = new Swiper('.big-slider-Job-find-js', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		loop: true,
+
+		//lazy load
+		lazy: {
+			loadPrevNext: true,
+		},
+		//
+		on: {
+			click: () => {
+				//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+				JobFindenThumb.updateSlidesClasses();
+				JobFindenBigSlider.updateSlidesClasses();
+			},
+			slideChange: () => {
+				if (JobFindenBigSlider){
+					//we already have slider
+					bind2SlidersSwipesBigSl();
+				}
+				else{
+					//we dont have slider, lets wait until it exist
+					let sliderReady = window.setInterval(function () {
+						if (!JobFindenBigSlider){ return }
+						window.clearInterval(sliderReady);
+						//it exist now
+						bind2SlidersSwipesBigSl();
+					}, 1);
+				}
+			},
+
+		},
+	});
+
+	function bind2SlidersSwipesBigSl() {
+		let slideToIndex = JobFindenBigSlider.realIndex + 1;
+		if(JobFindenBigSlider.realIndex + 1 >  JobFindenThumb.slides.length - 1){
+			slideToIndex = 0;
+		}
+		JobFindenThumb.slideTo(slideToIndex, 700, false);
+	}
+	//to next slide btn
+	$('.next-slide-btn-js').click(function () {
+		JobFindenBigSlider.slideNext();
+	});
+	//treatment
+	window.addEventListener('resize', function () {
+		JobFindenBigSlider.update();
+		JobFindenThumb.update();
+		window.setTimeout(function () {
+			JobFindenBigSlider.update();
+			JobFindenThumb.update();
+		}, 100);
+	}, {passive: true});
 
 	//end luckyone js
 
