@@ -468,6 +468,7 @@ function eventHandler() {
 		//
 		on: {
 			click: () => {
+				if (window.matchMedia("(max-width: 768px)").matches) {return}
 				//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
 				JobFindenThumb.updateSlidesClasses();
 				JobFindenBigSlider.updateSlidesClasses();
@@ -493,11 +494,13 @@ function eventHandler() {
 		//
 		on: {
 			click: () => {
+				if (window.matchMedia("(max-width: 768px)").matches) {return}
 				//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
 				JobFindenThumb.updateSlidesClasses();
 				JobFindenBigSlider.updateSlidesClasses();
 			},
 			slideChange: () => {
+				if (window.matchMedia("(max-width: 768px)").matches) {return}
 				if (JobFindenBigSlider){
 					//we already have slider
 					bind2SlidersSwipesBigSl();

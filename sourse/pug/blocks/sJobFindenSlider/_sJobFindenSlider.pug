@@ -45,7 +45,7 @@ mixin BigSlide(imgNum=1, name="Mustafa Ali", proffesion="Koch")
 					+icon('search')
 
 mixin ThumbSlide(imgNum=1, name="Mustafa Ali", proffesion="Koch")
-	.swiper-slide
+	.swiper-slide.d-none.d-md-block
 		+e.img-block
 			img.swiper-lazy(src='#' data-src=`img/@2x/job-find-slider-${imgNum}.jpg` alt="")
 		+e.name.descr-item=name
