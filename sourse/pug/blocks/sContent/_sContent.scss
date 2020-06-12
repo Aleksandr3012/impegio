@@ -1,6 +1,21 @@
+.page-title {
+	padding-top: em(84);
+}
 
-	// start .sContent
-	.sContent {
+// start .sContent
+.sContent {
+	padding-top: calc(var(--sPT) - #{rem(118)});
+	padding-bottom: calc(var(--sPB) - #{rem(136)});
+	&__row {
+		padding-bottom: em(58);
+	}
+
+	p {
+		letter-spacing: -0.01em;
+	}
+	&__col {
+		padding-bottom: em(37);
+	}
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

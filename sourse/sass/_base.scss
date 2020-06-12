@@ -89,7 +89,14 @@ html {
 }
 
 .section-title { 
-	padding-bottom: var(--sTPB);
+	padding-bottom: var(--sTPB);	
+}
+
+.page-title {
+	h1 {
+		@extend .h2;
+		font-weight: 900;
+	}
 }
 
 body {
