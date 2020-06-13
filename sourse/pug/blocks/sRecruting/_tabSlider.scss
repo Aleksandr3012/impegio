@@ -3,7 +3,100 @@
 		position: relative;
 		z-index: 5;
 		padding-top: rem(30);
-		padding-bottom: rem(30);
+		// padding-bottom: rem(30);
 		margin-bottom: rem(30);
+		border-bottom: solid 1px $gray-500;
 	}
+
+	.slide-name {
+		display: flex;
+		justify-content: center;
+	}
+
+	.swiper-button {
+		border: 1px solid;
+		&-next {
+			width: rem(41);
+			height: rem(41);
+			&::after {
+				content: '';
+				background-image: url('../img/svg/swiper-next.svg');
+				background-position: center;
+				background-repeat: no-repeat;
+				width: rem(41);
+				height: rem(41);
+			}
+		}
+		&-prev {
+			width: rem(41);
+			height: rem(41);
+			left: 93%;
+			&::after {
+				content: '';
+				background-image: url('../img/svg/swiper-prev.svg');
+				background-position: center;
+				background-repeat: no-repeat;
+				width: rem(41);
+				height: rem(41);
+			}
+		}
+	}
+
+	.h4 {
+		font-weight: 900;
+		margin-bottom: rem(40);
+	}
+
+	&__iconItem {
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(25);
+
+		.icon {
+			color: $primary;
+			font-size: rem(45);
+			margin-right: rem(25);
+		}
+	}
+
+	.swiper-pagination-bullet {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		font-weight: 900;
+		border-radius: 0;
+		color: $gray-500;
+		margin-bottom: -2px;
+		background-color: transparent;
+		border-bottom: solid 3px transparent;
+
+		&-active {
+			background-color: transparent;
+			color: $primary;
+			border-bottom: solid 3px $primary;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
 }

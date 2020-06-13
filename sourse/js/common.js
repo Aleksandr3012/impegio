@@ -199,7 +199,7 @@ function eventHandler() {
 	heightses();
 
 	// листалка по стр
-	$(" .top-nav li a, .scroll-link").click(function () {
+	$(" .top-nav li a, .scroll-link, .headerBlock__scroll").click(function () {
 		const elementClick = $(this).attr("href");
 		const destination = $(elementClick).offset().top;
 
@@ -216,9 +216,9 @@ function eventHandler() {
 		lazy: {
 			loadPrevNext: true,
 		},
-		autoplay: {
-			delay: 5000,
-		},
+		// autoplay: {
+		// 	delay: 5000,
+		// },
 	};
 
 	const swiper1 = new Swiper('.slider-js', {

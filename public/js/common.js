@@ -185,7 +185,7 @@ function eventHandler() {
 	});
 	heightses(); // листалка по стр
 
-	$(" .top-nav li a, .scroll-link").click(function () {
+	$(" .top-nav li a, .scroll-link, .headerBlock__scroll").click(function () {
 		var elementClick = $(this).attr("href");
 		var destination = $(elementClick).offset().top;
 		$('html, body').animate({
@@ -200,10 +200,10 @@ function eventHandler() {
 		loop: true,
 		lazy: {
 			loadPrevNext: true
-		},
-		autoplay: {
-			delay: 5000
-		}
+		} // autoplay: {
+		// 	delay: 5000,
+		// },
+
 	};
 	var swiper1 = new Swiper('.slider-js', _objectSpread({}, defaultSl));
 	var swiper2 = new Swiper('.sAbout__sectionSlider', _objectSpread(_objectSpread({}, defaultSl), {}, {

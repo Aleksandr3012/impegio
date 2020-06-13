@@ -1,6 +1,38 @@
 	// start .sRecruting
 .sRecruting {
 	background-color: $secondary;
+
+
+	.section-title {
+
+		&__logo {
+			font-size: $small;
+			font-weight: 900;
+		}
+	}
+
+	h2 {
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+
+	&__tel {
+		font-weight: 900;
+		color: $body-color;
+		margin-bottom: rem(20);
+		text-decoration: none !important;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	&__telBlock {
+		.h6 {
+			font-weight: 300;
+		}
+	}
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

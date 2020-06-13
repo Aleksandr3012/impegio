@@ -7,9 +7,9 @@ mixin sRecruting()
 					+b.section-title
 						+e.logo Impegio
 						h2 Wir sind auf Zeitarbeit und Personalvermittlung spezialisiert.
-				.col
+				.col.align-self-center
 					+e.telBlock
-						+e.tel(href='tel:+49(741)9423810') +49 (741) 94 23 81 0
+						+e.tel.h4(href='tel:+49(741)9423810') +49 (741) 94 23 81 0
 						.h6 Wir sind immer für Sie erreichbar
 			+b.tabSlider.slider-tabs-js.swiper-container
 				+e.slideNav
@@ -23,7 +23,7 @@ mixin sRecruting()
 								.row
 									.col-lg
 											img.res-i.swiper-lazy(src="#" data-src=`img/@2x/tab-slide.jpg` alt="")
-									.col
+									.col.align-self-center
 										+e.iconBlock
 											.h4 Ihre Vorteile
 											mixin iconItem(i,t)
