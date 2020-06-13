@@ -55,8 +55,15 @@
 		.icon{
 			color: $white;
 			margin: auto;
-			font-size: 25px;
 			@include mt();
+
+			font-size: 15px;
+			@include media-breakpoint-up(md){
+				font-size: 20px;
+			}
+			@include media-breakpoint-up(xl){
+				font-size: 25px;
+			}
 		}
 
 		@include mt();
@@ -118,6 +125,7 @@
 	.swiper-slide{
 		height: auto;
 	}
+	width: 100%;
 	@include media-breakpoint-up(lg){
 		width: 91.3%;
 		//max-width: calc(100vw - 376px);
@@ -135,6 +143,7 @@
 
 
 	&__slide-content{
+		max-width: 100vw;
 		display: flex;
 		align-items: stretch;
 		height: 100%;
@@ -161,6 +170,7 @@
 	}
 	//
 	&__vacation-name{
+		max-width: calc(100vw - 60px);
 		text-transform: uppercase;
 
 		@include media-breakpoint-up(lg){

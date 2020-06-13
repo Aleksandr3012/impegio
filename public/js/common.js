@@ -478,7 +478,11 @@ var JobFindenThumb = new Swiper('.thumb-slider-Job-find-js', {
 	//
 	on: {
 		click: function click() {
-			//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+			if (window.matchMedia("(max-width: 768px)").matches) {
+				return;
+			} //photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+
+
 			JobFindenThumb.updateSlidesClasses();
 			JobFindenBigSlider.updateSlidesClasses();
 			var slideToIndex = JobFindenThumb.realIndex + 1;
@@ -500,11 +504,19 @@ var JobFindenBigSlider = new Swiper('.big-slider-Job-find-js', {
 	//
 	on: {
 		click: function click() {
-			//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+			if (window.matchMedia("(max-width: 768px)").matches) {
+				return;
+			} //photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+
+
 			JobFindenThumb.updateSlidesClasses();
 			JobFindenBigSlider.updateSlidesClasses();
 		},
 		slideChange: function slideChange() {
+			if (window.matchMedia("(max-width: 768px)").matches) {
+				return;
+			}
+
 			if (JobFindenBigSlider) {
 				//we already have slider
 				bind2SlidersSwipesBigSl();
