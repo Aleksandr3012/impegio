@@ -55,8 +55,15 @@
 		.icon{
 			color: $white;
 			margin: auto;
-			font-size: 25px;
 			@include mt();
+
+			font-size: 15px;
+			@include media-breakpoint-up(md){
+				font-size: 20px;
+			}
+			@include media-breakpoint-up(xl){
+				font-size: 25px;
+			}
 		}
 
 		@include mt();
