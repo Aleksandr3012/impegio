@@ -12,11 +12,10 @@ html {
 	overflow: hidden;
 	width: 100%;
 	height: 100%;
-	background-position: center 19px;
-	// background-position: center -26px;
-
+	background-position: center 0px;
+	background-position: center -2001px;
 	opacity: 0;
-	//opacity: 0.55;
+	// opacity: 0.55;
 }
 
 body,
@@ -27,6 +26,10 @@ html {
 	}
 	// @include font-size(1rem);
 
+}
+
+strong{
+	font-weight: bold;
 }
 
 .row {
@@ -88,7 +91,14 @@ html {
 }
 
 .section-title { 
-	padding-bottom: var(--sTPB);
+	padding-bottom: var(--sTPB);	
+}
+
+.page-title {
+	h1 {
+		@extend .h2;
+		font-weight: 900;
+	}
 }
 
 body {
@@ -446,4 +456,16 @@ img.img-bg,
 
 iframe {
 	border: none;
+}
+
+.btn {
+	background-color: $primary;
+	color: #fff;
+	letter-spacing: rem(-0.4px);
+	text-align: center;
+
+	&:hover {
+		background-color: #ff730b;
+		color: #fff;
+	}
 }

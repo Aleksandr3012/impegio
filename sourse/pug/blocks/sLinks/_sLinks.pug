@@ -1,0 +1,33 @@
+mixin sLinks()
+	// start sLinks
+	+b.sLinks#sLinks&attributes(attributes)
+		.container
+			+e.cards
+				mixin cardItem(bg,title,t,link)
+					+e.cardItem(class= bg)&attributes(attributes)
+						if bg
+							+pic('GesundheitMedizin')(class='picture-bg primaryPicture')
+							.h4= title
+							.h6= t
+							+e.link(href='#')
+								+icon('chevron-right')
+								span= link
+						//- else if bg == pic
+						//- 	+pic('GesundheitMedizin')(class='picture-bg primaryPicture')
+						//- 	.h4= title
+						//- 	.h6= t
+						//- 	+e.link(href='#')
+						//- 		+icon('chevron-right')
+				+e.cardNoPic
+					+cardItem('white','Working next level','Mehr als ein Versprechen. impegio steht für zeitgerechte, intelligente und innovative Lösungen im Bereich der Personalarbeit.')
+					+cardItem('primary','Standorte','Wir sind immer für Sie da, persönlich vor Ort an 12 Standorten.','zu unseren Standorten')
+					+cardItem('pic','Qualität und Sicherheit','Qualitätssicherung ist  für uns ein unverzichtbares Werkzeug zur Entwicklung von effizienten und transparenten Dienstleistungen.')
+					+cardItem('white','Engagement und Verantwortung','Wir von impegio bereiten den Weg für Equal Payment und informieren bereits jetzt unsere Kunden zu diesem Thema.')
+				+e.cardPic.order-lg-first
+					+pic('tobias')(class='picture-bg')
+					+cardItem('')(class='d-none d-md-flex')
+					+cardItem('')(class='d-none d-md-flex')
+					+cardItem('')
+					+cardItem('white','Karriere','Sie leisten aus Überzeugung und haben große Pläne für die Zukunft?')
+
+	// end sLinks

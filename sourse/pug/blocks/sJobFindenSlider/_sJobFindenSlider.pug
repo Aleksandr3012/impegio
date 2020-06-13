@@ -1,0 +1,97 @@
+mixin sJobFindenSlider()
+	// start sJobFindenSlider
+	+b.sJobFindenSlider#sJobFindenSlider&attributes(attributes)
+		.container
+			+e.to-next-slider-strip
+				+e.lined-txt
+					span Erfahrungsberichte
+				+e.next-slide-btn.next-slide-btn-js
+					+icon('chevron-right')
+			+e.sliders-container
+				+b.big-slider
+					.swiper-container.big-slider-Job-find-js
+						.swiper-wrapper
+							+BigSlide(1, 'Silke Hammer', 'Krankenschwester')
+							+BigSlide(2, 'Mustafa Ali', 'Koch')
+							+BigSlide(2, 'Mustafa Ali', 'Koch3')
+							+BigSlide(2, 'Mustafa Ali', 'Koch4')
+							//-+BigSlide(1)
+				+b.thumb-slider
+					.swiper-container.thumb-slider-Job-find-js
+						.swiper-wrapper
+							+ThumbSlide(1, 'Silke Hammer', 'Krankenschwester')
+							+ThumbSlide(2, 'Mustafa Ali', 'Koch')
+							+ThumbSlide(2, 'Mustafa Ali', 'Koch3')
+							+ThumbSlide(2, 'Mustafa Ali', 'Koch4')
+	// end sJobFindenSlider
+
+mixin BigSlide(imgNum=1, name="Mustafa Ali", proffesion="Koch")
+	.swiper-slide
+		+e.slide-content
+			+e.descr-bl
+				+e.vacation-name
+					+e.SPAN.bold-txt=name
+					+e.SPAN.light-txt=proffesion
+				+e.vacation-descr &laquo;Ich war sehr zufrieden mit der Zusammenarbeit. Wir hatten einen tollen Ideeninput. Kombiniert mit der guten Organisation war die Bewerbung absolut stressfrei. Ich habe endlich mein Traumjob gefunden, Vielen Dank impegio.&raquo;
+				+e.A.get-job-btn.d-none.d-lg-flex(href="#")
+					span Zum Kontaktformular
+					.icon-cont
+						+icon('mail')
+			+e.img-block
+				img.swiper-lazy(src='#' data-src=`img/@2x/job-find-slider-${imgNum}.jpg` alt="")
+			+e.A.get-job-btn.d-lg-none(href="#")
+				span Zum Kontaktformular
+				.icon-cont
+					+icon('mail')
+
+mixin ThumbSlide(imgNum=1, name="Mustafa Ali", proffesion="Koch")
+	.swiper-slide.d-none.d-md-block
+		+e.img-block
+			img.swiper-lazy(src='#' data-src=`img/@2x/job-find-slider-${imgNum}.jpg` alt="")
+		+e.name.descr-item=name
+		+e.proffesion.descr-item=proffesion
+
+mixin BigSlide-uber(imgNum=3, name="Markus Wehner,  ", proffesion="Geschäftsführe")
+	.swiper-slide
+		+e.slide-content
+			+e.descr-bl
+				+e.vacation-name
+					+e.SPAN.bold-txt=name
+					+e.SPAN.light-txt=proffesion
+				+e.vacation-descr &laquo;Die Zusammenarbeit mit unserem persönlichen Ansprechpartner von impegio ist sehr vertrauensvoll. Unsere Anforderungen und unsere Unternehmenskultur sind ihm bestens bekannt, sodass er uns nach sehr kurzer Zeit passende Kandidaten vorstellen kann.&raquo;
+				+e.A.get-job-btn.d-none.d-lg-flex(href="#")
+					span JOB FINDEN
+					.icon-cont
+						+icon('mail')
+			+e.img-block
+				img.swiper-lazy(src='#' data-src=`img/@2x/job-find-slider-${imgNum}.jpg` alt="")
+			+e.A.get-job-btn.d-lg-none(href="#")
+				span JOB FINDEN
+				.icon-cont
+					+icon('mail')
+
+mixin sJobFindenSlider-uber()
+	// start sJobFindenSlider
+	+b.sJobFindenSlider#sJobFindenSlider&attributes(attributes)
+		.container
+			+e.to-next-slider-strip
+				+e.lined-txt
+					span Erfahrungsberichte
+				+e.next-slide-btn.next-slide-btn-js
+					+icon('chevron-right')
+			+e.sliders-container
+				+b.big-slider
+					.swiper-container.big-slider-Job-find-js
+						.swiper-wrapper
+							+BigSlide-uber(3, 'Markus Wehner,', 'Geschäftsführe')
+							+BigSlide-uber(4, 'Anna-Marie Schneemann,', 'XY SVP Finance')
+							+BigSlide-uber(4, 'Anna-Marie Schneemann,', 'XY SVP Finance-2')
+							+BigSlide-uber(4, 'Anna-Marie Schneemann,', 'XY SVP Finance-3')
+							//-+BigSlide(1)
+				+b.thumb-slider
+					.swiper-container.thumb-slider-Job-find-js
+						.swiper-wrapper
+							+ThumbSlide(3, 'Markus Wehner,', 'Geschäftsführe')
+							+ThumbSlide(4, 'Anna-Marie Schneemann,', 'XY SVP Finance')
+							+ThumbSlide(4, 'Anna-Marie Schneemann,', 'XY SVP Finance-2')
+							+ThumbSlide(4, 'Anna-Marie Schneemann,', 'XY SVP Finance-3')

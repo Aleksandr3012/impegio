@@ -145,8 +145,8 @@ function eventHandler() {
 	JSCCommon.select2(); // JSCCommon.inputMask();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Startseite1440x900px.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Uns375x812px.jpg);"></div>')
+	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -185,7 +185,7 @@ function eventHandler() {
 	});
 	heightses(); // листалка по стр
 
-	$(" .top-nav li a, .scroll-link").click(function () {
+	$(" .top-nav li a, .scroll-link, .headerBlock__scroll").click(function () {
 		var elementClick = $(this).attr("href");
 		var destination = $(elementClick).offset().top;
 		$('html, body').animate({
@@ -198,14 +198,32 @@ function eventHandler() {
 		watchOverflow: true,
 		spaceBetween: 0,
 		loop: true,
+		loopAdditionalSlides: 3,
+		loopedSlides: 3,
 		lazy: {
 			loadPrevNext: true
-		},
-		autoplay: {
-			delay: 4000
-		}
+		} // autoplay: {
+		// 	delay: 5000,
+		// },
+
 	};
-	var swiper1 = new Swiper('.slider-js', _objectSpread({}, defaultSl));
+	var swiper1 = new Swiper('.slider-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		breakpoints: {
+			// when window width is >= 320px
+			// when window width is >= 480px
+			480: {
+				slidesPerView: 2
+			},
+			// when window width is >= 640px
+			992: {
+				slidesPerView: 1
+			}
+		}
+	}));
+	$(".moreDetailed").click(function () {
+		swiper1.slideNext();
+		return false;
+	});
 	var swiper2 = new Swiper('.sAbout__sectionSlider', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		loop: false,
 		effect: 'fade',
@@ -225,6 +243,25 @@ function eventHandler() {
 		// 	}
 		// }
 
+	}));
+	var names = [];
+	$(".slider-tabs-js .swiper-slide").each(function (i) {
+		names.push($(this).data("slide-name"));
+		console.log(names);
+	});
+	var swiper3 = new Swiper('.slider-tabs-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		watchOverflow: false,
+		// pagination: '.slide-name',
+		// paginationClickable: true,
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',
+		pagination: {
+			el: '.slide-name',
+			clickable: true,
+			renderBullet: function renderBullet(index, className) {
+				return '<span class="' + className + '">' + names[index] + '</span>';
+			}
+		}
 	}));
 
 	var gets = function () {
@@ -317,7 +354,13 @@ function eventHandler() {
 	});
 }
 
-; //бовая кноака с контактами
+;
+$(".select-group .custom-select-js ").on('change', function (e) {
+	// alert("Handler for .change() called.");
+	var tel = $(this).find('option:selected').data('telephone');
+	var telLink = tel.replace(/\s+/g, '');
+	$(this).parents(".select-group").find(".select-group__select-tel").attr('href', 'tel:' + telLink).find('span').text(tel);
+}); //бовая кноака с контактами
 
 $('.icon-block-js').click(function () {
 	event.preventDefault();
@@ -449,26 +492,17 @@ function vh(v) {
 boostDigits(); //sJobFindenSlider
 
 var JobFindenThumb = new Swiper('.thumb-slider-Job-find-js', {
-	//slidesPerView: '2',
-	direction: 'horizontal',
+	slidesPerView: 1,
 	spaceBetween: 20,
+	loop: true,
 	//lazy load
 	lazy: {
 		loadPrevNext: true
 	},
-	//
-	on: {
-		click: function click() {
-			//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
-			JobFindenThumb.updateSlidesClasses();
-			JobFindenBigSlider.updateSlidesClasses();
-			var slideToIndex = JobFindenThumb.realIndex + 1;
-			console.log(slideToIndex);
-			window.setTimeout(function () {
-				JobFindenBigSlider.slideTo(slideToIndex, 700, false);
-			}, 10);
-		}
-	}
+	loopedSlides: 5,
+	//looped slides should be the same
+	watchSlidesVisibility: true,
+	watchSlidesProgress: true
 });
 var JobFindenBigSlider = new Swiper('.big-slider-Job-find-js', {
 	slidesPerView: 1,
@@ -478,43 +512,10 @@ var JobFindenBigSlider = new Swiper('.big-slider-Job-find-js', {
 	lazy: {
 		loadPrevNext: true
 	},
-	//
-	on: {
-		click: function click() {
-			//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
-			JobFindenThumb.updateSlidesClasses();
-			JobFindenBigSlider.updateSlidesClasses();
-		},
-		slideChange: function slideChange() {
-			if (JobFindenBigSlider) {
-				//we already have slider
-				bind2SlidersSwipesBigSl();
-			} else {
-				//we dont have slider, lets wait until it exist
-				var sliderReady = window.setInterval(function () {
-					if (!JobFindenBigSlider) {
-						return;
-					}
-
-					window.clearInterval(sliderReady); //it exist now
-
-					bind2SlidersSwipesBigSl();
-				}, 1);
-			}
-		}
+	thumbs: {
+		swiper: JobFindenThumb
 	}
-});
-
-function bind2SlidersSwipesBigSl() {
-	var slideToIndex = JobFindenBigSlider.realIndex + 1;
-
-	if (JobFindenBigSlider.realIndex + 1 > JobFindenThumb.slides.length - 1) {
-		slideToIndex = 0;
-	}
-
-	JobFindenThumb.slideTo(slideToIndex, 700, false);
-} //to next slide btn
-
+}); //to next slide btn
 
 $('.next-slide-btn-js').click(function () {
 	JobFindenBigSlider.slideNext();

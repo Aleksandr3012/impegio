@@ -51,6 +51,7 @@ $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(("primary": $primary,
     "secondary": $secondary,
+    "white": $white,
     "success": $success,
     "accent": $success,
     // "info":       $info,
@@ -254,8 +255,8 @@ $input-btn-font-size-lg: $font-size-lg !default;
 //
 // For each of Bootstrap's buttons, define text, background, and border color.
 
-$btn-padding-y: $input-btn-padding-y !default;
-$btn-padding-x: $input-btn-padding-x !default;
+$btn-padding-y: rem(15) !default;
+$btn-padding-x: rem(63) !default;
 $btn-font-family: $input-btn-font-family !default;
 $btn-font-size: $input-btn-font-size !default;
 $btn-line-height: $input-btn-line-height !default;
@@ -276,7 +277,7 @@ $btn-font-weight: $font-weight-normal !default;
 $btn-box-shadow: inset 0 1px 0 rgba($white, .15),
 0 1px 1px rgba($black, .075) !default;
 $btn-focus-width: $input-btn-focus-width !default;
-// $btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
+$btn-focus-box-shadow:        none !default;
 $btn-disabled-opacity: .65 !default;
 $btn-active-box-shadow: inset 0 3px 5px rgba($black, .125) !default;
 
@@ -285,7 +286,7 @@ $btn-link-disabled-color: $gray-600 !default;
 $btn-block-spacing-y: .5rem !default;
 
 // Allows for customizing button radius independently from global border radius
-// $btn-border-radius:           $border-radius !default;
+$btn-border-radius:           rem(30) !default;
 // $btn-border-radius-lg:        $border-radius-lg !default;
 // $btn-border-radius-sm:        $border-radius-sm !default;
 
@@ -881,18 +882,18 @@ $custom-file-text: (en: "Browse"
 
 // // Breadcrumbs
 
-// $breadcrumb-padding-y:              .75rem !default;
-// $breadcrumb-padding-x:              1rem !default;
+$breadcrumb-padding-y:              0.7rem !default;
+$breadcrumb-padding-x:              0rem !default;
 // $breadcrumb-item-padding-x:         .5rem !default;
 
-// $breadcrumb-margin-bottom:          1rem !default;
+$breadcrumb-margin-bottom:          2.24rem !default;
 
-// $breadcrumb-bg:                     $gray-200 !default;
-// $breadcrumb-divider-color:          $gray-600 !default;
-// $breadcrumb-active-color:           $gray-600 !default;
-// $breadcrumb-divider:                quote("/") !default;
+$breadcrumb-bg:                     transparent !default;
+$breadcrumb-divider-color:           $body-color !default;
+$breadcrumb-active-color:           $primary !default;
+$breadcrumb-divider:                quote(">") !default;
 
-// // $breadcrumb-border-radius:          $border-radius !default;
+$breadcrumb-border-radius:          0 !default;
 
 
 // // Carousel

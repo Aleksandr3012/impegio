@@ -14,14 +14,14 @@ mixin headerBlock()
 				.col-lg
 					+b.FORM.jobSearchBlock
 						+e.INPUT.control--work(type="text" placeholder="Welchen Job suchst du?")
-						+e.INPUT.control--ort.d-none.d-xl-block(type="text" placeholder="Ort")
+						+e.INPUT.control--ort.d-lg-none.d-none.d-md-block.d-xl-block(type="text" placeholder="Ort")
 						+e.BUTTON.btn(type="button")
 							+icon('search')
 					p 3.139 Jobs online. Ist Dein Wunschjob dabei?
 		+e.scrollCont.container
 			.row.d-xl-none
 				.col
-			+e.scroll(href="#") 
+			+e.scroll(href="#sAdvantage") 
 				img(src="img/svg/arrowDown.svg", alt="")
 				span Scroll down
 	// end headerBlock

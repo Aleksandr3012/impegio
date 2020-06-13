@@ -1,0 +1,60 @@
+	// start .sRecruting
+.sRecruting {
+	background-color: $secondary;
+
+
+	.section-title {
+
+		&__logo {
+			font-size: $small;
+			font-weight: 900;
+		}
+	}
+
+	h2 {
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+
+	&__tel {
+		font-weight: 900;
+		color: $body-color;
+		margin-bottom: rem(20);
+		text-decoration: none !important;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	&__telBlock {
+		.h6 {
+			font-weight: 300;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sRecruting

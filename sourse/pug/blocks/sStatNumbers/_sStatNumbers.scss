@@ -304,6 +304,11 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
+	&--uber {
+		.sStatNumbers__digits-bl {
+			margin-bottom: 0;
+		}
+	}
 } // end.sStatNumbers
 
 .partner-logoes-slider{

@@ -39,13 +39,13 @@ const JSCCommon = {
 
 			_this.btnToggleMenuMobile.forEach(function (element) {
 				element.addEventListener('click', function () {
-					
+
 					_this.btnToggleMenuMobile.forEach(function (element) {
 						element.classList.toggle("on");
 					});
 					_this.menuMobile.classList.toggle("active");
 					_this.body.classList.toggle("fixed");
-					
+
 					return false;
 				});
 			});
@@ -55,10 +55,10 @@ const JSCCommon = {
 	closeMenu() {
 		let _this = this;
 		if (_this.menuMobile) {
-			
+
 			_this.btnToggleMenuMobile.forEach(function (element) {
 				element.classList.remove("on");
-				
+
 			});
 			_this.menuMobile.classList.remove("active");
 			_this.body.classList.remove("fixed");
@@ -86,24 +86,24 @@ const JSCCommon = {
 		// закрыть/открыть мобильное меню
 		let _this = this;
 		if (_this.menuMobileLink) {
-			
+
 			_this.toggleMenu();
 			_this.menuMobileLink.forEach(function (element) {
 				element.addEventListener('click', function (e) {
 					console.log(element);
 					_this.closeMenu();
-					
+
 				});
 			})
 			document.addEventListener('mouseup', function (event) {
 				let container = event.target.closest(".menu-mobile--js.active"); // (1)
 				if (!container) {
 					_this.closeMenu();
-					
+
 				}
 			});
 		}
-		},
+	},
 	// /mobileMenu
 
 	// табы  . 
@@ -145,7 +145,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Startseite1440x900px.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Uns375x812px.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -199,7 +199,7 @@ function eventHandler() {
 	heightses();
 
 	// листалка по стр
-	$(" .top-nav li a, .scroll-link").click(function () {
+	$(" .top-nav li a, .scroll-link, .headerBlock__scroll").click(function () {
 		const elementClick = $(this).attr("href");
 		const destination = $(elementClick).offset().top;
 
@@ -213,33 +213,52 @@ function eventHandler() {
 		watchOverflow: true,
 		spaceBetween: 0,
 		loop: true,
+		loopAdditionalSlides: 3,
+		loopedSlides: 3,
 		lazy: {
 			loadPrevNext: true,
 		},
-		autoplay: {
-			delay: 4000,
-		},
+		// autoplay: {
+		// 	delay: 5000,
+		// },
 	};
 
 	const swiper1 = new Swiper('.slider-js', {
 		...defaultSl,
-
+		breakpoints: {
+			// when window width is >= 320px
+		 
+			// when window width is >= 480px
+			480: {
+				slidesPerView: 2, 
+			},
+			// when window width is >= 640px
+			992: {
+				slidesPerView: 1
+			}
+		}
 	});
 
+	$(".moreDetailed").click(function () {
+		swiper1.slideNext();
+
+		return false;
+	})
+
 	const swiper2 = new Swiper('.sAbout__sectionSlider', {
-		...defaultSl, 
+		...defaultSl,
 		loop: false,
 		effect: 'fade',
 		navigation: {
 			nextEl: '.swiper-slide',
 		},
 		// breakpoints: {
-			// 768: {
-				mousewheel: {
-					sensitivity: 4.5,
-					releaseOnEdges: true,
-				},
-			// },
+		// 768: {
+		mousewheel: {
+			sensitivity: 4.5,
+			releaseOnEdges: true,
+		},
+		// },
 		// },
 
 		// on: {
@@ -247,6 +266,28 @@ function eventHandler() {
 		// 		mousewheel: false,
 		// 	}
 		// }
+	});
+
+	var names = [];
+	$(".slider-tabs-js .swiper-slide").each(function (i) {
+		names.push($(this).data("slide-name"));
+		console.log(names);
+	});
+
+	const swiper3 = new Swiper('.slider-tabs-js', {
+		...defaultSl,
+		watchOverflow: false,
+		// pagination: '.slide-name',
+		// paginationClickable: true,
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',
+		pagination: {
+			el: '.slide-name',
+			clickable: true,
+			renderBullet: function (index, className) {
+				return '<span class="' + className + '">' + (names[index]) + '</span>';
+			},
+		},
 	});
 
 	var gets = (function () {
@@ -318,230 +359,207 @@ function eventHandler() {
 	// }
 
 	//Аккардион
-	$('.accordion-js').click(function(){
+	$('.accordion-js').click(function () {
 		$(this).toggleClass('active').next().slideToggle();
 	});
 
-		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
-		if (isIE11) {
-			$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
+	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+	if (isIE11) {
+		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
 
-		}
+	}
 
-		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+
+
+	// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+	let vh = window.innerHeight * 0.01;
+	// Then we set the value in the --vh custom property to the root of the document
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+	// We listen to the resize event
+	window.addEventListener('resize', () => {
+		// We execute the same script as before
 		let vh = window.innerHeight * 0.01;
-		// Then we set the value in the --vh custom property to the root of the document
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	});
+};
 
-		// We listen to the resize event
-		window.addEventListener('resize', () => {
-			// We execute the same script as before
-			let vh = window.innerHeight * 0.01;
-			document.documentElement.style.setProperty('--vh', `${vh}px`);
-		});
-	};
 
-	//бовая кноака с контактами
-	$('.icon-block-js').click(function(){
-		event.preventDefault();
+
+$(".select-group .custom-select-js ").on('change', function (e) {
+	// alert("Handler for .change() called.");
+	var tel = $(this).find('option:selected').data('telephone');
+	var telLink = tel.replace(/\s+/g, '')
+	$(this).parents(".select-group").find(".select-group__select-tel")
+		.attr('href', 'tel:' + telLink)
+		.find('span').text(tel);
+});
+
+
+
+
+//бовая кноака с контактами
+$('.icon-block-js').click(function () {
+	event.preventDefault();
+	this.classList.toggle('active');
+
+	$(this).parent().toggleClass('active');
+	$(this).parent().find('.hidden-block-js').toggle(function () {
 		this.classList.toggle('active');
-
-		$(this).parent().toggleClass('active');
-		$(this).parent().find('.hidden-block-js').toggle(function () {
-			this.classList.toggle('active');
-		});
 	});
+});
 
-	//luckyoneJs
+//luckyoneJs
 
-	$('.contact-pill-item-with-sublist').click(function () {
-		event.preventDefault();
+$('.contact-pill-item-with-sublist').click(function () {
+	event.preventDefault();
+	this.classList.toggle('active');
+
+	$(this).find('.contact-pill-item-subbox').slideToggle(function () {
 		this.classList.toggle('active');
-
-		$(this).find('.contact-pill-item-subbox').slideToggle(function () {
-			this.classList.toggle('active');
-		});
-
 	});
 
-	//statDigits bl
+});
 
-	let partnersSlider = new Swiper('.partners-slider-js', {
-		loop: true,
+//statDigits bl
 
-		//responsive
-		breakpoints: {
-			1245: {
-				slidesPerView: 6,
-			},
-			992: {
-				slidesPerView: 5,
-			},
-			768: {
-				slidesPerView: 4,
-			},
-			0: {
-				slidesPerView: 3,
-			},
+let partnersSlider = new Swiper('.partners-slider-js', {
+	loop: true,
 
+	//responsive
+	breakpoints: {
+		1245: {
+			slidesPerView: 6,
+		},
+		992: {
+			slidesPerView: 5,
+		},
+		768: {
+			slidesPerView: 4,
+		},
+		0: {
+			slidesPerView: 3,
 		},
 
-		//lazy load
-		lazy: {
-			loadPrevNext: true,
-		},
-		//autoplay
-		autoplay: {
-			delay: 6000,
-		},
-	});
+	},
 
-	function boostDigits() {
+	//lazy load
+	lazy: {
+		loadPrevNext: true,
+	},
+	//autoplay
+	autoplay: {
+		delay: 6000,
+	},
+});
+
+function boostDigits() {
+	let digitsItems = document.querySelectorAll('.digits-boost-js');
+	for (let item of digitsItems) {
+		//replace numbers by 0
+		let number = item.innerHTML.replace('.', '');
+		item.customPropInnerNumber = number;
+		item.innerHTML = '0';
+	}
+
+	window.addEventListener('scroll', trigerDigitsCounter, { passive: true });
+}
+
+function trigerDigitsCounter() {
+	let firstDigitItem = document.querySelector('.digits-boost-js');
+	let digitsItemsTop = $(firstDigitItem).offset().top;
+	let windowScroll = window.scrollY + vh(100);
+
+	if (windowScroll > digitsItemsTop + 50) {
+		window.removeEventListener('scroll', trigerDigitsCounter, { passive: true });
+
 		let digitsItems = document.querySelectorAll('.digits-boost-js');
-		for (let item of digitsItems){
-			//replace numbers by 0
-			let number = item.innerHTML.replace('.', '');
-			item.customPropInnerNumber = number;
-			item.innerHTML = '0';
-		}
-
-		window.addEventListener('scroll', trigerDigitsCounter, {passive : true});
-	}
-
-	function trigerDigitsCounter() {
-		let firstDigitItem = document.querySelector('.digits-boost-js');
-		let digitsItemsTop = $(firstDigitItem).offset().top;
-		let windowScroll = window.scrollY + vh(100);
-
-		if (windowScroll > digitsItemsTop + 50) {
-			window.removeEventListener('scroll', trigerDigitsCounter, {passive : true});
-
-			let digitsItems = document.querySelectorAll('.digits-boost-js');
-			for (let item of digitsItems){
-				fromZeroToDigit(item);
-			}
+		for (let item of digitsItems) {
+			fromZeroToDigit(item);
 		}
 	}
-	//
-	function fromZeroToDigit(item){
-		let currNum = Number(item.innerHTML.replace('.', ''));
-		let targetNum = Number(item.customPropInnerNumber);
-		let difference = targetNum - currNum;
-		let step = Math.floor(difference/25); //
-		if (step === 0) step = 1;
+}
+//
+function fromZeroToDigit(item) {
+	let currNum = Number(item.innerHTML.replace('.', ''));
+	let targetNum = Number(item.customPropInnerNumber);
+	let difference = targetNum - currNum;
+	let step = Math.floor(difference / 25); //
+	if (step === 0) step = 1;
 
-		if (difference > 0){
-			let newVal = currNum + step;
-			item.innerHTML = placeDot(newVal);
+	if (difference > 0) {
+		let newVal = currNum + step;
+		item.innerHTML = placeDot(newVal);
 
-			window.setTimeout(function () {
-				fromZeroToDigit(item);
-			}, 10); //
-		}
-
+		window.setTimeout(function () {
+			fromZeroToDigit(item);
+		}, 10); //
 	}
 
-	function placeDot(number) {
-		if (number < 1000) return number
+}
 
-		let strArr = String(number).split('');
-		strArr.splice(-3,0,'.'); // 3
-		return strArr.join('')
-	}
+function placeDot(number) {
+	if (number < 1000) return number
 
-	function vh(v) {
-		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-		return (v * h) / 100;
-	}
-	boostDigits();
+	let strArr = String(number).split('');
+	strArr.splice(-3, 0, '.'); // 3
+	return strArr.join('')
+}
 
-	//sJobFindenSlider
-	let JobFindenThumb = new Swiper('.thumb-slider-Job-find-js', {
-		//slidesPerView: '2',
-		direction: 'horizontal',
-		spaceBetween: 20,
+function vh(v) {
+	var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+	return (v * h) / 100;
+}
+boostDigits();
 
-		//lazy load
-		lazy: {
-			loadPrevNext: true,
-		},
-		//
-		on: {
-			click: () => {
-				//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
-				JobFindenThumb.updateSlidesClasses();
-				JobFindenBigSlider.updateSlidesClasses();
+//sJobFindenSlider
+let JobFindenThumb = new Swiper('.thumb-slider-Job-find-js', { 
+	slidesPerView: 1,
+	spaceBetween: 20,
+	loop: true,
+	//lazy load
+	lazy: {
+		loadPrevNext: true,
+	},
+	loopedSlides: 5, //looped slides should be the same
+	watchSlidesVisibility: true,
+	watchSlidesProgress: true,
+});
 
-				let slideToIndex = JobFindenThumb.realIndex + 1;
-				console.log(slideToIndex);
-				window.setTimeout(function () {
-					JobFindenBigSlider.slideTo(slideToIndex, 700, false);
-				}, 10);
-			},
-		},
-	});
+let JobFindenBigSlider = new Swiper('.big-slider-Job-find-js', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+	loop: true,
 
-	let JobFindenBigSlider = new Swiper('.big-slider-Job-find-js', {
-		slidesPerView: 1,
-		spaceBetween: 20,
-		loop: true,
-
-		//lazy load
-		lazy: {
-			loadPrevNext: true,
-		},
-		//
-		on: {
-			click: () => {
-				//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
-				JobFindenThumb.updateSlidesClasses();
-				JobFindenBigSlider.updateSlidesClasses();
-			},
-			slideChange: () => {
-				if (JobFindenBigSlider){
-					//we already have slider
-					bind2SlidersSwipesBigSl();
-				}
-				else{
-					//we dont have slider, lets wait until it exist
-					let sliderReady = window.setInterval(function () {
-						if (!JobFindenBigSlider){ return }
-						window.clearInterval(sliderReady);
-						//it exist now
-						bind2SlidersSwipesBigSl();
-					}, 1);
-				}
-			},
-
-		},
-	});
-
-	function bind2SlidersSwipesBigSl() {
-		let slideToIndex = JobFindenBigSlider.realIndex + 1;
-		if(JobFindenBigSlider.realIndex + 1 >  JobFindenThumb.slides.length - 1){
-			slideToIndex = 0;
-		}
-		JobFindenThumb.slideTo(slideToIndex, 700, false);
-	}
-	//to next slide btn
-	$('.next-slide-btn-js').click(function () {
-		JobFindenBigSlider.slideNext();
-	});
-	//treatment
-	window.addEventListener('resize', function () {
+	//lazy load
+	lazy: {
+		loadPrevNext: true,
+	},
+	thumbs: {
+		swiper: JobFindenThumb,
+	},
+ 
+});
+ 
+//to next slide btn
+$('.next-slide-btn-js').click(function () {
+	JobFindenBigSlider.slideNext();
+});
+//treatment
+window.addEventListener('resize', function () {
+	JobFindenBigSlider.update();
+	JobFindenThumb.update();
+	window.setTimeout(function () {
 		JobFindenBigSlider.update();
 		JobFindenThumb.update();
-		window.setTimeout(function () {
-			JobFindenBigSlider.update();
-			JobFindenThumb.update();
-		}, 100);
-	}, {passive: true});
+	}, 100);
+}, { passive: true });
 
-	//end luckyone js
+//end luckyone js
 
 
-	if (document.readyState !== 'loading') {
-		eventHandler();
-	} else {
-		document.addEventListener('DOMContentLoaded', eventHandler);
-	}
+if (document.readyState !== 'loading') {
+	eventHandler();
+} else {
+	document.addEventListener('DOMContentLoaded', eventHandler);
+}

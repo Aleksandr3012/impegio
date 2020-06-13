@@ -39,11 +39,24 @@ $output-bourbon-deprecation-warnings: false;
 @import "./node_modules/bootstrap/scss/breadcrumb";
 
 .breadcrumb {
+	border-bottom: solid 1px $gray-600;
+	padding-bottom: .6rem;
+	a {
+		color: $body-color;
+		font-size: rem(12);
+		letter-spacing: rem(-0.3px);
+	}
 	.active {
 		a {
 			color: $breadcrumb-active-color;
 			pointer-events: none;
 		}
+	}
+	.breadcrumb-item+.breadcrumb-item:before {
+		font-size: rem(12);
+	}
+	.breadcrumb-item+.breadcrumb-item {
+		padding-left: .3rem;
 	}
 }
 
