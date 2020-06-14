@@ -1,11 +1,15 @@
 	// start .sDetail
 .sDetail {
 	padding-top: 0;
-	padding-bottom: rem(40);
+	@include media-breakpoint-up(xxl) {
+		padding-bottom: rem(40);
+	}
 	background-color: $secondary;
 
 	.section-title {
-		padding-top: rem(20);
+		@include media-breakpoint-up(lg) {
+			padding-top: rem(20);
+		}
 		&__logo {
 			font-weight: 900;
 			font-size: $small;
@@ -23,12 +27,18 @@
 
 	&__col {
 		padding-top: rem(7);
-		max-width: rem(542px);
-		margin-left: auto;
+		@include media-breakpoint-up(lg) {
+			max-width: rem(542px);
+			margin-left: auto;
+		}
 	}
 
 	img {
-		margin-bottom: rem(87);
+		width: 100%;
+		margin-bottom: rem(45);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(87);
+		}
 		@include media-breakpoint-up(xxl) {
 			max-width: rem(876);
 		}
@@ -48,7 +58,9 @@
 
 	&__write {
 		font-weight: 900;
-		max-width: rem(300);
+		@include media-breakpoint-up(lg) {
+			max-width: rem(300);
+		}
 		padding-top: rem(9);
 		margin-bottom: rem(25) !important;
 	}
