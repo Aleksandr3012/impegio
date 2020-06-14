@@ -79,6 +79,7 @@
 
 	&__cardItem {
 		width: 100%;
+		overflow: hidden;
 	
 		text-decoration: none !important;
 		@include media-breakpoint-up(md) {
@@ -106,6 +107,13 @@
 		@include media-breakpoint-up(xxl) {
 			height: rem(365px);
 			padding: rem(43) rem(17) rem(38) rem(45);
+		}
+
+		img {
+			@include media-breakpoint-down(sm) {
+				width: 100%;
+				height: auto;
+			}
 		}
 
 		.h4 {
