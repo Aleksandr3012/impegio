@@ -1,0 +1,83 @@
+mixin sSliderFluid()
+	// start sSliderFluid
+	+b.SECTION.sSliderFluid.section#sSliderFluid&attributes(attributes)
+		.container
+			+b.section-title
+				+e.name impegio ist vor Ort immer für Sie da!
+				h2 Unsere Standorte
+				+e.kontakt.d-lg-none Kontaktieren Sie eine unserer Niederlassungen in Ihrer Nähe.
+			+e.slider.swiper-container
+				.swiper-wrapper
+					mixin slide(sity,i)
+						.swiper-slide
+							+e.slide
+								+e.pic
+									+e.sity.h4= sity
+									img.swiper-lazy.picture-bg(src="#" data-src=`img/@2x/sliderFluid-${i}.jpg` alt="")
+								+e.contact
+									+e.tel(href="tel:49(741)9423810") 
+										+icon('phone')
+										span.h6 +49 (741) 94 23 81 0
+									+mail('info@impegio.de')
+									+e.location(href='https://goo.gl/maps/66KFwyRWJ6i4v8Tq8' target="_blank")
+										+icon('contact-location')
+										span.h6 Werner-von-Siemens-Str. 2-6 Gebäude 5108/ 2. OG D&#8209;76646 Bruchsal
+					+slide('Bruchsal','4')
+					+slide('Reutlingen','3')
+					+slide('Küssaberg','1')
+					+slide('Köln','2')
+			+e.about
+				+e.sliderNav
+					.swiper-button-prev
+						img(src="img/svg/swiper-prev.svg", alt="")
+					.swiper-button-next
+						img(src="img/svg/swiper-prev.svg", alt="")
+				+e.text.h6 Wir sind an 12 Standorten in Deutschland präsent und planen einen weiteren Ausbau unseres Filialnetzes.
+
+
+
+mixin sSliderFluid-entrepreneurs()
+	// start sSliderFluid
+	+b.SECTION.sSliderFluid.section#sSliderFluid&attributes(attributes)
+		.container
+			+b.section-title
+				+e.name impegio ist vor Ort immer für Sie da!
+				h2 Unsere Standorte
+				+e.kontakt.d-lg-none Ob Sie feste MitarbeiterInnen oder projektbezogene Unterstützung suchen, unsere Modelle orientieren sich immer an Ihren spezifischen Anforderungen.
+			+e.slider.swiper-container
+				.swiper-wrapper
+					mixin slide(sity,i)
+						.swiper-slide
+							+e.slide
+								+e.pic
+									+e.sity.h4= sity
+									img.swiper-lazy.picture-bg(src="#" data-src=`img/@2x/sliderFluid-${i}.jpg` alt="")
+								+e.descr
+									+e.UL.virtues
+										li Lorem Ipsum
+										li Versandspezialist
+										li Lagerarbeiter
+										li Lagerverwalter
+										li Warenabholung
+									+e.sliderText.h6 Ob Sie feste MitarbeiterInnen oder projektbezogene Unterstützung suchen, unsere Modelle orientieren sich immer an Ihren spezifischen Anforderungen.
+								//- +e.contact
+								//- 	+e.tel(href="tel:49(741)9423810") 
+								//- 		+icon('phone')
+								//- 		span.h6 +49 (741) 94 23 81 0
+								//- 	+mail('info@impegio.de')
+								//- 	+e.location(href='https://goo.gl/maps/66KFwyRWJ6i4v8Tq8' target="_blank")
+								//- 		+icon('contact-location')
+								//- 		span.h6 Werner-von-Siemens-Str. 2-6 Gebäude 5108/ 2. OG D&#8209;76646 Bruchsal
+					+slide('Lieferung','5')
+					+slide('Industrie','6')
+					+slide('Hospilität','7')
+					+slide('Logistik','8')
+					+slide('Industrie','9')
+			+e.about
+				+e.sliderNav
+					.swiper-button-prev
+						img(src="img/svg/swiper-prev.svg", alt="")
+					.swiper-button-next
+						img(src="img/svg/swiper-prev.svg", alt="")
+				+e.text.h6 Flexibilität für die optimale Anpassungsfähigkeit an Ihrem Markt.
+	// end sSliderFluid

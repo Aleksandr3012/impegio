@@ -1,19 +1,30 @@
 	// start .sRecruting
 .sRecruting {
 	background-color: $secondary;
-
+	padding-top: calc(var(--sPT) + #{rem(70)});
+	padding-bottom: calc(var(--sPB) + #{rem(28)});
+	@include media-breakpoint-up(xxl) {
+		padding-top: calc(var(--sPT) + #{rem(22)});
+		padding-bottom: calc(var(--sPB) + #{rem(28)});
+	}
 
 	.section-title {
-
 		&__logo {
 			font-size: $small;
 			font-weight: 900;
+			margin-bottom: rem(30);
+		}
+
+		@include media-breakpoint-up(xl) {
+			padding-bottom: calc(var(--sTPB) - #{rem(20)});
 		}
 	}
 
 	h2 {
 		font-weight: 900;
+		max-width: rem(710);
 		text-transform: uppercase;
+		line-height: 0.96;
 	}
 
 	&__tel {
@@ -28,6 +39,11 @@
 	}
 
 	&__telBlock {
+		margin-bottom: rem(30);
+		@include media-breakpoint-up(xl) {
+			padding-left: rem(30);
+			margin-bottom: rem(10);
+		}
 		.h6 {
 			font-weight: 300;
 		}
@@ -57,4 +73,15 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
+	&--entrepreneurs {
+		.swiper-pagination-bullet {
+			@include media-breakpoint-down(sm) {
+				margin-left: rem(2);
+				margin-right: rem(2);
+				text-align: center;
+				font-size: rem(12.5);
+				margin-top: auto;
+			}
+		}
+	}
 } // end.sRecruting

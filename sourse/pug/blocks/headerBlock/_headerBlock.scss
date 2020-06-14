@@ -136,7 +136,7 @@
 	// 	}
 	// }
 
-	&__scroll {
+	&__scroll, &__bottomBlock {
 		text-decoration: none !important;
 		color: #fff !important;
 		width: 100%;
@@ -223,6 +223,61 @@
 	
 	@include media-breakpoint-down(xs) {}
 	
+	//entrepreneurs ///////////////////////////////////////////////////
+	&--entrepreneurs {
+		.headerBlock__contMain  {
+			margin-bottom: 0;
+		}
+		.breadcrumb-item a{
+			color: #fff;
+		}
+		.breadcrumb-item+.breadcrumb-item:before {
+			color: #fff;
+		}
+		.h6 {
+			max-width: rem(400);
+			font-weight: 300;
+			margin-bottom: rem(29);
+		}
+	}
+	///////////////////////////////////////////////////////////////
+	&__bottomBlock {
+		margin-top: auto;
+		img {
+			transform: translate(0);
+			margin-right: 0;
+		}
+		&:hover img {
+			transform: translate(0);
+		}
+	}
+	&__titleBlock {
+		max-width: rem(380);
+		@include media-breakpoint-up(xl) {
+			max-width: rem(700);
+		}
+	}
+	&__uber {
+		font-size: $small;
+		font-weight: 900;
+		margin-bottom: rem(20);
+	}
+	h2 {
+		font-weight: 900;
+		margin-bottom: rem(40);
+		text-transform: uppercase;
+	}
+	.get-job-btn {
+		margin-bottom: 0;
+		@include media-breakpoint-up(xl) {
+			margin-bottom: rem(60);
+		}
+		span {
+			font-weight: 800;
+			color: #000;
+		}
+	}
+
 }
 @include media-breakpoint-only(md) {
 	.headerBlock__row{

@@ -1,0 +1,25 @@
+mixin sPartners()
+	// start sPartners
+	+b.SECTION.sPartners.section#sPartners&attributes(attributes)
+		.container
+			.row
+				.col-xl-7
+					+e.textBlock
+						+e.focus UNSER FOKUS - IHRE SICHERHEIT
+						h2 Wir arbeiten mit ausgewählten Partnern
+						.h6 Impegio arbeitet in&nbsp;Deutschland sowohl mit Partnern auf dem Gebiet der Personaldienstleistung &amp;&nbsp;Zeitarbeit zusammen, als auch mit Verb&auml;nden, die auf die Bereiche Bilanzbuchhaltung, Controlling und Credit Management spezialisiert sind.
+				.col
+					+e.linkBlock
+						+e.partner 
+							span Unsere Partner
+							+e.line
+						mixin link(t)
+							+e.link(href="#")
+								.h6= t
+								+icon('chevron-right')
+						+link('Bundesagentur für Arbeit')
+						+link('Bundesverband für Personaldienstleister')
+						+link('Verwaltungs- Berufsgenossenschaft')
+			+e.moreInfo.btn(href="#") weitere Informationen zu unseren Partner
+			+partnersLogoSlider()
+	// end sPartners

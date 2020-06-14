@@ -5,7 +5,13 @@
 	top: 42vh;
 	display: flex;
 	@include mt;
-	box-shadow: 0px 3px 6px #00000029;
+
+	&:not(.active) {
+		box-shadow: 0px 3px 6px #00000029;
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
 
 	&.active {
 		top: 17.5vh;
@@ -95,6 +101,8 @@
 	}
 
 	&__name {
+		position: relative;
+		z-index: 10;
 		margin-left: rem(23);
 		color: $primary;
 	}
@@ -115,8 +123,12 @@
 	&__imgWrap {
 		position: relative;
 		z-index: 2;
-		margin-left: rem(20);
-		margin-right: rem(20);
+		margin-left: rem(10);
+		margin-right: rem(10);
+		@include media-breakpoint-up(sm) {
+			margin-left: rem(20);
+			margin-right: rem(20);
+		}
 		
 		&::before {
 			content: '';
@@ -125,7 +137,10 @@
 			height: rem(270px);
 			width: rem(500);
 			z-index: -1;
-			right: -100%;
+			right: -125%;
+			@include media-breakpoint-up(sm) {
+				right: -100%;
+			}
 		}
 
 		img {

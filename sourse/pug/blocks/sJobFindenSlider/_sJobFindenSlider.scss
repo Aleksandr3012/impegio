@@ -224,65 +224,7 @@
 			margin-bottom: 282px;
 		}
 	}
-	&__get-job-btn{
-		text-decoration: none !important;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		line-height: 1;
-		padding: rem(10) rem(10) rem(10) rem(30) ; 
-		@extend .btn;
-		@extend .btn-white;
-		border-radius: rem(50);
-		background-color: #ffffff;
-		 width: rem(344);
-		color: $primary;
-		font-weight: bold;
-		font-size: rem(20);
 
-		margin-bottom: 69px;
-		@include media-breakpoint-up(lg){
-			margin-bottom: 0;
-		}
-
-		span{
-			// max-width: 86px;
-			// color: $white;
-			// font-size: 20px;
-			// font-weight: 900;
-			// letter-spacing: -0.2px;
-			// line-height: 21px;
-			// text-transform: uppercase;
-		}
-		.icon-cont{
-			margin-left: 14px;
-			border-radius: 50%;
-			background-color: $primary;
-			display: flex;
-			color: #ffffff;
-			position: relative;
-			&::before{
-				content: '';
-				position: absolute;
-				height: 100%;
-				width: 1px;
-				right: 140%;
-				@include a-cent(y);
-				background-color: #d3d3d3;
-
-			}
-
-			width: rem(35px);
-			height: rem(35px);
-			flex: 0 0 rem(35);
-
-			.icon{
-				margin: auto;
-				font-size: 15px; 
-			}
-		}
-
-	}
 	//img-block
 	&__img-block{
 		flex-shrink: 0;

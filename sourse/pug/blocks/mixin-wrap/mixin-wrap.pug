@@ -221,6 +221,18 @@ mixin moreDetailed(t)
 		+e.line
 		img(src="img/svg/chevronDown.svg")
 
+mixin get-job-btn(t)
+	if t
+		+b.get-job-btn(href="#")&attributes(attributes)
+			span= t
+			.icon-cont
+				+icon('mail')
+	else
+		+b.get-job-btn(href="#")&attributes(attributes)
+			span JOB FINDEN
+			.icon-cont
+				+icon('mail')
+
 mixin pic(i, bg, lazy="lazy", media='576px')
 	-
 		const smpath2 = "2x"
