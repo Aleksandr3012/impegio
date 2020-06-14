@@ -17,25 +17,24 @@ include ../blocks/sPartners/_sPartners.pug
 block variables
 	- let  mainPage= null
 block title
-	- let  title= 'title'
+	- let  title= 'about'
 	title= title
 block pagecontent 
 	//- +mob-mnu()
-	#home1-infos-inside
-		+header()
-			//- +top-nav()
-			+topLine()
-			+headerBlockAbout
-		+sResponsibility()
-			+breadcrumb('impegio.de','Home für Über impegio')
-		+sWhatWeAre-about()
-		+sStatNumbers-uber()
-		+sQuality()
-		+sLinks()
-		+sRecruting()
-		+sSliderFluid()
-		+sPartners()
-		+sJobFindenSlider-uber()
-		+sContact()
-		+sConvince()
-		+footer()
+	+header()
+		//- +top-nav()
+		+topLine()
+		+headerBlockAbout
+	+sResponsibility()
+		+breadcrumb('impegio.de','Home für Über impegio')
+	+sWhatWeAre-about()
+	+sStatNumbers-uber()
+	+sQuality()
+	+sLinks()
+	+sRecruting()
+	+sSliderFluid()
+	+sPartners()
+	+sJobFindenSlider-uber()
+	+sContact()
+	+sConvince()
+	+footer()

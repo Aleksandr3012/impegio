@@ -41,6 +41,10 @@
 			line-height: 1.4;
 			letter-spacing: rem(-0.28);
 		}
+
+		a {
+			text-decoration: none !important;
+		}
 	}
 
 	&__moreInfo {
@@ -161,4 +165,23 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
+	&__wrap {
+		padding-bottom: rem(10);
+	}
+
+	&__imgBlock {
+		padding-top: rem(30);
+		a {
+			&:not(:last-child) {
+				margin-right: rem(90);
+			}
+			img {
+				@include mt;
+			}
+
+			&:hover img{
+				transform: scale(1.03);
+			}
+		}
+	}
 } // end.sPartners

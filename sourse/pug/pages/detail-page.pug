@@ -1,0 +1,26 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sAdvantage/_sAdvantage.pug 
+include ../blocks/sWhatWeAre/_sWhatWeAre.pug 
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sResponsibility/_sResponsibility.pug
+include ../blocks/sDetail/_sDetail.pug
+include ../blocks/sPartners/_sPartners.pug
+include ../blocks/sLinks/_sLinks.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'detail-page'
+	title= title
+block pagecontent 
+	//- +mob-mnu()
+	+header()
+		+topLine()
+	+sDetail()
+	+sPartners-detail()
+	+sLinks-detail()
+	+footer()

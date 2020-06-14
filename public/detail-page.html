@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>detail-page</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
+		<link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png"><meta name="format-detection" content="telephone=no">
+		<link rel="image_src" href="http://genrif.ru/assets/i/soc-logo.png">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="content">
+		<meta property="og:title" content="content">
+		<meta property="og:description" content="content">
+		<meta property="og:url" content="content">
+		<meta property="og:locale" content="ru_RU">
+		<meta property="og:image" content="path/to/image.jpg">
+		<meta property="og:image:width" content="968">
+		<meta property="og:image:height" content="504">
+		<!-- Custom Browsers Color-->
+		<meta name="theme-color" content="#3361d8">
+		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
+		<link rel="stylesheet" href="libs/select2/css/select2.min.css"/>
+		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
+		<link rel="stylesheet" href="css/main.min.css"/>
+	</head>
+	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+		<div class="main-wrapper">
+			<!-- start header-->
+			<div class="header" id="header">
+				<!-- start topLine-->
+				<div class="topLine" id="topLine">
+					<div class="container">
+						<div class="row justify-content-between align-items-center">
+							<div class="col-auto"><a class="topLine__logo" href="/">
+								<svg class="icon icon-logo ">
+									<use xlink:href="img/svg/sprite.svg#logo"></use>
+								</svg></a>
+							</div>
+							<div class="col d-none d-xl-block">
+								<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+									<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Bewerber</a></li>
+									<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Unternehmen</a></li>
+									<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Über Uns</a></li>
+									<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Standorte</a></li>
+								</ul>
+							</div>
+							<div class="topLine__col col-auto">
+								<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+								</div>
+								<div class="menu-mobile menu-mobile--js">
+									<div class="menu-mobile__inner d-none d-lg-flex">
+										<div class="menu-mobile__topMnu">
+											<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+											</div><a class="searchBlock" href="#"><span>JOB FINDEN</span>
+											<div class="searchBlock__iconWrap">
+												<svg class="icon icon-search ">
+													<use xlink:href="img/svg/sprite.svg#search"></use>
+												</svg>
+											</div></a>
+										</div>
+										<div class="menu-mobile__body"><a class="mail" href="mailto:info@impegio.de">
+											<svg class="icon icon-mail ">
+												<use xlink:href="img/svg/sprite.svg#mail"></use>
+											</svg><span>info@impegio.de</span></a><a class="menu-mobile__tel" href="tel:+49(741)9423810">
+											<svg class="icon icon-phone ">
+												<use xlink:href="img/svg/sprite.svg#phone"></use>
+											</svg><span>+49 (741) 94 23 81 0</span></a>
+											<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+												<li class="menu-item menu-item-has-children"> <a href="#" itemprop="url">Mein Impegio</a>
+													<ul class="sub-menu">
+														<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Kontakt</a></li>
+														<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Working next level</a></li>
+														<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Karriere</a></li>
+													</ul>
+												</li>
+												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">AGB</a></li>
+												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Datenschutz</a></li>
+												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Impressum</a></li>
+											</ul><a class="searchBlock searchBlock--line" href="#">
+											<div class="searchBlock__iconWrap">
+												<svg class="icon icon-search ">
+													<use xlink:href="img/svg/sprite.svg#search"></use>
+												</svg>
+											</div><span>Zur JOBBÖRSE</span></a>
+										</div>
+										<div class="soc"><a class="soc__item" href="№" target="_blank">
+											<svg class="icon icon-in ">
+												<use xlink:href="img/svg/sprite.svg#in"></use>
+											</svg></a><a class="soc__item" href="№" target="_blank">
+											<svg class="icon icon-XING ">
+												<use xlink:href="img/svg/sprite.svg#XING"></use>
+											</svg></a><a class="soc__item" href="№" target="_blank">
+											<svg class="icon icon-fb ">
+												<use xlink:href="img/svg/sprite.svg#fb"></use>
+											</svg></a><a class="soc__item" href="№" target="_blank">
+											<svg class="icon icon-inst ">
+												<use xlink:href="img/svg/sprite.svg#inst"></use>
+											</svg></a>
+										</div>
+										<div class="text-right"></div>
+									</div>
+									<div class="menu-mobile__inner d-lg-none">
+										<div class="menu-mobile__topMnu"><a class="searchBlock" href="#"><span>Zur Jobbörse</span>
+											<div class="searchBlock__iconWrap">
+												<svg class="icon icon-search ">
+													<use xlink:href="img/svg/sprite.svg#search"></use>
+												</svg>
+											</div></a>
+											<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+											</div>
+										</div>
+										<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Home</a></li>
+											<li class="menu-item menu-item-has-children"><span class="accordion-js">Für Bewerber</span>
+												<ul class="sub-menu">
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Karrierebegleiter</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Bewerbungsservice</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Einstiegsmöflichkeiten</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Working next level</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Jobbörse</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Mein Impegio</a></li>
+												</ul>
+											</li>
+											<li class="menu-item menu-item-has-children"><span class="accordion-js">Für Unternehmen</span>
+												<ul class="sub-menu">
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Zeitarbeit</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Projektmanagement</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">HR-Beratunng</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Working next level</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Ihre Ansprechpartner</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Mein Impegio</a></li>
+												</ul>
+											</li>
+											<li class="menu-item menu-item-has-children"><span class="accordion-js">Über uns</span>
+												<ul class="sub-menu">
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Lorem ipsum dolor sit</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Lorem ipsum dolor sit</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Lorem ipsum dolor sit</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Lorem ipsum dolor sit</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Lorem ipsum dolor sit</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Lorem ipsum dolor sit</a></li>
+												</ul>
+											</li>
+											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Standorte</a></li>
+											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Kontakt</a></li>
+										</ul>
+									</div>
+								</div>
+								<!--  мобильное меню-->
+							</div>
+							<div class="col-auto d-none d-sm-block"><a class="searchBlock" href="#"><span>JOB FINDEN</span>
+								<div class="searchBlock__iconWrap">
+									<svg class="icon icon-search ">
+										<use xlink:href="img/svg/sprite.svg#search"></use>
+									</svg>
+								</div></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end topLine-->
+			</div>
+			<!-- end header-->
+			<!-- start sDetail-->
+			<section class="sDetail section" id="sDetail">
+				<div class="container">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+							<li class="breadcrumb-item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">impegio.de</span>
+									<meta itemprop="position" content="1"/></a></li>
+							<li class="breadcrumb-item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Home für Über impegio</span>
+									<meta itemprop="position" content="2"/></a></li>
+							<li class="breadcrumb-item active" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Home für Über impegio</span>
+									<meta itemprop="position" content="3"/></a></li>
+						</ol>
+					</nav>
+					<div class="section-title">
+						<div class="section-title__logo">Impegio
+						</div>
+						<h2>Engagement & Verantwortung</h2>
+					</div>
+					<div class="row">
+						<div class="col-xxl-7 col-lg-6">
+							<div class="h6">impegio m&ouml;chte die Entwicklung der Zeitarbeit bewusst mitgestalten. Vor diesem Hintergrund bef&uuml;rworten wir die Einf&uuml;hrung eines durchdachten und sinnvollen Equal Payment- Prinzips.<br><br> Wir vertreten den Standpunkt, dass Menschen gerecht entlohnt werden m&uuml;ssen. Es&nbsp;d&uuml;rfen keine sozialen Unterschiede zwischen der Stammbelegschaft des Kundenunternehmens und den &laquo;Kollegen auf Zeit&raquo; gemacht werden. Arbeits- und Fachkr&auml;fte, die als Zeitarbeitnehmer bei Unternehmen eingesetzt werden, zeichnen sich durch fundiertes Fachwissen, T&auml;tigkeitserfahrung und einem hohen Ma&szlig; an&nbsp;Flexibilit&auml;t aus.</div><img class="res-i lazy" src="#" data-src="img/@2x/detail-1.jpg" alt=""/>
+						</div>
+						<div class="sDetail__col col"><img class="res-i lazy" src="#" data-src="img/@2x/detail-2.jpg" alt=""/>
+							<div class="h4 text-primary">Gute Arbeits- und Fachkr&auml;fte werden immer die Wahl haben, sich f&uuml;r ein gutes Unternehmen entscheiden zu&nbsp;k&ouml;nnen. Equal Payment sichert Vorteile, wenn es&nbsp;um&nbsp;die besten Kr&auml;fte am&nbsp;Arbeitsmarkt geht.</div>
+							<div class="h6">Wir von impegio bereiten den Weg f&uuml;r Equal Payment und informieren bereits jetzt unsere Kunden zu&nbsp;diesem Thema. Sollten Sie Interesse an&nbsp;einer individuellen Beratung zum Thema Equal Payment haben.</div>
+							<div class="sDetail__write h4">Schreiben Sie uns bitte eine E-Mail.
+							</div><a class="mail" href="mailto:info@impegio.de">
+							<svg class="icon icon-mail ">
+								<use xlink:href="img/svg/sprite.svg#mail"></use>
+							</svg><span>info@impegio.de</span></a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sDetail-->
+			<!-- start sPartners-->
+			<section class="sPartners section" id="sPartners">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-7">
+							<div class="sPartners__textBlock">
+								<h2>Was heißt Equal Pay in der Zeitarbeit?</h2>
+								<div class="h6">Auch wenn Equal Payment inzwischen weitläufig für die entgeltseitige Gleichstellung von Zeitarbeitnehmern steht, also gleicher Lohn für gleiche Arbeit, so gibt es bisher noch immer keine genaue Definition des Begriffs. <br> Generell gilt in Deutschland bereits seit Jahren der sogenannte Gleichstellungsgrundsatz, demnach das Zeitarbeitsunternehmen dem Arbeitnehmer für die Zeit der Überlassung die im Betrieb des Kunden geltenden wesentlichen Arbeits- und Entgeltbedingungen gewähren muss. Von dieser Verfplichtung ist ein Zeitarbeitgeber dann befreit, wenn er einen Tarifvertrag mit abweichenden Regelungen anwendet oder einen zuvor arbeitslosen Mitarbeiter für den Zeitraum von maximal 6 Wochen niedriger vergütet.<br> Die in der letzten Tarifrunde geschlossenen Verbandstarifverträge von BAP (vormals BZA) und iGZ haben noch eine Mindestlaufzeit bis Ende Oktober 2013. Diese regeln einen Mindestlohn sowie kontinuierliche Lohnsteigerung in festen Stufen.<br> Trotzdem haben die Arbeitgeberverbände im Jahr 2012 Tarifverhandlungen mit den Einzelgewerkschaften des Deutschen Gewerkschaftsbundes (DGB) angestrebt. Grund hierfür war das Ultimatum der Regierung aus dem Februar 2011, eine tarifliche Lösung für die Umsetzung der entgeltseitigen Gleichstellung zu finden, so dass es keine vom Staat vorgeschriebene gesetzliche Regelung geben muss.<br> Im Mai 2012 haben einigten sich schließlich die Arbeitgeberverbände der Zeitarbeit zunächst mit der IG Metall und kurz darauf mit der IG BCE auf Branchenzuschläge für Arbeitnehmerüberlassungen in der jeweiligen Industrie geeinigt. Seitdem wurden ähnliche Regelungen mit weiteren Gewerkschaften vereinbart, die im Laufe des ersten Halbjahres 2013 Geltung erlangen.  Nähere Informationen zu den Tarifverträgen über Branchenzuschläge finden <a href="#">Sie hier</a>. <br>Die Tarifverträge Branchenzuschlag sind als absolutes Novum in der Tarifgestaltung zu sehen und stellen eine großen Schritt in Richtung Gleichstellung dar. Gleichzeitig bergen sie als tarifpolitisches Neuland erhebliche Risiken in der Umsetzung für die Unternehmen, die Zeitarbeit einsetzen, sowie Beschäftigte in der Zeitarbeit. <br> <strong>Sollten Sie Interesse an einer individuellen Beratung zum Thema Equal Payment haben, schreiben Sie uns bitte eine E-Mail an</strong> <a class="fw-900" href="mailto:info@impegio.de.">info@impegio.de.</a></div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="sPartners__linkBlock">
+								<div class="sPartners__wrap">
+									<div class="sPartners__partner"> <span>Verwandte Seiten:</span>
+										<div class="sPartners__line">
+										</div>
+									</div><a class="sPartners__link" href="#">
+									<div class="h6">Qualität und Sicherheit</div>
+									<svg class="icon icon-chevron-right ">
+										<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+									</svg></a><a class="sPartners__link" href="#">
+									<div class="h6">DGB/BZA Tarifvertrag</div>
+									<svg class="icon icon-chevron-right ">
+										<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+									</svg></a>
+								</div>
+								<div class="sPartners__wrap">
+									<div class="sPartners__partner"> <span>Weiterführende Links:</span>
+										<div class="sPartners__line">
+										</div>
+									</div><a class="sPartners__link" href="#">
+									<div class="h6">Homepage des Bundesarbeitgeberverbands der Personaldienstleister</div>
+									<svg class="icon icon-chevron-right ">
+										<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+									</svg></a><a class="sPartners__link" href="#">
+									<div class="h6">Informationsseite der Bundesagentur für Arbeit</div>
+									<svg class="icon icon-chevron-right ">
+										<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+									</svg></a><a class="sPartners__link" href="#">
+									<div class="h6">IG Metall - Tarife</div>
+									<svg class="icon icon-chevron-right ">
+										<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+									</svg></a>
+								</div>
+							</div>
+							<div class="sPartners__imgBlock"><a href="#"><img class="res-i" src="img/@2x/Image-1.jpg" alt=""/></a><a href="#"><img class="res-i" src="img/@2x/Image-2.jpg" alt=""/></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sPartners-->
+			<!-- start sLinks-->
+			<div class="sLinks sLinks--detail" id="sLinks">
+				<div class="container">
+					<div class="sLinks__cards">
+						<div class="sLinks__cardNoPic"><a class="sLinks__cardItem white" href="#">
+							<!-- picture-->
+							<picture class="lazy picture-bg primaryPicture"> 
+								<source srcset="#" data-srcset="img/@2x/GesundheitMedizin.jpg" type="image/jpg" media="(min-width:576px)"/>
+								<source srcset="#" data-srcset="img/@1x/GesundheitMedizin.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/GesundheitMedizin.jpg" alt=""/>
+							</picture>
+							<!-- /picture-->
+							<div class="h4">Working next level</div>
+							<div class="h6">Mehr als ein Versprechen. impegio steht für zeitgerechte, intelligente und innovative Lösungen im Bereich der Personalarbeit.</div><span class="sLinks__link">
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg><span></span></span></a><a class="sLinks__cardItem primary" href="#">
+							<!-- picture-->
+							<picture class="lazy picture-bg primaryPicture"> 
+								<source srcset="#" data-srcset="img/@2x/GesundheitMedizin.jpg" type="image/jpg" media="(min-width:576px)"/>
+								<source srcset="#" data-srcset="img/@1x/GesundheitMedizin.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/GesundheitMedizin.jpg" alt=""/>
+							</picture>
+							<!-- /picture-->
+							<div class="h4">Jobbörse</div>
+							<div class="h6">Unsere Aktuellsten Jobs für Sie. Mit impegio Jobbörse können Sie viele Jobs durchsuchen und somit den nächsten Schritt in Ihrer Karriere planen.</div><span class="sLinks__link">
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg><span></span></span></a><a class="sLinks__cardItem pic" href="#">
+							<!-- picture-->
+							<picture class="lazy picture-bg primaryPicture"> 
+								<source srcset="#" data-srcset="img/@2x/GesundheitMedizin.jpg" type="image/jpg" media="(min-width:576px)"/>
+								<source srcset="#" data-srcset="img/@1x/GesundheitMedizin.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/GesundheitMedizin.jpg" alt=""/>
+							</picture>
+							<!-- /picture-->
+							<div class="h4">Qualität und Sicherheit</div>
+							<div class="h6">Qualitätssicherung ist  für uns ein unverzichtbares Werkzeug zur Entwicklung von effizienten und transparenten Dienstleistungen.</div><span class="sLinks__link">
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg><span></span></span></a><a class="sLinks__cardItem white" href="#">
+							<!-- picture-->
+							<picture class="lazy picture-bg primaryPicture"> 
+								<source srcset="#" data-srcset="img/@2x/GesundheitMedizin.jpg" type="image/jpg" media="(min-width:576px)"/>
+								<source srcset="#" data-srcset="img/@1x/GesundheitMedizin.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/GesundheitMedizin.jpg" alt=""/>
+							</picture>
+							<!-- /picture-->
+							<div class="h4">Standorte</div>
+							<div class="h6">Wir sind immer für Sie da, persönlich vor Ort an 12 Standorten.</div><span class="sLinks__link">
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg><span></span></span></a>
+						</div>
+						<div class="sLinks__cardPic order-lg-first">
+							<!-- picture-->
+							<picture class="lazy picture-bg"> 
+								<source srcset="#" data-srcset="img/@2x/mountains.jpg" type="image/jpg" media="(min-width:576px)"/>
+								<source srcset="#" data-srcset="img/@1x/mountains.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/mountains.jpg" alt=""/>
+							</picture>
+							<!-- /picture--><a class="sLinks__cardItem d-none d-md-flex" href="#"></a><a class="sLinks__cardItem d-none d-md-flex" href="#"></a><a class="sLinks__cardItem" href="#"></a><a class="sLinks__cardItem white" href="#">
+							<!-- picture-->
+							<picture class="lazy picture-bg primaryPicture"> 
+								<source srcset="#" data-srcset="img/@2x/GesundheitMedizin.jpg" type="image/jpg" media="(min-width:576px)"/>
+								<source srcset="#" data-srcset="img/@1x/GesundheitMedizin.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/GesundheitMedizin.jpg" alt=""/>
+							</picture>
+							<!-- /picture-->
+							<div class="h4">Karriere</div>
+							<div class="h6">Sie leisten aus Überzeugung und haben große Pläne für die Zukunft?</div><span class="sLinks__link">
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg><span>zur Jobbörse</span></span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end sLinks-->
+			<footer class="footer block-with-lazy">
+				<div class="container"><a class="footer__logo" href="/">
+					<svg class="icon icon-logo ">
+						<use xlink:href="img/svg/sprite.svg#logo"></use>
+					</svg></a>
+					<div class="row">
+						<div class="col-xl-5 col-lg-7">
+							<div class="footer__descr h6">Wir stehen für zeitgerechte, intelligente und innovative Lösungen im Bereich der Personalarbeit. 
+							</div><a class="searchBlock d-none d-lg-flex" href="#"><span>Zur Jobbörse</span>
+							<div class="searchBlock__iconWrap">
+								<svg class="icon icon-search ">
+									<use xlink:href="img/svg/sprite.svg#search"></use>
+								</svg>
+							</div></a>
+						</div>
+						<div class="col-lg">
+							<div class="row">
+								<div class="col-xl">
+									<div class="footer__mnu">
+										<div class="footer__mnuTitle accordion-js">Mein Impegio
+										</div>
+										<div class="wrapper">
+											<ul>
+												<li class="current-menu-item"><a href="#">Kontakt</a></li>
+												<li><a href="#">Standorte</a></li>
+												<li><a href="#">Working next level</a></li>
+												<li><a href="#">Karriere</a></li>
+												<li><a href="#">Jobbörse</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl">
+									<div class="footer__mnu">
+										<div class="footer__mnuTitle accordion-js">Für Bewerber
+										</div>
+										<div class="wrapper">
+											<ul>
+												<li><a href="#">Karrierebegleiter</a></li>
+												<li><a href="#">Bewerbungsservice</a></li>
+												<li><a href="#">Einstiegsmöflichkeiten</a></li>
+												<li><a href="#">Working next level</a></li>
+												<li><a href="#">Jobbörse</a></li>
+												<li><a href="#">Mein Impegio</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl">
+									<div class="footer__mnu">
+										<div class="footer__mnuTitle accordion-js">Für Unternehmen
+										</div>
+										<div class="wrapper">
+											<ul>
+												<li><a href="#">Zeitarbeit</a></li>
+												<li><a href="#">Projektmanagement</a></li>
+												<li><a href="#">HR-Beratunng</a></li>
+												<li><a href="#">Working next level</a></li>
+												<li><a href="#">Ihre Ansprechpartner</a></li>
+												<li><a href="#">Mein Impegio</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col d-lg-none"><a class="searchBlock" href="#"><span>Zur Jobbörse</span>
+							<div class="searchBlock__iconWrap">
+								<svg class="icon icon-search ">
+									<use xlink:href="img/svg/sprite.svg#search"></use>
+								</svg>
+							</div></a>
+						</div>
+					</div>
+					<div class="footer__foot row justify-content-between">
+						<div class="col-md order-lg-last">
+							<div class="footer__confidentiality">
+								<ul>
+									<li><a href="#">AGB</a></li>
+									<li><a href="#">Datenschutz</a></li>
+									<li><a href="#">Impressum</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-auto">
+							<div class="soc"><a class="soc__item" href="№" target="_blank">
+								<svg class="icon icon-in ">
+									<use xlink:href="img/svg/sprite.svg#in"></use>
+								</svg></a><a class="soc__item" href="№" target="_blank">
+								<svg class="icon icon-XING ">
+									<use xlink:href="img/svg/sprite.svg#XING"></use>
+								</svg></a><a class="soc__item" href="№" target="_blank">
+								<svg class="icon icon-fb ">
+									<use xlink:href="img/svg/sprite.svg#fb"></use>
+								</svg></a><a class="soc__item" href="№" target="_blank">
+								<svg class="icon icon-inst ">
+									<use xlink:href="img/svg/sprite.svg#inst"></use>
+								</svg></a>
+							</div>
+						</div>
+						<div class="col-lg order-lg-first">
+							<div class="footer__copyright">© 2020 impegio GmbH Personalmanagemen  <span class="d-none d-md-inline">|  info@impegio.de</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="feedback">
+					<div class="feedback__iconBlock icon-block-js">
+						<svg class="icon icon-phone-bg ">
+							<use xlink:href="img/svg/sprite.svg#phone-bg"></use>
+						</svg>
+						<svg class="icon icon-mail-bg ">
+							<use xlink:href="img/svg/sprite.svg#mail-bg"></use>
+						</svg>
+						<div class="feedback__close">
+						</div>
+					</div>
+					<div class="feedback__contactBlock hidden-block-js">
+						<div class="feedback__logo">
+							<svg class="icon icon-logo ">
+								<use xlink:href="img/svg/sprite.svg#logo"></use>
+							</svg>
+						</div>
+						<div class="h4">KONTAKTIEREN SIE UNS.</div>
+						<div class="feedback__manager">
+							<div class="feedback__name rotate">Tamara Felbinger
+							</div>
+							<div class="feedback__imgWrap"><img class="res-i" src="img/@2x/tamara-felbinger.jpg" alt=""/>
+							</div>
+							<div class="feedback__working rotate">Working Next level
+							</div>
+						</div>
+						<div class="feedback__links"><a class="feedback__tel" href="tel:+49(741)9423810">
+							<svg class="icon icon-phone ">
+								<use xlink:href="img/svg/sprite.svg#phone"></use>
+							</svg><span>+49 (741) 94 23 81 0</span></a><a class="mail" href="mailto:info@impegio.de">
+							<svg class="icon icon-mail ">
+								<use xlink:href="img/svg/sprite.svg#mail"></use>
+							</svg><span>info@impegio.de</span></a>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<div class="d-none">
+			<div class="form-wrap modal-win modal-form" id="modal-call">
+				<form>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="text-center">
+						<div class="form-wrap__title h3 ttu">Обратный звонок
+						</div>
+						<p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течение 15&nbsp;минут</p>
+					</div>
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше Имя" name="text" required="required"/> 
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
+					</div>
+					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Рассчитать"/>
+					<div class="form-wrap__polite">
+						<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+						</label>
+					</div>
+				</form>
+			</div>
+			<!-- #modal-call-->
+		</div>
+		<!-- modal-->
+		<script src="js/lazy.js"></script>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<!-- полифил для picture-->
+		<script src="libs/picturefill/picturefill.min.js"></script>
+		<!-- полифил для object-fit-->
+		<script src="libs/object-fit-images/ofi.min.js"></script>
+		<!-- modal libs-->
+		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
+		<!-- modal libs-->
+		<!-- slider libs-->
+		<script src="libs/select2/js/select2.full.min.js"></script>
+		<script src="libs/swiper/js/swiper.min.js"></script>
+		<!-- /slider libs-->
+		<!-- for svg libs-->
+		<script src="libs/svg4everybody/svg4everybody.min.js"></script>
+		<!-- /for svg libs-->
+		<script src="libs/inputmask/jquery.inputmask.min.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

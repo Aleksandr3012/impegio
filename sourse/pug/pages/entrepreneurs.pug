@@ -17,35 +17,34 @@ include ../blocks/sJobFindenSlider/_sJobFindenSlider.pug
 block variables
 	- let  mainPage= null
 block title
-	- let  title= 'title'
+	- let  title= 'entrepreneurs'
 	title= title
 block pagecontent 
 	//- +mob-mnu()
-	#home1-infos-inside
-		+header()
-			//- +top-nav()
-			+topLine()
-			+headerBlockAbout(class='headerBlock--entrepreneurs')
-				+e.bottomBlock
-					+breadcrumb('impegio.de','Unternehmer')
-					.row.justify-content-between
-						.col-auto
-							+e.titleBlock
-								+e.uber Über 300.000 flexible Mitarbeiter verfügbar
-								h2 Benötigen Sie Mitarbeiter?
-								.h6 Wir versprechen Ihnen eine individuelle und zielorientierte Betreuung.
-						.col-auto.d-none.d-md-block.order-lg-last
-							img.lazy(data-src="img/@2x/convince-logo-1.png" src="#" alt="")
-						.col-md-auto.align-self-center
-							+get-job-btn('Zum Kontaktformular')
-						
+	+header()
+		//- +top-nav()
+		+topLine()
+		+headerBlockAbout(class='headerBlock--entrepreneurs')
+			+e.bottomBlock
+				+breadcrumb('impegio.de','Unternehmer')
+				.row.justify-content-between
+					.col-auto
+						+e.titleBlock
+							+e.uber Über 300.000 flexible Mitarbeiter verfügbar
+							h2 Benötigen Sie Mitarbeiter?
+							.h6 Wir versprechen Ihnen eine individuelle und zielorientierte Betreuung.
+					.col-auto.d-none.d-md-block.order-lg-last
+						img.lazy(data-src="img/@2x/convince-logo-1.png" src="#" alt="")
+					.col-md-auto.align-self-center
+						+get-job-btn('Zum Kontaktformular')
+					
 
-		+sAdvantage-entrepreneurs()
-		+sSliderFluid-entrepreneurs()
-		+sRecruting-entrepreneurs()
-		//- +sYourWork()
-		+sJobFindenSlider()
-		//- +sStatNumbers()
-		+sContact()
-		+sConvince()
-		+footer()
+	+sAdvantage-entrepreneurs()
+	+sSliderFluid-entrepreneurs()
+	+sRecruting-entrepreneurs()
+	//- +sYourWork()
+	+sJobFindenSlider()
+	//- +sStatNumbers()
+	+sContact()
+	+sConvince()
+	+footer()

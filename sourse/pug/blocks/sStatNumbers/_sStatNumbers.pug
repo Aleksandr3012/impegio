@@ -28,24 +28,6 @@ mixin statDigitsItem(digits='1.988', boldWords='Verfügbare', commonWords='Kandi
 		span=boldWords
 		p=commonWords
 
-mixin partnersLogoSlider()
-	+b.partner-logoes-slider
-		+e.pre-slider-txt
-			span Unternehmen die uns vertrauen
-		+e.partners-slider
-			.swiper-container.partners-slider-js
-				.swiper-wrapper
-					+partnersLogoSlide(1)
-					+partnersLogoSlide(2)
-					+partnersLogoSlide(3)
-					+partnersLogoSlide(4)
-					+partnersLogoSlide(5)
-					+partnersLogoSlide(6)
-
-mixin partnersLogoSlide(imgNum=1)
-	.swiper-slide
-		a(href="#")
-			img.lazy(src="#" data-src=`img/partners-logos-slider-${imgNum}.svg` alt="")
 
 mixin sStatNumbers-uber()
 	// start sStatNumbers

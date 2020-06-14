@@ -144,6 +144,9 @@
 		&.white {
 			background-color: #fff;
 				@extend .text-body;
+			.sLinks__link {
+				color: $primary;
+			}
 		}
 		&.pic,
 		&.primary {
@@ -207,4 +210,11 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
+	&--detail {
+		padding-top: var(--sPT);
+		padding-bottom: var(--sPB);
+		.sLinks__cards {
+			margin-top: 0 !important;
+		}
+	}
 } // end.sLinks
