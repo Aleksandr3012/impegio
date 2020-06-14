@@ -104,6 +104,20 @@
 		}
 	}
 
+	&--entrepreneurs {
+		h2 {
+			letter-spacing: rem(-0.6);
+			// @include me
+			// word-wrap: break-word;
+		}
+
+		.sAdvantage__colSl:before {
+			@include media-breakpoint-up(xl) {
+				right: 92%;
+			}
+		}
+	}
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

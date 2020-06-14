@@ -145,7 +145,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Uns375x812px.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Unternehmen.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -271,12 +271,12 @@ function eventHandler() {
 	var names = [];
 	$(".slider-tabs-js .swiper-slide").each(function (i) {
 		names.push($(this).data("slide-name"));
-		console.log(names);
 	});
 
 	const swiper3 = new Swiper('.slider-tabs-js', {
 		...defaultSl,
 		watchOverflow: false,
+		spaceBetween: 2,
 		// pagination: '.slide-name',
 		// paginationClickable: true,
 		nextButton: '.swiper-button-next',
@@ -288,6 +288,25 @@ function eventHandler() {
 				return '<span class="' + className + '">' + (names[index]) + '</span>';
 			},
 		},
+	});
+
+	const swiper4 = new Swiper('.sSliderFluid__slider', {
+		...defaultSl,
+		spaceBetween: 20,
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',
+		breakpoints: {
+			// when window width is >= 320px
+		 
+			// when window width is >= 480px
+			768: {
+				slidesPerView: 2, 
+			},
+			// when window width is >= 640px
+			1200: {
+				slidesPerView: 3
+			}
+		}
 	});
 
 	var gets = (function () {

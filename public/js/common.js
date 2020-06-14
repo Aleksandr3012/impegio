@@ -145,7 +145,7 @@ function eventHandler() {
 	JSCCommon.select2(); // JSCCommon.inputMask();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Uns375x812px.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Unternehmen.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
@@ -247,10 +247,10 @@ function eventHandler() {
 	var names = [];
 	$(".slider-tabs-js .swiper-slide").each(function (i) {
 		names.push($(this).data("slide-name"));
-		console.log(names);
 	});
 	var swiper3 = new Swiper('.slider-tabs-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		watchOverflow: false,
+		spaceBetween: 2,
 		// pagination: '.slide-name',
 		// paginationClickable: true,
 		nextButton: '.swiper-button-next',
@@ -260,6 +260,22 @@ function eventHandler() {
 			clickable: true,
 			renderBullet: function renderBullet(index, className) {
 				return '<span class="' + className + '">' + names[index] + '</span>';
+			}
+		}
+	}));
+	var swiper4 = new Swiper('.sSliderFluid__slider', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		spaceBetween: 20,
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',
+		breakpoints: {
+			// when window width is >= 320px
+			// when window width is >= 480px
+			768: {
+				slidesPerView: 2
+			},
+			// when window width is >= 640px
+			1200: {
+				slidesPerView: 3
 			}
 		}
 	}));

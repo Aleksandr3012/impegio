@@ -4,7 +4,7 @@
 		z-index: 5;
 		padding-top: rem(30);
 		// padding-bottom: rem(30);
-		margin-bottom: rem(30);
+		margin-bottom: rem(67);
 		border-bottom: solid 1px $gray-500;
 	}
 
@@ -14,30 +14,42 @@
 	}
 
 	.swiper-button {
-		border: 1px solid;
-		&-next {
-			width: rem(41);
-			height: rem(41);
-			&::after {
-				content: '';
-				background-image: url('../img/svg/swiper-next.svg');
-				background-position: center;
-				background-repeat: no-repeat;
-				width: rem(41);
-				height: rem(41);
-			}
-		}
-		&-prev {
-			width: rem(41);
-			height: rem(41);
-			left: 93%;
+		&-next, &-prev {
+			width: 41px;
+			height: 41px;
 			&::after {
 				content: '';
 				background-image: url('../img/svg/swiper-prev.svg');
 				background-position: center;
 				background-repeat: no-repeat;
-				width: rem(41);
-				height: rem(41);
+				width: 41px;
+				height: 41px;
+			}
+			@include media-breakpoint-down(lg) {
+				display: none;
+			}
+		}
+		&-next {
+			&::after {
+				transform: rotate(180deg);
+			}
+			&:hover{
+				&::after {
+					transform: rotate(0deg);
+					background-image: url('../img/svg/swiper-next.svg');
+				}
+			}
+		}
+		&-prev {
+			left: 91%;
+			@include media-breakpoint-up(xxl) {
+				left: 93%;
+			}
+			&:hover{
+				&::after {
+					transform: rotate(180deg);
+					background-image: url('../img/svg/swiper-next.svg');
+				}
 			}
 		}
 	}
@@ -47,15 +59,27 @@
 		margin-bottom: rem(40);
 	}
 
+	&__iconBlock {
+		padding-top: rem(43);
+		padding-left: rem(35);
+	}
+
 	&__iconItem {
 		display: flex;
 		align-items: center;
-		margin-bottom: rem(25);
+		margin-bottom: rem(27);
 
 		.icon {
 			color: $primary;
 			font-size: rem(45);
-			margin-right: rem(25);
+			margin-right: rem(23);
+			width: rem(51);
+		}
+
+		.h6 {
+			font-weight: 900;
+			margin-top: rem(10);
+			margin-bottom: 0;
 		}
 	}
 
@@ -67,6 +91,16 @@
 		border-radius: 0;
 		color: $gray-500;
 		margin-bottom: -2px;
+		padding-bottom: rem(6);
+		margin-left: rem(25);
+		margin-right: rem(25);
+		@include media-breakpoint-up(md) {
+			margin-left: rem(45);
+			margin-right: rem(45);
+		}
+		@include media-breakpoint-down(lg) {
+			font-size: rem(14);
+		}
 		background-color: transparent;
 		border-bottom: solid 3px transparent;
 
@@ -76,19 +110,6 @@
 			border-bottom: solid 3px $primary;
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
