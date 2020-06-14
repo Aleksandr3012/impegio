@@ -77,6 +77,8 @@
 
 	&__cardItem {
 		width: 100%;
+	
+		text-decoration: none !important;
 		@include media-breakpoint-up(md) {
 			flex: 0 0 50%;
 			max-width: 50%;
@@ -141,8 +143,9 @@
 
 		&.white {
 			background-color: #fff;
+				@extend .text-body;
 		}
-
+		&.pic,
 		&.primary {
 			background-color: $primary;
 			.h4, .h6 {
@@ -156,31 +159,28 @@
 					color: #fff;
 				}
 			}
+			
 		}
 
 		&.pic {
-			.h4, .h6 {
-				color: #fff;
+			z-index: 2;
+			position: relative;
+			background-color: $primary;
+			picture {
+				opacity: 0.19;
 			}
-			.sLinks__link {
-				.icon {
-					color: #fff;
-				}
-				span {
-					color: #fff;
-				}
-			}
-			&::before {
-				content: '';
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				z-index: -1;
-				background-color: $primary;
-				opacity: 0.81;
-				left: 0;
-				top: 0;
-			}
+			 
+		 
+			// &::before {
+			// 	content: '';
+			// 	position: absolute;
+			// 	width: 100%;
+			// 	height: 100%;
+			// 	z-index: -1;
+			// 	opacity: 0.81;
+			// 	left: 0;
+			// 	top: 0;
+			// }
 		}
 	}
 	@include media-breakpoint-up(xl) {}

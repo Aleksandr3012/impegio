@@ -4,12 +4,12 @@ mixin sLinks()
 		.container
 			+e.cards
 				mixin cardItem(bg,title,t,link)
-					+e.cardItem(class= bg)&attributes(attributes)
+					+e.cardItem(href='#' class= bg)&attributes(attributes)
 						if bg
 							+pic('GesundheitMedizin')(class='picture-bg primaryPicture')
 							.h4= title
 							.h6= t
-							+e.link(href='#')
+							+e.link()
 								+icon('chevron-right')
 								span= link
 						//- else if bg == pic

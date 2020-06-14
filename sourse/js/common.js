@@ -279,8 +279,10 @@ function eventHandler() {
 		spaceBetween: 2,
 		// pagination: '.slide-name',
 		// paginationClickable: true,
-		nextButton: '.swiper-button-next',
-		prevButton: '.swiper-button-prev',
+		navigation: {
+			nextEl: '.tabSlider__slideNav .swiper-button-next',
+			prevEl: '.tabSlider__slideNav .swiper-button-prev',
+		},
 		pagination: {
 			el: '.slide-name',
 			clickable: true,
@@ -293,8 +295,10 @@ function eventHandler() {
 	const swiper4 = new Swiper('.sSliderFluid__slider', {
 		...defaultSl,
 		spaceBetween: 20,
-		nextButton: '.swiper-button-next',
-		prevButton: '.swiper-button-prev',
+		navigation: {
+			nextEl: '.sSliderFluid .swiper-button-next',
+			prevEl: '.sSliderFluid .swiper-button-prev',
+		}, 
 		breakpoints: {
 			// when window width is >= 320px
 		 
@@ -308,63 +312,7 @@ function eventHandler() {
 			}
 		}
 	});
-
-	var gets = (function () {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
-		}
-		return b;
-	})();
-	// form
-
-
-	var gets = (function () {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
-		}
-		return b;
-	})();
-	// form
-	$("form").submit(function (e) {
-		e.preventDefault();
-		const th = $(this);
-		var data = th.serialize();
-		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-		$.ajax({
-			url: 'action.php',
-			type: 'POST',
-			data: data,
-		}).done(function (data) {
-
-			$.fancybox.close();
-			$.fancybox.open({
-				src: '#modal-thanks',
-				type: 'inline'
-			});
-			// window.location.replace("/thanks.html");
-			setTimeout(function () {
-				// Done Functions
-				th.trigger("reset");
-				// $.magnificPopup.close();
-				// ym(53383120, 'reachGoal', 'zakaz');
-				// yaCounter55828534.reachGoal('zakaz');
-			}, 4000);
-		}).fail(function () { });
-	});
-
+ 
 	//Видео bg
 	var video = document.getElementById(".headerVideo");
 	// function myFunction() {
