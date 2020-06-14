@@ -513,7 +513,8 @@ var JobFindenBigSlider = new Swiper('.big-slider-Job-find-js', {
 		loadPrevNext: true
 	},
 	thumbs: {
-		swiper: JobFindenThumb
+		swiper: JobFindenThumb,
+		slidesPerView: 1
 	}
 }); //to next slide btn
 

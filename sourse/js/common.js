@@ -537,6 +537,7 @@ let JobFindenBigSlider = new Swiper('.big-slider-Job-find-js', {
 	},
 	thumbs: {
 		swiper: JobFindenThumb,
+		slidesPerView: 1,
 	},
  
 });
