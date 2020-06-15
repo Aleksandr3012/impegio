@@ -1,0 +1,104 @@
+	// start .sDetail
+.sDetail {
+	padding-top: 0;
+	@include media-breakpoint-up(xxl) {
+		padding-bottom: rem(40);
+	}
+	background-color: $secondary;
+
+	.section-title {
+		@include media-breakpoint-up(lg) {
+			padding-top: rem(20);
+		}
+		&__logo {
+			font-weight: 900;
+			font-size: $small;
+			margin-bottom: rem(34);
+		}
+		padding-bottom: calc(var(--sTPB) - #{rem(22)});
+	}
+
+	h2 {
+		text-transform: uppercase;
+		max-width: rem(460);
+		font-weight: 900;
+		line-height: 0.95;
+	}
+
+	&__col {
+		padding-top: rem(7);
+		@include media-breakpoint-up(lg) {
+			max-width: rem(542px);
+			margin-left: auto;
+		}
+	}
+
+	img {
+		width: 100%;
+		margin-bottom: rem(45);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(87);
+		}
+		@include media-breakpoint-up(xxl) {
+			max-width: rem(876);
+		}
+	}
+
+	.h6 {
+		margin-bottom: rem(60);
+		font-weight: 300;
+		line-height: 1.4;
+	}
+
+	.h4 {
+		margin-bottom: rem(40);
+		line-height: 1.25;
+		font-weight: 900;
+	}
+
+	&__write {
+		font-weight: 900;
+		@include media-breakpoint-up(lg) {
+			max-width: rem(300);
+		}
+		padding-top: rem(9);
+		margin-bottom: rem(25) !important;
+	}
+
+	.mail {
+		color: $body-color;
+		.icon {
+			color: $primary;
+			@include mt;
+		}
+		&:hover {
+			.icon {
+				transform: scale(1.1);
+			}
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sDetail

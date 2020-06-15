@@ -145,7 +145,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/KontaktX.png);"></div>');
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Detailseite.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -348,7 +348,7 @@ function eventHandler() {
 		// We execute the same script as before
 		let vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
-	}, { passive: true });
+	});
 };
 
 
@@ -422,8 +422,6 @@ let partnersSlider = new Swiper('.partners-slider-js', {
 
 function boostDigits() {
 	let digitsItems = document.querySelectorAll('.digits-boost-js');
-	if (digitsItems.length === 0) return
-
 	for (let item of digitsItems) {
 		//replace numbers by 0
 		let number = item.innerHTML.replace('.', '');
@@ -517,11 +515,6 @@ $('.next-slide-btn-js').click(function () {
 });
 //treatment
 window.addEventListener('resize', function () {
-	//check
-	let slider = document.querySelector('.big-slider-Job-find-js');
-	if (!slider) return
-
-	//func
 	JobFindenBigSlider.update();
 	JobFindenThumb.update();
 	window.setTimeout(function () {
@@ -529,34 +522,6 @@ window.addEventListener('resize', function () {
 		JobFindenThumb.update();
 	}, 100);
 }, { passive: true });
-
-
-/*BreadCrumSlider*/
-
-let breadSl = new Swiper('.breadcrumb-slider-js', {
-	slidesPerView: 'auto',
-	// spaceBetween: 30,
-	freeMode: true,
-	freeModeMomentum: true,
-	// spaceBetween: 30,
-	watchOverflow: true,
-});
-
-
-let ContacterSlider = new Swiper('.KP-radio-btns-js', {
-	slidesPerView: 'auto',
-	// spaceBetween: 30,
-	freeMode: true,
-	freeModeMomentum: true,
-	// spaceBetween: 30,
-	watchOverflow: true,
-
-	//lazy load
-	lazy: {
-		loadPrevNext: true,
-		loadPrevNextAmount: 4,
-	},
-});
 
 //end luckyone js
 

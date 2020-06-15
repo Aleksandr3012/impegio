@@ -41,6 +41,10 @@
 			line-height: 1.4;
 			letter-spacing: rem(-0.28);
 		}
+
+		a {
+			text-decoration: none !important;
+		}
 	}
 
 	&__moreInfo {
@@ -130,6 +134,8 @@
 		}
 
 		.icon {
+			flex-shrink: 0;
+			margin-left: rem(10);
 			font-size: rem(15);
 		}
 	}
@@ -161,4 +167,38 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
+	&__wrap {
+		padding-bottom: rem(10);
+	}
+
+	&__imgBlock {
+		padding-top: rem(30);
+		display: flex;
+		a {
+			&:not(:last-child) {
+				margin-right: rem(50);
+				@include media-breakpoint-up(xl) {
+					margin-right: rem(90);
+				}
+			}
+			img {
+				@include mt;
+			}
+
+			&:hover img{
+				transform: scale(1.03);
+			}
+		}
+	}
+
+	&--detail {
+		@include media-breakpoint-down(md) {
+			padding-top: var(--sPT);
+		}
+		.sPartners__link .h6{
+			@include media-breakpoint-only(lg) {
+				font-size: rem(16) !important;
+			}
+		}
+	}
 } // end.sPartners

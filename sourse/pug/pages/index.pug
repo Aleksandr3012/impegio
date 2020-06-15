@@ -15,21 +15,20 @@ include ../blocks/sJobFindenSlider/_sJobFindenSlider.pug
 block variables
 	- let  mainPage= null
 block title
-	- let  title= 'title'
+	- let  title= 'impegio'
 	title= title
 block pagecontent 
 	//- +mob-mnu()
-	#home1-infos-inside
-		+header()
-			//- +top-nav()
-			+topLine()
-			+headerBlock()
-		+sAdvantage()
-		+sWhatWeAre()
-		+sAbout()
-		+sYourWork()
-		+sJobFindenSlider()
-		+sStatNumbers()
-		+sContact()
-		+sConvince()
-		+footer()
+	+header()
+		//- +top-nav()
+		+topLine()
+		+headerBlock()
+	+sAdvantage()
+	+sWhatWeAre()
+	+sAbout()
+	+sYourWork()
+	+sJobFindenSlider()
+	+sStatNumbers()
+	+sContact()
+	+sConvince()
+	+footer()

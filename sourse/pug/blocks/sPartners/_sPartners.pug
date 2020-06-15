@@ -22,4 +22,43 @@ mixin sPartners()
 						+link('Verwaltungs- Berufsgenossenschaft')
 			+e.moreInfo.btn(href="#") weitere Informationen zu unseren Partner
 			+partnersLogoSlider()
+
+
+mixin sPartners-detail()
+	// start sPartners
+	+b.SECTION.sPartners--detail.section#sPartners&attributes(attributes)
+		.container
+			.row
+				.col-lg-7
+					+e.textBlock
+						h2 Was heißt Equal Pay in der Zeitarbeit?
+						.h6 Auch wenn Equal Payment inzwischen weitläufig für die entgeltseitige Gleichstellung von Zeitarbeitnehmern steht, also gleicher Lohn für gleiche Arbeit, so gibt es bisher noch immer keine genaue Definition des Begriffs. <br> Generell gilt in Deutschland bereits seit Jahren der sogenannte Gleichstellungsgrundsatz, demnach das Zeitarbeitsunternehmen dem Arbeitnehmer für die Zeit der Überlassung die im Betrieb des Kunden geltenden wesentlichen Arbeits- und Entgeltbedingungen gewähren muss. Von dieser Verfplichtung ist ein Zeitarbeitgeber dann befreit, wenn er einen Tarifvertrag mit abweichenden Regelungen anwendet oder einen zuvor arbeitslosen Mitarbeiter für den Zeitraum von maximal 6 Wochen niedriger vergütet.<br> Die in der letzten Tarifrunde geschlossenen Verbandstarifverträge von BAP (vormals BZA) und iGZ haben noch eine Mindestlaufzeit bis Ende Oktober 2013. Diese regeln einen Mindestlohn sowie kontinuierliche Lohnsteigerung in festen Stufen.<br> Trotzdem haben die Arbeitgeberverbände im Jahr 2012 Tarifverhandlungen mit den Einzelgewerkschaften des Deutschen Gewerkschaftsbundes (DGB) angestrebt. Grund hierfür war das Ultimatum der Regierung aus dem Februar 2011, eine tarifliche Lösung für die Umsetzung der entgeltseitigen Gleichstellung zu finden, so dass es keine vom Staat vorgeschriebene gesetzliche Regelung geben muss.<br> Im Mai 2012 haben einigten sich schließlich die Arbeitgeberverbände der Zeitarbeit zunächst mit der IG Metall und kurz darauf mit der IG BCE auf Branchenzuschläge für Arbeitnehmerüberlassungen in der jeweiligen Industrie geeinigt. Seitdem wurden ähnliche Regelungen mit weiteren Gewerkschaften vereinbart, die im Laufe des ersten Halbjahres 2013 Geltung erlangen.  Nähere Informationen zu den Tarifverträgen über Branchenzuschläge finden #[a(href="#") Sie hier]. <br>Die Tarifverträge Branchenzuschlag sind als absolutes Novum in der Tarifgestaltung zu sehen und stellen eine großen Schritt in Richtung Gleichstellung dar. Gleichzeitig bergen sie als tarifpolitisches Neuland erhebliche Risiken in der Umsetzung für die Unternehmen, die Zeitarbeit einsetzen, sowie Beschäftigte in der Zeitarbeit. <br> #[strong Sollten Sie Interesse an einer individuellen Beratung zum Thema Equal Payment haben, schreiben Sie uns bitte eine E-Mail an] #[a.fw-900(href="mailto:info@impegio.de.") info@impegio.de.]
+				.col
+					+e.linkBlock
+						+e.wrap
+							+e.partner 
+								span Verwandte Seiten:
+								+e.line
+							mixin link(t)
+								+e.link(href="#")
+									.h6= t
+									+icon('chevron-right')
+							+link('Qualität und Sicherheit')
+							+link('DGB/BZA Tarifvertrag')
+						+e.wrap
+							+e.partner 
+								span Weiterführende Links:
+								+e.line
+							mixin link(t)
+								+e.link(href="#")
+									.h6= t
+									+icon('chevron-right')
+							+link('Homepage des Bundesarbeitgeberverbands der Personaldienstleister')
+							+link('Informationsseite der Bundesagentur für Arbeit')
+							+link('IG Metall - Tarife')
+					+e.imgBlock.d-none.d-sm-block
+						a(href="#")
+							img.res-i(src="img/@2x/Image-1.jpg", alt="")
+						a(href="#")
+							img.res-i(src="img/@2x/Image-2.jpg", alt="")
 	// end sPartners

@@ -12,22 +12,21 @@ include ../blocks/sConvince/_sConvince.pug
 block variables
 	- let  mainPage= null
 block title
-	- let  title= 'title'
+	- let  title= 'impressum'
 	title= title
 block pagecontent 
 	//- +mob-mnu()
-	#home1-infos-inside
-		+header()
-			//- +top-nav()
-			+topLine()
-			//- +headerBlockAbout()
-		//- +sAdvantage()
-		//- +sWhatWeAre()
-		//- +sAbout()
-		//- +sYourWork()
-		//- +sResponsibility()
-			//- +breadcrumb('impegio.de','Home für Über impegio')
-		//- +sContact()
-		//- +sConvince()
-		+sContent()
-		+footer()
+	+header()
+		//- +top-nav()
+		+topLine()
+		//- +headerBlockAbout()
+	//- +sAdvantage()
+	//- +sWhatWeAre()
+	//- +sAbout()
+	//- +sYourWork()
+	//- +sResponsibility()
+		//- +breadcrumb('impegio.de','Home für Über impegio')
+	//- +sContact()
+	//- +sConvince()
+	+sContent()
+	+footer()

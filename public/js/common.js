@@ -313,8 +313,6 @@ function eventHandler() {
 		// We execute the same script as before
 		var vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
-	}, {
-		passive: true
 	});
 }
 
@@ -372,7 +370,6 @@ var partnersSlider = new Swiper('.partners-slider-js', {
 
 function boostDigits() {
 	var digitsItems = document.querySelectorAll('.digits-boost-js');
-	if (digitsItems.length === 0) return;
 
 	var _iterator = _createForOfIteratorHelper(digitsItems),
 			_step;
@@ -488,10 +485,6 @@ $('.next-slide-btn-js').click(function () {
 }); //treatment
 
 window.addEventListener('resize', function () {
-	//check
-	var slider = document.querySelector('.big-slider-Job-find-js');
-	if (!slider) return; //func
-
 	JobFindenBigSlider.update();
 	JobFindenThumb.update();
 	window.setTimeout(function () {
@@ -500,29 +493,6 @@ window.addEventListener('resize', function () {
 	}, 100);
 }, {
 	passive: true
-});
-/*BreadCrumSlider*/
-
-var breadSl = new Swiper('.breadcrumb-slider-js', {
-	slidesPerView: 'auto',
-	// spaceBetween: 30,
-	freeMode: true,
-	freeModeMomentum: true,
-	// spaceBetween: 30,
-	watchOverflow: true
-});
-var ContacterSlider = new Swiper('.KP-radio-btns-js', {
-	slidesPerView: 'auto',
-	// spaceBetween: 30,
-	freeMode: true,
-	freeModeMomentum: true,
-	// spaceBetween: 30,
-	watchOverflow: true,
-	//lazy load
-	lazy: {
-		loadPrevNext: true,
-		loadPrevNextAmount: 4
-	}
 }); //end luckyone js
 
 if (document.readyState !== 'loading') {
