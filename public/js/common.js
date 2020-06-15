@@ -145,8 +145,8 @@ function eventHandler() {
 	JSCCommon.select2(); // JSCCommon.inputMask();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/KontaktX.png);"></div>'); // /добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/Detailseite.jpg);"></div>')
+	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
