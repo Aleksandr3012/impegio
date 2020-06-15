@@ -2,34 +2,54 @@
 	position: fixed;
 	right: 0;
 	z-index: 100;
-	top: 42vh;
+	bottom: 0;
+	@include media-breakpoint-up(lg) {
+		bottom: 42vh;
+	}
 	display: flex;
+	align-items: flex-end;
 	@include mt;
 
 	&:not(.active) {
-		box-shadow: 0px 3px 6px #00000029;
 		&:hover {
 			transform: scale(1.05);
 		}
 	}
 
 	&.active {
-		top: 17.5vh;
+		@include media-breakpoint-up(lg) {
+			bottom: 17.5vh;
+		}
+		@include media-breakpoint-down(md) {
+			flex-direction: column;
+			.feedback__iconBlock {
+				width: rem(110);
+			}
+		}
 	}
 
 
 
 
+
 	&__iconBlock {
+		flex-shrink: 0;
+		box-shadow: 0px 3px 6px #00000029;
 		display: flex;
-		flex-direction: column;
+		justify-content: center;
+		@include media-breakpoint-up(lg) {
+			flex-direction: column;
+		}
 		margin-top: auto;
 		margin-bottom: auto;
 		align-items: center;
 		background-color: $primary;
-		padding: rem(12) rem(5) rem(17) rem(10);
+		padding: rem(8) rem(10);
+		@include media-breakpoint-up(lg) {
+			padding: rem(12) rem(5) rem(17) rem(10);
+			height: rem(106);
+		}
 		cursor: pointer;
-		height: rem(106);
 
 		.icon {
 			color: #fff;
@@ -43,15 +63,23 @@
 		.icon-phone-bg {
 			@include mt;
 			font-size: rem(40);
-			margin-bottom: rem(15);
 			position: relative;
-			padding-bottom: rem(10);
-			border-bottom: solid 1px #fff;
+			@include media-breakpoint-down(md) {
+				padding-right: rem(10);
+				margin-right: rem(10);
+				border-right: solid 1px #fff;
+			}
+			@include media-breakpoint-up(lg) {
+				padding-bottom: rem(10);
+				margin-bottom: rem(15);
+				border-bottom: solid 1px #fff;
+			}
 		}
 
 		&.active {
 			.icon-mail-bg, .icon-phone-bg {
-				transform: scale(0);
+				// transform: scale(0);
+				display: none;
 				height: 0;
 				// display: none;
 			}

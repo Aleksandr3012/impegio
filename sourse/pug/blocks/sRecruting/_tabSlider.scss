@@ -57,11 +57,16 @@
 	.h4 {
 		font-weight: 900;
 		margin-bottom: rem(40);
+		@include media-breakpoint-down(md) {
+			font-size: rem(24.5);
+		}
 	}
 
 	&__iconBlock {
 		padding-top: rem(43);
-		padding-left: rem(35);
+		@include media-breakpoint-up(lg) {
+			padding-left: rem(35);
+		}
 	}
 
 	&__iconItem {
