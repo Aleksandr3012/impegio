@@ -1,0 +1,35 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sAdvantage/_sAdvantage.pug 
+include ../blocks/sWhatWeAre/_sWhatWeAre.pug 
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sYourWork/_sYourWork.pug
+include ../blocks/sConvince/_sConvince.pug
+include ../blocks/sStatNumbers/_sStatNumbers.pug
+
+include ../blocks/sJobFindenSlider/_sJobFindenSlider.pug
+
+
+//- new for kontakt page
+include ../blocks/sContactHeader/_sContactHeader.pug
+include ../blocks/sFromKontantP/_sFromKontantP.pug
+include ../blocks/sKontaktAdrreses/_sKontaktAdrreses.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'title'
+	title= title
+block pagecontent 
+	//- +mob-mnu()
+	#home1-infos-inside
+		+header()
+			//- +top-nav()
+			+topLine()
+			+sContactHeader()
+		+sFromKontantP()
+		+sKontaktAdrreses()
+		+footer()

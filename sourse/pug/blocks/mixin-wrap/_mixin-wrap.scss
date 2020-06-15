@@ -221,3 +221,44 @@
 	}
 
 }
+
+//breadcrumbs
+.breadcrumb-slider-js{
+	border-bottom: 1px solid $gray-600;
+	margin-bottom: 40px;
+}
+.breadcrumb{
+	display: flex;
+	flex-wrap: nowrap;
+
+	padding: rem(10) 0 0 0;
+	li{
+		width: auto;
+
+		a{
+			font-size: 12px;
+			font-weight: 300;
+			letter-spacing: -0.12px;
+			line-height: 28px;
+			color: $body-color;
+		}
+
+		&:before{
+			line-height: 28px;
+		}
+	}
+
+	//active item
+	li:last-child{
+		a{
+			color: $primary;
+		}
+	}
+
+
+}
+
+
+
+
+

@@ -1,0 +1,73 @@
+mixin sFromKontantP()
+	// start sFromKontantP
+	+b.SECTION.sFromKontantP#sFromKontantP&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Wähle dein Anliegen aus
+				p Die mit * gekennzeichneten Felder sind Pflichtfelder.
+			+b.radio-btn-slider
+				.swiper-container.KP-radio-btns-js
+					.swiper-wrapper
+						+ContacterItem('cont1',true, 1, 'Bewerber', 'Du bist auf der Suche nach einem neuen Job?')
+						+ContacterItem('cont2',false, 2, 'Unternehmer', 'Sie suchen Mitarbeiter?')
+						+ContacterItem('cont3',false, 3, 'Interner Bewerber', 'Du möchtest bei uns arbeiten?')
+						+ContacterItem('cont4',false, 4, 'Allgemein', 'Sie haben eine allgemeine Anfragen?')
+			+form-wrap()
+				+e.your-address-bl
+					+e.headline Ihre Adressdaten
+					+e.inputs-row.row
+						.col-12
+							+input('Unternehmen', 'text', undefined, "inp_name")(value='VI-ARISE Communication GmbH')
+						.col-md-6
+							+formSelect()
+						.col-md-6
+							+input('Name*', 'text', undefined, 'name')
+						.col-md-6
+							+input('Straße, Nr.', 'text', undefined,'address')
+						.col-md-6
+							+input('PLZ, Ort', 'text', undefined, 'post_index')
+						.col-md-6
+							+input('Telefon', 'tel', undefined, 'phone')
+						.col-md-6
+							+input('Telefax', 'text', undefined, 'fax')
+						.col-12
+							+input('Email*', 'email', undefined, 'email')
+				+e.message-bl
+					+e.headline Ihre Nachricht an uns
+					+input('Mitteilung', 'textarea', undefined)
+				+e.polite
+					span.wpcf7-form-control-wrap.acceptance-133
+						span.wpcf7-form-control.wpcf7-acceptance
+							span.wpcf7-list-item
+								label
+									input(type="checkbox" checked="checked" name='acceptance-133' aria-invalid="false" value='1')
+									span.wpcf7-list-item-label
+										|Ich habe die
+										|
+										a(href='#') Datenschutzbestimmung
+										|
+										|zur Kenntnis genommen.
+				+e.BUTTON.submit-btn(type="submit") Absenden
+
+	// end sFromKontantP
+mixin formSelect()
+	+b.kontakt-page-select-group.input-group
+		.custom-select-wrap
+			select.custom-select-js.form-control(name="male")
+				option(value="Herr" selected) Herr
+				option(value="Frau") Frau
+mixin ContacterItem(radioVal, checked, imgNum, Name, Question)
+	.swiper-slide
+		+e.LABEL.contacter-slide
+			+ContacterCheckbox(checked)
+			+e.contacter-bl
+				.portrait-cont
+					.img-container
+						img.swiper-lazy(src="#" data-src=`img/@2x/contacter-slider-${imgNum}.jpg` alt="")
+				.contacter-name=Name
+				.contacter-question.d-none.d-xl-block=Question
+mixin ContacterCheckbox(checked)
+	if checked
+		input.checkbox(type="radio" name="contactet_gr" value=radioVal checked)
+	else
+		input.checkbox(type="radio" name="contactet_gr" value=radioVal)

@@ -1,0 +1,83 @@
+mixin sKontaktAdrreses()
+	// start sKontaktAdrreses
+	+b.SECTION.sKontaktAdrreses.section#sKontaktAdrreses&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Kontaktanschriften
+				p impegio Personalmanagement GmbH
+		+e.work-address-items
+			+workAddressItem(1)
+				| Lederstr.&nbsp;134
+				br
+				| D-72764 Reutlingen
+			+workAddressItem(2)
+				|Werner-von-Siemens-Str. 2-6
+				br
+				|Geb&auml;ude 5108/ 2. OG
+				br
+				|D-76646 Bruchsal
+			+workAddressItem(3)
+				| Lederstr.&nbsp;134
+				br
+				| D-72764 Reutlingen
+			+workAddressItem(2)
+				| Lederstr.&nbsp;134
+				br
+				| D-72764 Reutlingen
+			+workAddressItem(4)
+				| Lederstr.&nbsp;134
+				br
+				| D-72764 Reutlingen
+			+workAddressItem(2)
+				| Lederstr.&nbsp;134
+				br
+				| D-72764 Reutlingen
+			+workAddressItem(1)
+				| Lederstr.&nbsp;134
+				br
+				| D-72764 Reutlingen
+			+workAddressItem(3)
+				| Lederstr.&nbsp;134
+				br
+				| D-72764 Reutlingen
+			+workAddressItem(2)
+				| Lederstr.&nbsp;134
+				br
+				| D-72764 Reutlingen
+			+workAddressItem(4)
+				| Lederstr.&nbsp;134
+				br
+				| D-72764 Reutlingen
+			+workAddressItem(2)
+				| Lederstr.&nbsp;134
+				br
+				| D-72764 Reutlingen
+			+workAddressItem(1)
+				| Lederstr.&nbsp;134
+				br
+				| D-72764 Reutlingen
+	// end sKontaktAdrreses
+
+mixin workAddressItem(imgNum=1)
+	+e.work-address-item
+		.container
+			+e.img-bl.d-none.d-lg-block
+				img.lazy(src="#" data-src=`img/@2x/working-add-item-${imgNum}.jpg` alt='')
+			+e.descr-block
+				.place-name Niederlassung Reutlingen
+				.place-adrr
+					block
+				+e.A.place-phone.cotact-link(href="tel:+1234567890")
+					.icon-cont
+						+icon('phone')
+					span +49 (7121) 159 41 51
+				+e.A.place-fax.cotact-link(href="#")
+					.icon-cont
+						+icon('fax')
+					span +49 (7121) 159 41 99
+				+e.A.place-mail.cotact-link(href="mailto:name@email.com")
+					.icon-cont
+						+icon('mail')
+					span reutlingen@impegio.de
+			+e.map-block
+				img.lazy(src="#" data-src="img/@2x/Kontakt-Page_map.jpg" alt="")

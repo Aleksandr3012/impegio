@@ -1,0 +1,15 @@
+mixin sContactHeader()
+	// start sContactHeader
+	+b.SECTION.sContactHeader#sContactHeader&attributes(attributes)
+		+e.img-block
+			img(src="img/@2x/kontakt-bg.jpg" alt="")
+		+e.content-bl
+			+breadcrumb('impegio.de', 'Kontakt')(class="d-none d-md-block")
+			+e.content-txt-bl
+				+e.section-title
+					p JEDERZEIT. PERSÖNLICH FÜR SIE DA.
+					h2 Wir freuen uns auf den Kontakt.
+				+e.section-descr
+					p Und genau deshalb wollen wir die Kontaktaufnahme so&nbsp;bequem wie m&ouml;glich f&uuml;r Sie gestalten. Hier k&ouml;nnen Sie Ihr Anliegen ausw&auml;hlen und gelangen schnell und einfach an&nbsp;den richtigen impegio Ansprechpartner.
+
+	// end sContactHeader
