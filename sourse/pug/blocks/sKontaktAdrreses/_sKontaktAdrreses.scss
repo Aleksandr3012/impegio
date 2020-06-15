@@ -227,7 +227,11 @@
 		.icon-cont{
 			display: inline-block;
 			vertical-align: top;
+			text-align: center;
+			.icon-mail {
 
+				font-size: rem(23px);
+			}
 			min-width: 30px;
 			@include media-breakpoint-up(xl){
 				min-width: 36px;
