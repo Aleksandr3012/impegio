@@ -395,6 +395,7 @@ function boostDigits() {
 
 function trigerDigitsCounter() {
 	var firstDigitItem = document.querySelector('.digits-boost-js');
+	if (!firstDigitItem) return;
 	var digitsItemsTop = $(firstDigitItem).offset().top;
 	var windowScroll = window.scrollY + vh(100);
 
@@ -485,6 +486,9 @@ $('.next-slide-btn-js').click(function () {
 }); //treatment
 
 window.addEventListener('resize', function () {
+	//check
+	var slider = document.querySelector('.thumb-slider-Job-find-js');
+	if (!slider) return;
 	JobFindenBigSlider.update();
 	JobFindenThumb.update();
 	window.setTimeout(function () {
@@ -493,6 +497,28 @@ window.addEventListener('resize', function () {
 	}, 100);
 }, {
 	passive: true
+}); //breadcrumbs
+
+var breadSl = new Swiper('.breadcrumb-slider-js', {
+	slidesPerView: 'auto',
+	// spaceBetween: 30,
+	freeMode: true,
+	freeModeMomentum: true,
+	// spaceBetween: 30,
+	watchOverflow: true
+});
+var ContacterSlider = new Swiper('.KP-radio-btns-js', {
+	slidesPerView: 'auto',
+	// spaceBetween: 30,
+	freeMode: true,
+	freeModeMomentum: true,
+	// spaceBetween: 30,
+	watchOverflow: true,
+	//lazy
+	lazy: {
+		loadPrevNext: true,
+		loadPrevNextAmount: 4
+	}
 }); //end luckyone js
 
 if (document.readyState !== 'loading') {

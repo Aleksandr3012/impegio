@@ -434,6 +434,7 @@ function boostDigits() {
 
 function trigerDigitsCounter() {
 	let firstDigitItem = document.querySelector('.digits-boost-js');
+	if(!firstDigitItem) return
 	let digitsItemsTop = $(firstDigitItem).offset().top;
 	let windowScroll = window.scrollY + vh(100);
 
@@ -515,6 +516,10 @@ $('.next-slide-btn-js').click(function () {
 });
 //treatment
 window.addEventListener('resize', function () {
+	//check
+	let slider = document.querySelector('.thumb-slider-Job-find-js');
+	if (!slider) return
+
 	JobFindenBigSlider.update();
 	JobFindenThumb.update();
 	window.setTimeout(function () {
@@ -522,6 +527,32 @@ window.addEventListener('resize', function () {
 		JobFindenThumb.update();
 	}, 100);
 }, { passive: true });
+
+
+//breadcrumbs
+let breadSl = new Swiper('.breadcrumb-slider-js', {
+	slidesPerView: 'auto',
+	// spaceBetween: 30,
+	freeMode: true,
+	freeModeMomentum: true,
+	// spaceBetween: 30,
+	watchOverflow: true,
+});
+
+let ContacterSlider = new Swiper('.KP-radio-btns-js', {
+	slidesPerView: 'auto',
+	// spaceBetween: 30,
+	freeMode: true,
+	freeModeMomentum: true,
+	// spaceBetween: 30,
+	watchOverflow: true,
+
+	//lazy
+	lazy: {
+		loadPrevNext: true,
+		loadPrevNextAmount: 4,
+	},
+});
 
 //end luckyone js
 
