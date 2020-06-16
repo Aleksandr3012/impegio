@@ -54,6 +54,44 @@
 				margin-bottom: rem(11);
 				margin-left: rem(20);
 			}
+
+			a {
+				position: relative;
+	
+				&::before {
+					content: '';
+					@include triangle(8px, currentColor, up-right);
+					display: inline-block;
+					margin-right: rem(8);
+					position: absolute;
+					left: 0;
+					top: rem(8);
+					opacity: 0;
+					@include mt;
+				}
+
+				&::after {
+					content: '';
+					height: 1px;
+					width: 100%;
+					background-color: #fff;
+					position: absolute;
+					left: 0;
+					bottom: -3px;
+					opacity: 0;
+					@include mt;
+				}
+			}
+
+			.current-menu-item a,
+			a:hover {
+				&::before, &::after {
+					opacity: 1;
+				}
+				font-weight: 900;
+				padding-left: rem(20);
+	
+			}
 		}
 
 		.menu-item {
@@ -76,9 +114,9 @@
 				@include media-breakpoint-up(xxl) {
 					font-size: $em-base;
 				}
-				&:hover {
-					opacity: .6;
-				}
+				// &:hover {
+				// 	opacity: .6;
+				// }
 			}
 		}
 

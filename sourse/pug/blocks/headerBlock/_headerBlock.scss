@@ -33,10 +33,10 @@
 		position: relative;
 		z-index: 4;
 		@include media-breakpoint-down(lg) {
-			padding-top: rem(90);
+			padding-top: rem(50);
 		}
 		@include media-breakpoint-only(md) {
-			padding-top: rem(125);
+			padding-top: rem(60);
 			margin-left: rem(10);
 			padding-right: rem(10);
 		}

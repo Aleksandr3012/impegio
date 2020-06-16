@@ -74,6 +74,8 @@
 			@include media-breakpoint-only(lg) {
 				font-size: rem(13);
 			}
+			opacity: 0;
+			@include mt;
 		}
 	}
 
@@ -194,6 +196,10 @@
 			// 	left: 0;
 			// 	top: 0;
 			// }
+		}
+
+		&:hover .sLinks__link span {
+			opacity: 1;
 		}
 	}
 	@include media-breakpoint-up(xl) {}
