@@ -411,9 +411,9 @@ let partnersSlider = new Swiper('.partners-slider-js', {
 	},
 
 	//lazy load
-	lazy: {
-		loadPrevNext: true,
-	},
+	//lazy: {
+	//	loadPrevNext: true,
+	//},
 	//autoplay
 	autoplay: {
 		delay: 6000,
