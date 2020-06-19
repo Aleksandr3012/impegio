@@ -255,7 +255,7 @@
 		}
 		@include media-breakpoint-up(xxl){
 			height: 872px;
-			//width: 703px;
+			max-width: 703px;
 			width: 36.61vw;
 		}
 		img{

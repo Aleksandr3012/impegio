@@ -72,7 +72,8 @@
 		}
 
 		@include media-breakpoint-up(xxl) {
-			max-width: calc(100% - 745px);
+			//max-width: calc(100% - 745px);
+			max-width: calc(100% - 40vw);
 			max-height: 740px;
 			top: 250px;
 		}
