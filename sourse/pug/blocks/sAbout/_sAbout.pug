@@ -1,61 +1,59 @@
 mixin sAbout()
 	// start sAbout
-	+b.sAbout#sAbout&attributes(attributes)
-		.container
-			+b.section-title
-				p Wie funktioniert es?
-				h2 WIR GESTALTEN DEINE JOBSSUCHE EINFACH
-			+e.sectionSlider.swiper-container
-				.swiper-wrapper
-					mixin slide(numb)
-						.swiper-slide
-							.row
-								.col-xl-3
-									mixin slideName(k,p,w,d)
-										+e.slideName
-											ul
-												li(class=`${k}`)
-													+e.numb 1
-													+e.text
-														p KONTAKT
-														+e.descr Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-												li(class=`${p}`)
-													+e.numb 2
-													+e.text
-														p Persönliches Gespräch
-														+e.descr Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-												li(class=`${w}`)
-													+e.numb 3
-													+e.text
-														p Wir suchen Deinen Job
-														+e.descr Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-												li(class=`${d}`)
-													+e.numb 4
-													+e.text
-														p Du hast einen neuen Job
-														+e.descr Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-											+e.slideNumb.d-lg-none= numb
-									if numb == 1
-										+slideName('active','inactive','inactive','inactive')
-									if numb == 2
-										+slideName('passed','active','inactive','inactive')
-									if numb == 3
-										+slideName('passed','passed','active','inactive')
-									if numb == 4
-										+slideName('passed','passed','passed','active')
-									+jobSearchBlock(class="d-none d-xl-flex")
-								+e.col.col-lg-auto
-									+e.imgWrap
-										img.res-i.swiper-lazy(src="#" data-src="img/@2x/sAbout.jpg", alt="")
-								.col
-									+e.slideNumb.d-none.d-lg-block= numb
-									.h4 Lorem ipsum dolor sit amet, consectetuer elit
-									.h6 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo. 
+	+b.sAbout#sAbout&attributes(attributes)  
+		mixin slide(numb)
+			+e.slide&attributes(attributes)
+				.container
+					+b.section-title
+						p Wie funktioniert es?
+						.h2 WIR GESTALTEN DEINE JOBSSUCHE EINFACH
+					.row
+						.col-xl-3
+							mixin slideName(k,p,w,d)
+								+e.slideName
+									ul
+										li(class=`${k}`)
+											+e.numb 1
+											+e.text
+												p KONTAKT
+												+e.descr Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+										li(class=`${p}`)
+											+e.numb 2
+											+e.text
+												p Persönliches Gespräch
+												+e.descr Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+										li(class=`${w}`)
+											+e.numb 3
+											+e.text
+												p Wir suchen Deinen Job
+												+e.descr Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+										li(class=`${d}`)
+											+e.numb 4
+											+e.text
+												p Du hast einen neuen Job
+												+e.descr Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+									+e.slideNumb.d-lg-none= numb
+							if numb == 1
+								+slideName('active','inactive','inactive','inactive')
+							if numb == 2
+								+slideName('passed','active','inactive','inactive')
+							if numb == 3
+								+slideName('passed','passed','active','inactive')
+							if numb == 4
+								+slideName('passed','passed','passed','active')
+							+jobSearchBlock(class="d-none d-xl-flex")
+						+e.col.col-lg-auto
+							+e.imgWrap
+								img.res-i(src="img/@2x/sAbout.jpg", alt="")
+						.col
+							+e.slideNumb.d-none.d-lg-block= numb
+							.h4 Lorem ipsum dolor sit amet, consectetuer elit
+							.h6 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo. 
 
-					+slide('1')
-					+slide('2')
-					+slide('3')
-					+slide('4')
-				+jobSearchBlock(class='d-xl-none')
+		+slide('1')(class="slide-1")
+		+slide('2')(class="slide-2")
+		+slide('3')(class="slide-3")
+		+slide('4')(class="slide-4")
+		+jobSearchBlock(class='d-xl-none')
 
 	// end sAbout

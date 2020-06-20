@@ -223,27 +223,58 @@ function eventHandler() {
 	$(".moreDetailed").click(function () {
 		swiper1.slideNext();
 		return false;
-	});
-	var swiper2 = new Swiper('.sAbout__sectionSlider', _objectSpread(_objectSpread({}, defaultSl), {}, {
-		loop: false,
-		effect: 'fade',
-		navigation: {
-			nextEl: '.swiper-slide'
-		},
-		// breakpoints: {
-		// 768: {
-		mousewheel: {
-			sensitivity: 4.5,
-			releaseOnEdges: true
-		} // },
-		// },
-		// on: {
-		// 	reachEnd: function() {
-		// 		mousewheel: false,
-		// 	}
-		// }
+	}); // const swiper2 = new Swiper('.sAbout__sectionSlider', {
+	// 	...defaultSl,
+	// 	loop: false,
+	// 	effect: 'fade',
+	// 	navigation: {
+	// 		nextEl: '.swiper-slide',
+	// 	},
+	// 	// breakpoints: {
+	// 	// 768: {
+	// 	mousewheel: {
+	// 		sensitivity: 4.5,
+	// 		releaseOnEdges: true,
+	// 	},
+	// 	// },
+	// 	// },
+	// 	// on: {
+	// 	// 	reachEnd: function() {
+	// 	// 		mousewheel: false,
+	// 	// 	}
+	// 	// }
+	// });
 
-	}));
+	var controller = new ScrollMagic.Controller(); // define movement of panels
+
+	var wipeAnimation = new TimelineMax().fromTo(".sAbout__slide.slide-1", .1, {
+		opacity: 1
+	}, {
+		opacity: 1
+	}) // in from left
+	.fromTo(".sAbout__slide.slide-2", .1, {
+		opacity: 0
+	}, {
+		opacity: 1
+	}) // in from left
+	.fromTo(".sAbout__slide.slide-3", .1, {
+		opacity: 0
+	}, {
+		opacity: 1
+	}) // in from left
+	.fromTo(".sAbout__slide.slide-4", .1, {
+		opacity: 0
+	}, {
+		opacity: 1
+	}); // in from left
+	// create scene to pin and link animation
+
+	new ScrollMagic.Scene({
+		triggerElement: "#sAbout",
+		triggerHook: "onLeave",
+		duration: "100%"
+	}).setPin("#sAbout").setTween(wipeAnimation) // .addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
 	var names = [];
 	$(".slider-tabs-js .swiper-slide").each(function (i) {
 		names.push($(this).data("slide-name"));

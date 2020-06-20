@@ -1,6 +1,8 @@
 	// start .sYourWork
 .sYourWork {
-	padding-top: calc(var(--sPT) + #{rem(62s)});
+	position: relative;
+	z-index: 10;
+	padding-top: calc(var(--sPT) + #{rem(62)});
 	@include media-breakpoint-up(lg) {
 		padding-top: calc(var(--sPT) + #{rem(13)});
 	}
